@@ -29,7 +29,7 @@ class IndicatorList extends React.Component {
     const listItems = list.map((item) => {
       return (
         <tr key={item.id}>
-        <td><Link to={`/indicators/${item.id}`}>{item.name}</Link></td>
+        <td><Link to={`/indicators/${item.id}`} className="link--primary">{item.name}</Link></td>
         <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
         <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
         </tr>
@@ -43,7 +43,6 @@ class IndicatorList extends React.Component {
       <div className="section">
         <h2 className="header-page-main">Recently Added Indicators</h2>
         <Link to='indicators/new' className="btn button--primary button-section-header button--small">Add an Indicator</Link>
-        <Link to='indicators' className="btn button--primary button-section-header button--small">View All</Link>
         <table className="table">
           <thead>
             <tr>
@@ -56,6 +55,7 @@ class IndicatorList extends React.Component {
             {listItems}
           </tbody>
         </table>
+        <Link to='indicators' className="link--primary">View All</Link>
       </div>
     );
   }
