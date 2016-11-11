@@ -44,22 +44,22 @@ export default function (yearLabel, monthLabel) {
 
       years.unshift(<option key={-1} value={-1}>Year</option>);
 
-      return <div className="multiform-group">
-      <legend>{this.props.schema.title}</legend>
-      <div className="row">
-      <div className="col-sm-6">
-      <label>{yearLabel}</label>
-      <select className="form-control" value={Number(year)} onChange={this.onChange('year')}>
-      {years}
-      </select>
-      </div>
-      <div className="col-sm-6">
-      <label>{monthLabel}</label>
-      <select className="form-control" value={Number(month)} onChange={this.onChange('month')}>
-      {months}
-      </select>
-      </div>
-      </div>
+      return <div className="form-date">
+        <legend>{this.props.schema.title}</legend>
+        <div className="row">
+          <div className="col-sm-6">
+            <label>{yearLabel}</label>
+            <select className="form-control" value={Number(year)} onChange={this.onChange('year')}>
+            {years}
+            </select>
+          </div>
+          <div className="col-sm-6">
+            <label>{monthLabel}</label>
+            <select className="form-control" value={Number(month)} onChange={this.onChange('month')}>
+            {months}
+            </select>
+          </div>
+        </div>
       </div>;
     }
   };
