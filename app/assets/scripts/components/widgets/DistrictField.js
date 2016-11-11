@@ -11,7 +11,7 @@ export default class DistrictField extends React.Component {
       const {governorate, district} = props.formData;
       this.state = {governorate, district};
     } else {
-      this.state = {governorate: '-1', district: '-1'};
+      this.state = {governorate: '', district: ''};
     }
   }
   onChange (name) {
@@ -24,17 +24,17 @@ export default class DistrictField extends React.Component {
 
   render () {
     const {governorate, district} = this.state;
-    let districts = (governorate === '-1' ? [] : districtNames[governorate].map((district) => {
+    let districts = (governorate === '' ? [] : districtNames[governorate].map((district) => {
       return <option key={district} value={district}>{district}</option>;
     }));
     if (districts.length) districts.unshift(<option key={'-2'} value={'All'}>All Districts</option>);
-    districts.unshift(<option key={'-1'} value={'-1'}>District</option>);
+    districts.unshift(<option key={'-1'} value={''}>District</option>);
 
     const governorates = Object.keys(districtNames).map((governorate) => {
       return <option key={governorate} value={governorate}>{governorate}</option>;
     });
 
-    governorates.unshift(<option key={'-1'} value={'-1'}>Governorate</option>);
+    governorates.unshift(<option key={'-1'} value={''}>Governorate</option>);
 
     return <div className="form-date">
       <legend>{this.props.schema.title}</legend>
@@ -55,4 +55,3 @@ export default class DistrictField extends React.Component {
     </div>;
   }
 }
-

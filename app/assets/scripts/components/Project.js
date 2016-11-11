@@ -69,9 +69,9 @@ class Project extends React.Component {
         } else if (key === 'location') {
           const locations = project[key].map((location) => {
             let district = location.district;
-            if (district.district !== '-1') {
+            if (district.district) {
               return <li>{district.district + ', ' + district.governorate}</li>;
-            } else if (district.governorate !== -1) {
+            } else if (district.governorate) {
               return <li>{district.governorate}</li>;
             } else {
               return <li></li>;
