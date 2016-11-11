@@ -14,9 +14,15 @@ export const schema = {
       title: 'Objective',
       type: 'string'
     },
+    published: {
+      title: 'Visibility',
+      type: 'boolean',
+      enumNames: ['Published', 'Draft']
+    },
     private: {
-      title: 'Make data private?',
-      type: 'boolean'
+      title: 'Privacy',
+      type: 'boolean',
+      enumNames: ['Private', 'Public']
     },
     components: {
       title: 'Components',
@@ -262,6 +268,12 @@ class ProjectForm extends React.Component {
       },
       description: {
         'ui:widget': 'textarea'
+      },
+      published: {
+        'ui:widget': 'radio'
+      },
+      private: {
+        'ui:widget': 'radio'
       },
       amendments: {
         'ui:widget': 'textarea'

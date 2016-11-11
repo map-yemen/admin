@@ -11,9 +11,15 @@ export const schema = {
       title: 'Description',
       type: 'string'
     },
+    published: {
+      title: 'Visibility',
+      type: 'boolean',
+      enumNames: ['Published', 'Draft']
+    },
     private: {
-      title: 'Make data private?',
-      type: 'boolean'
+      title: 'Privacy',
+      type: 'boolean',
+      enumNames: ['Private', 'Public']
     },
     category: {
       type: 'array',
@@ -43,6 +49,12 @@ const uiSchema = {
   },
   description: {
     'ui:widget': 'textarea'
+  },
+  published: {
+    'ui:widget': 'radio'
+  },
+  private: {
+    'ui:widget': 'radio'
   },
   data: {
     'ui:widget': 'textarea',

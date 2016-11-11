@@ -7,6 +7,7 @@ const apiRoot = config.api_root;
 const ordering = [
   'name',
   'description',
+  'published',
   'private',
   'data'
 ];
@@ -47,7 +48,11 @@ class Indicator extends React.Component {
             <label>{keys[key].title}</label>
             <textarea className='form-control' readOnly value={indicator[key]}></textarea>
           </li>);
-        } else if (keys[key].type === 'string' || keys[key].type === 'boolean') {
+        } else if (key === 'private') {
+          return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Private' : 'Public' }</li>;
+        } else if (key === 'published') {
+          return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Published' : 'Draft' }</li>;
+        } else if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(indicator[key]) }</li>;
         }
       });

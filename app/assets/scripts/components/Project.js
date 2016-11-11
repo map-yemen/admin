@@ -7,6 +7,7 @@ const apiRoot = config.api_root;
 const ordering = [
   'name',
   'description',
+  'published',
   'private',
   'project_delays',
   'status',
@@ -62,8 +63,12 @@ class Project extends React.Component {
         return 0;
       }).map(function (key) {
         if (!keys[key]) { return <div></div>; }
-        if (keys[key].type === 'string' || keys[key].type === 'boolean') {
+        if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(project[key]) }</li>;
+        } else if (key === 'private') {
+          return <li key={key}><label>{keys[key].title}</label>{ project[key] ? 'Private' : 'Public' }</li>;
+        } else if (key === 'published') {
+          return <li key={key}><label>{keys[key].title}</label>{ project[key] ? 'Published' : 'Draft' }</li>;
         } else if (key === 'number_served') {
           return <li key={key}><label>{keys[key].title}</label>{ project[key].number_served + ' ' + project[key].number_served_unit}</li>;
         } else if (key === 'location') {
