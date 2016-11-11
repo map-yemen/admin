@@ -80,6 +80,9 @@
 
 .button--primary {
   @include button-variation("filled", "dark", $primary-color);
+  &:hover {
+    color: #fff;
+  }
 }
 
 /* Primary Bounded */
@@ -252,6 +255,27 @@
   display: none;
 }
 
-.btn-info {
+.btn-info, .btn-info:visited, .btn-info:active, .btn-info:link  {
   margin-top: .5em;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  transition: opacity 0.24s ease 0s;
+  &:hover {
+    opacity: 0.8;
+    background-color: $primary-color;
+  }
+}
+
+.btn-danger, .btn-danger:visited, .btn-danger:active, .btn-danger:link {
+  background-color: $danger-color;
+  font-size: 1em;
+  max-width: 4em;
+  padding: .5em .5em .6em;
+  border: none;
+  transition: opacity 0.24s ease 0s;
+  &:hover {
+    opacity: 0.8;
+    background-color: $danger-color;
+  }
 }
