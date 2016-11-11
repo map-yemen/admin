@@ -31,7 +31,7 @@ class ProjectList extends React.Component {
         <tr key={item.id}>
           <td><Link to={`/projects/${item.id}`}>{item.name}</Link></td>
           <td>{item.categories && item.categories.join(', ')}</td>
-          <td>{item.location && item.location.map(l => `${l.governorate} - ${l.district}`).join(', ')}</td>
+          <td>{item.location && item.location.map(l => `${l.district.governorate} ${l.district.district ? '-' : ''} ${l.district.district}`).join(', ')}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
         </tr>

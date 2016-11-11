@@ -4,6 +4,7 @@ import {cloneDeep} from 'lodash';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
+import DistrictField from './widgets/DistrictField';
 
 export const schema = {
   type: 'object',
@@ -96,31 +97,24 @@ export const schema = {
       }
     },
     location: {
-      title: 'Location',
+      title: 'Locations',
       type: 'array',
       items: {
         type: 'object',
-        required: ['governorate'],
         properties: {
-          governorate: {
-            title: 'Governorate',
-            type: 'string',
-            enum: [
-              'Select a Governorate',
-              'governorate 1',
-              'governorate 2',
-              'governorate 3'
-            ]
-          },
           district: {
-            title: 'District',
-            type: 'string',
-            enum: [
-              'Select a District',
-              'district 1',
-              'district 2',
-              'district 3'
-            ]
+            type: 'object',
+            required: ['governorate'],
+            properties: {
+              governorate: {
+                title: 'Governorate',
+                type: 'string'
+              },
+              district: {
+                title: 'District',
+                type: 'string'
+              }
+            }
           },
           marker: {
             title: 'Location Marker',
@@ -297,6 +291,7 @@ class ProjectForm extends React.Component {
       location: {
         classNames: 'form-block multiform-group',
         items: {
+          district: {'ui:field': 'district'},
           marker: {'ui:field': 'marker'}
         }
       },
@@ -364,6 +359,7 @@ class ProjectForm extends React.Component {
         'short-date': DateFieldFactory('Year', 'Month'),
         'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
         'monitoring-date': DateFieldFactory('Monitoring Date - Year', 'Monitoring Date - Month'),
+        'district': DistrictField,
         'marker': LocationField,
         'currency': CurrencyField
       }}
