@@ -55,7 +55,10 @@ class IndicatorList extends React.Component {
             {listItems}
           </tbody>
         </table>
-        <Link to='indicators' className="link--primary">View All</Link>
+        { component.props.limit // only show view all button if we have a limit
+          ? <Link to='indicators' className="link--primary">View All</Link>
+          : ''
+        }
       </div>
     );
   }

@@ -31,7 +31,7 @@ class ProjectList extends React.Component {
         <tr key={item.id}>
           <td><Link to={`/projects/${item.id}`} className="link--primary">{item.name}</Link></td>
           <td>{item.categories && item.categories.join(', ')}</td>
-          <td>{item.location && item.location.map(l => `${l.governorate} - ${l.district}`).join(', ')}</td>
+          <td>{item.location && item.location.map(l => `${l.district.governorate} ${l.district.district ? '-' : ''} ${l.district.district}`).join(', ')}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
         </tr>
@@ -59,7 +59,10 @@ class ProjectList extends React.Component {
             {listItems}
           </tbody>
         </table>
-        <Link to='projects' className="link--primary">View All</Link>
+        { component.props.limit // only show view all button if we have a limit
+          ? <Link to='projects' className="link--primary">View All</Link>
+          : ''
+        }
       </div>
     );
   }
