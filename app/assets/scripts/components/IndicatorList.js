@@ -32,6 +32,7 @@ class IndicatorList extends React.Component {
         <td><Link to={`/indicators/${item.id}`}>{item.name}</Link></td>
         <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
         <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
+        <td>{item.published ? '✓' : ''}</td>
         </tr>
       );
     }).filter((item, i) => {
@@ -53,6 +54,7 @@ class IndicatorList extends React.Component {
               <th>Name</th>
               <th>Updated</th>
               <th>Created</th>
+              <th>Published</th>
             </tr>
           </thead>
           <tbody>
