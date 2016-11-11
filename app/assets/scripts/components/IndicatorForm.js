@@ -2,7 +2,6 @@ import React from 'react';
 import Form from 'react-jsonschema-form';
 
 export const schema = {
-  title: 'Indicator Form',
   type: 'object',
   required: ['name'],
   properties: {

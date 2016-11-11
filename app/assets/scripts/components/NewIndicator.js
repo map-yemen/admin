@@ -33,10 +33,10 @@ class NewIndicator extends React.Component {
   render () {
     const component = this;
     return (
-      <div>
-       <IndicatorForm onSubmit={component.handleSubmit} />
-       <br />
-       <Link className="btn btn-outline-danger" to="/">Cancel</Link>
+      <div className="wrapper-content width-medium">
+        <h1>Add a New Indicator</h1>
+        <IndicatorForm onSubmit={component.handleSubmit} />
+        <Link className="btn button--base-bounded" to="/">Cancel</Link>
      </div>
     );
   }

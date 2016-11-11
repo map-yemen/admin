@@ -29,9 +29,9 @@ class ProjectList extends React.Component {
     const listItems = list.map((item) => {
       return (
         <tr key={item.id}>
-          <td><Link to={`/projects/${item.id}`}>{item.name}</Link></td>
+          <td><Link to={`/projects/${item.id}`} className="link--primary">{item.name}</Link></td>
           <td>{item.categories && item.categories.join(', ')}</td>
-          <td>{item.location && item.location.map(l => `${l.governorate} - ${l.district}`).join(', ')}</td>
+          <td>{item.location && item.location.map(l => `${l.district.governorate} ${l.district.district ? '-' : ''} ${l.district.district}`).join(', ')}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
           <td>{item.published ? '✓' : ''}</td>
@@ -46,10 +46,6 @@ class ProjectList extends React.Component {
       <div className="section">
         <h2 className="header-page-main">Recently Added Projects</h2>
         <Link to='projects/new' className="btn button--primary button-section-header button--small">Add a Project</Link>
-        { component.props.limit // only show view all button if we have a limit
-          ? <Link to='projects' className="btn button--primary button-section-header button--small">View All</Link>
-          : ''
-        }
         <table className="table">
           <thead>
             <tr>
@@ -65,6 +61,10 @@ class ProjectList extends React.Component {
             {listItems}
           </tbody>
         </table>
+        { component.props.limit // only show view all button if we have a limit
+          ? <Link to='projects' className="link--primary">View All</Link>
+          : ''
+        }
       </div>
     );
   }

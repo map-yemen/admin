@@ -4,14 +4,20 @@ import {cloneDeep} from 'lodash';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
+import DistrictField from './widgets/DistrictField';
 
 export const schema = {
   type: 'object',
   required: ['name'],
   properties: {
     name: {type: 'string', title: 'Project Name', 'description': 'Please make sure this is a unique name'},
+    name_ar: {type: 'string', title: 'اسم المشروع'},
     description: {
       title: 'Objective',
+      type: 'string'
+    },
+    description_ar: {
+      title: 'الهدف',
       type: 'string'
     },
     published: {
@@ -25,35 +31,54 @@ export const schema = {
       enumNames: ['Private', 'Public']
     },
     components: {
-      title: 'Components',
+      title: 'Components (مكونات)',
       type: 'array',
       items: {
-        title: 'Component',
-        type: 'string'
+        type: 'object',
+        properties: {
+          component: {
+            title: 'Component',
+            type: 'string'
+          },
+          component_ar: {
+            title: 'مكون',
+            type: 'string'
+          }
+        }
       }
     },
     amendments: {
       title: 'Project Amendments',
       type: 'string'
     },
+    amendments_ar: {
+      title: 'تعديلات',
+      type: 'string'
+    },
     project_delays: {
       title: 'Project Delays',
       type: 'string'
     },
-    status: {type: 'string', title: 'Project Status', enum: ['Planned', 'Ongoing', 'Closed']},
-    planned_start_date: {type: 'string', title: 'Planned Start Date'},
-    actual_start_date: {type: 'string', title: 'Actual Start Date'},
-    planned_end_date: {type: 'string', title: 'Planned End Date'},
-    actual_end_date: {type: 'string', title: 'Actual End Date'},
+    project_delays_ar: {
+      title: 'تأجيلات ',
+      type: 'string'
+    },
+    status: {type: 'string', title: 'Project Status (حالة المشروع)', enum: ['Planned', 'Ongoing', 'Closed']},
+    planned_start_date: {type: 'string', title: 'Planned Start Date (تاريخ البدء المخطط)'},
+    actual_start_date: {type: 'string', title: 'Actual Start Date (تاريخ البدء الفعلي)'},
+    planned_end_date: {type: 'string', title: 'Planned End Date (تاريخ انتهاء المخطط)'},
+    actual_end_date: {type: 'string', title: 'Actual End Date (تاريخ انتهاء الفعلي)'},
     local_manager: {type: 'string', title: 'Local Project Manager'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry', enum: ['Select a Ministry', 'Ministry 1', 'Ministry 2', 'Ministry 3']},
-    project_link: {title: 'Project Link', type: 'string', format: 'uri'},
+    local_manager_ar: {type: 'string', title: 'المدير المحلي'},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry (الوزارة المسؤولة)', enum: ['Ministry 1', 'Ministry 2', 'Ministry 3']},
+    project_link: {title: 'Project Link (موقع الكتروني)', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
-      title: 'Number of Beneficiaries',
+      title: 'Number of Beneficiaries (المستفيدين)',
       properties: {
-        number_served: {type: 'number', title: 'Amount', 'description': 'e.g. 2000'},
-        number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'}
+        number_served: {type: 'number', title: 'Amount (كمية)', 'description': 'e.g. 2000'},
+        number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
+        number_served_unit_ar: {type: 'string', title: 'وحدة القياس'}
       }
     },
     sds_indicator: {
@@ -86,7 +111,7 @@ export const schema = {
     },
     category: {
       type: 'array',
-      title: 'Sub-sectors',
+      title: 'Sub-sectors (الفئات الفرعية)',
       items: {
         title: 'Sub-sector',
         type: 'string',
@@ -102,31 +127,24 @@ export const schema = {
       }
     },
     location: {
-      title: 'Location',
+      title: 'Locations (مواقع)',
       type: 'array',
       items: {
         type: 'object',
-        required: ['governorate'],
         properties: {
-          governorate: {
-            title: 'Governorate',
-            type: 'string',
-            enum: [
-              'Select a Governorate',
-              'governorate 1',
-              'governorate 2',
-              'governorate 3'
-            ]
-          },
           district: {
-            title: 'District',
-            type: 'string',
-            enum: [
-              'Select a District',
-              'district 1',
-              'district 2',
-              'district 3'
-            ]
+            type: 'object',
+            required: ['governorate'],
+            properties: {
+              governorate: {
+                title: 'Governorate',
+                type: 'string'
+              },
+              district: {
+                title: 'District',
+                type: 'string'
+              }
+            }
           },
           marker: {
             title: 'Location Marker',
@@ -141,7 +159,7 @@ export const schema = {
 
     },
     budget: {
-      title: 'Budget',
+      title: 'Budget (ميزانية)',
       type: 'array',
       items: {
         type: 'object',
@@ -159,6 +177,10 @@ export const schema = {
           donor_name: {
             type: 'string',
             title: 'Donor Name'
+          },
+          donor_name_ar: {
+            type: 'string',
+            title: 'المانح'
           }
         }
       }
@@ -182,6 +204,10 @@ export const schema = {
           donor_name: {
             type: 'string',
             title: 'Donor Name'
+          },
+          donor_name_ar: {
+            type: 'string',
+            title: 'المانح'
           },
           type: {
             type: 'string',
@@ -257,7 +283,10 @@ class ProjectForm extends React.Component {
       components: {
         classNames: 'multiform-group',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          component_ar: {
+            classNames: 'ar'
+          }
         }
       },
       category: {
@@ -266,7 +295,14 @@ class ProjectForm extends React.Component {
           classNames: 'multiform-group_item'
         }
       },
+      name_ar: {
+        classNames: 'ar'
+      },
       description: {
+        'ui:widget': 'textarea'
+      },
+      description_ar: {
+        classNames: 'ar',
         'ui:widget': 'textarea'
       },
       published: {
@@ -278,11 +314,31 @@ class ProjectForm extends React.Component {
       amendments: {
         'ui:widget': 'textarea'
       },
+      amendments_ar: {
+        classNames: 'ar',
+        'ui:widget': 'textarea'
+      },
       project_delays: {
         'ui:widget': 'textarea'
       },
+      project_delays_ar: {
+        classNames: 'ar',
+        'ui:widget': 'textarea'
+      },
+      local_manager_ar: {
+        classNames: 'ar'
+      },
       number_served: {
-        classNames: 'field-half form-less-spacing'
+        classNames: 'field-half form-less-spacing',
+        number_served: {
+          'ui:placeholder': '20000'
+        },
+        number_served_unit: {
+          'ui:placeholder': 'Households'
+        },
+        number_served_unit_ar: {
+          classNames: 'ar'
+        }
       },
       percent_complete: {
         'ui:widget': 'range'
@@ -309,6 +365,7 @@ class ProjectForm extends React.Component {
       location: {
         classNames: 'form-block multiform-group',
         items: {
+          district: {'ui:field': 'district'},
           marker: {'ui:field': 'marker'}
         }
       },
@@ -357,8 +414,8 @@ class ProjectForm extends React.Component {
   onChange ({formData}) {
     if (formData.components) {
       const componentEnums = formData.components.filter((component) => {
-        return component && component.length > 0;
-      });
+        return component && component.component && component.component.length > 0;
+      }).map((component) => `${component.component} - ${component.component_ar}`);
       if (componentEnums.length > 0) {
         let schema = cloneDeep(this.state.schema);
         schema.properties.kmi.items.properties.component.enum = componentEnums;
@@ -376,6 +433,7 @@ class ProjectForm extends React.Component {
         'short-date': DateFieldFactory('Year', 'Month'),
         'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
         'monitoring-date': DateFieldFactory('Monitoring Date - Year', 'Monitoring Date - Month'),
+        'district': DistrictField,
         'marker': LocationField,
         'currency': CurrencyField
       }}

@@ -76,7 +76,7 @@ a:active {
 }
 
 #site-canvas {
-  margin: 0 auto;
+  margin: 0 auto 7em;
   max-width: 1000px;
   line-height: 1.6;
   font-size: 14px;
@@ -150,7 +150,7 @@ label {
 .multiform-group {
   margin-bottom: 4em;
   .btn-group {
-    margin-top: 1.9em;
+    margin-top: 1.85em;
     >.btn:lastchild {
       border-radius: $base-border-radius;
     }
@@ -248,4 +248,8 @@ label {
   color: darken($background-color, 30%);
   margin-top: -.6em;
   margin-bottom: .3em;
+}
+
+.ar {
+  direction: rtl
 }

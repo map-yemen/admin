@@ -72,7 +72,16 @@ class Project extends React.Component {
         } else if (key === 'number_served') {
           return <li key={key}><label>{keys[key].title}</label>{ project[key].number_served + ' ' + project[key].number_served_unit}</li>;
         } else if (key === 'location') {
-          const locations = project[key].map((location) => <li>{location.district + ', ' + location.governorate}</li>);
+          const locations = project[key].map((location) => {
+            let district = location.district;
+            if (district.district) {
+              return <li>{district.district + ', ' + district.governorate}</li>;
+            } else if (district.governorate) {
+              return <li>{district.governorate}</li>;
+            } else {
+              return <li></li>;
+            }
+          });
           return <li key={key}><label>{keys[key].title}</label><ul>{locations}</ul></li>;
         } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'category') {
           const indicators = project[key].map((item) => <li>{item}</li>);
