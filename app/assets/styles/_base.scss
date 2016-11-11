@@ -125,7 +125,7 @@ input {
   border: 1px solid $background-color;
   border-radius: $base-border-radius;
   padding: .5em;
-  display: block; 
+  display: block;
   min-width: 18em;
   margin-bottom: 1em;
 }
@@ -139,6 +139,12 @@ input {
 
 label {
   margin-bottom: .4em;
+}
+
+.checkbox input {
+  margin-bottom: 0;
+  display: inline-block;
+  margin-right: 1em;
 }
 
 .multiform-group {
@@ -159,7 +165,7 @@ label {
 }
 
 .form-block {
-  .form-group { 
+  .form-group {
     margin-bottom: 1em;
     input, textarea {
       margin-bottom: 1em;
