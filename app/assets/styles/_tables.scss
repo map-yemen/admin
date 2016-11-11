@@ -23,6 +23,12 @@
     padding-right: 1rem;
   }
 
+  tbody {
+    td {
+      font-size: .9em;
+    }
+  }
+
   tbody tr:first-of-type {
     td {
       border-top: 0;
