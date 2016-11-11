@@ -34,6 +34,7 @@ class ProjectList extends React.Component {
           <td>{item.location && item.location.map(l => `${l.district.governorate} ${l.district.district ? '-' : ''} ${l.district.district}`).join(', ')}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
+          <td>{item.published ? '✓' : ''}</td>
         </tr>
       );
     }).filter((item, i) => {
@@ -53,6 +54,7 @@ class ProjectList extends React.Component {
               <th>Location</th>
               <th>Updated</th>
               <th>Created</th>
+              <th>Published</th>
             </tr>
           </thead>
           <tbody>
