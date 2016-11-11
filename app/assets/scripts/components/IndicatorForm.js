@@ -11,6 +11,10 @@ export const schema = {
       title: 'Description',
       type: 'string'
     },
+    private: {
+      title: 'Make data private?',
+      type: 'boolean'
+    },
     category: {
       type: 'array',
       title: 'Category',
