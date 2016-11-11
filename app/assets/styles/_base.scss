@@ -58,7 +58,7 @@ a:active {
 }
 
 .header {
-  margin: 1em 0 4em;
+  margin: 1.2em 0 4em;
   @extend .clearfix;
   h1 {
     margin-bottom: 32px;
@@ -67,6 +67,19 @@ a:active {
       height: 64px;
       max-width: 100%;
       vertical-align: top;
+    }
+  }
+  nav {
+    li {
+      &:first-of-type {
+        a {
+          font-weight: bold;
+          &:hover {
+            opacity: 100;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
@@ -111,7 +124,7 @@ legend {
     }
 
     li {
-      margin: 10px;
+      margin: 10px 0;
     }
   }
 }

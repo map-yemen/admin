@@ -42,25 +42,27 @@ class IndicatorList extends React.Component {
 
     return (
       <div className="section">
-        <h2 className="header-page-main">Recently Added Indicators</h2>
-        <Link to='indicators/new' className="btn button--primary button-section-header button--small">Add an Indicator</Link>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Updated</th>
-              <th>Created</th>
-              <th>Published</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listItems}
-          </tbody>
-        </table>
-        { component.props.limit // only show view all button if we have a limit
-          ? <Link to='indicators' className="link--primary">View All</Link>
-          : ''
-        }
+        <div className="wrapper-content">
+          <h2 className="header-page-main">Recently Added Indicators</h2>
+          <Link to='indicators/new' className="btn button--primary button-section-header button--small">Add an Indicator</Link>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Updated</th>
+                <th>Created</th>
+                <th>Published</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listItems}
+            </tbody>
+          </table>
+          { component.props.limit // only show view all button if we have a limit
+            ? <Link to='indicators' className="link--primary">View All</Link>
+            : ''
+          }
+        </div>
       </div>
     );
   }

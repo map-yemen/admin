@@ -61,12 +61,10 @@ class EditIndicator extends React.Component {
   render () {
     const component = this;
     if (component.state && component.state.indicator) {
-      return <div>
+      return <div className="wrapper-content width-medium">
+        <h1>Edit Indicator</h1>
         <IndicatorForm onSubmit={component.handleSubmit} formData={component.state.indicator.data}/>
-        <br />
         <button className="btn btn-danger" onClick={component.handleDelete}>Delete</button>
-        <br />
-        <br />
         <Link className="btn btn-outline-danger" to={`/indicators/${component.state.id}`}>Cancel</Link>
       </div>;
     }

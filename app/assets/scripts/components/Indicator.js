@@ -58,14 +58,12 @@ class Indicator extends React.Component {
       });
 
       return (
-        <div className="indicator-display">
+        <div className="indicator-display wrapper-content width-medium">
+          <h1>Indicator Name</h1>
           <ul>
             { rows }
           </ul>
           <Link className="btn btn-outline-primary" to={`/indicators/${component.state.id}/edit`}>Edit</Link>
-          <br />
-          <br />
-          <Link className="btn btn-outline-primary" to='/indicators'>All Indicators</Link>
         </div>
       );
     } else {
