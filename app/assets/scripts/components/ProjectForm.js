@@ -16,13 +16,13 @@ export const schema = {
       title: 'Objective',
       type: 'string'
     },
-    private: {
-      title: 'Make data private?',
-      type: 'boolean'
-    },
     description_ar: {
       title: 'الهدف',
       type: 'string'
+    },
+    private: {
+      title: 'Make data private?',
+      type: 'boolean'
     },
     components: {
       title: 'Components (مكونات)',
