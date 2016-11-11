@@ -46,7 +46,7 @@ export const schema = {
       type: 'object',
       title: 'Number of Beneficiaries',
       properties: {
-        number_served: {type: 'number', title: 'Amount', 'description': '2000'},
+        number_served: {type: 'number', title: 'Amount', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'}
       }
     },
@@ -270,21 +270,25 @@ class ProjectForm extends React.Component {
         'ui:widget': 'textarea'
       },
       number_served: {
-        classNames: 'field-half'
+        classNames: 'field-half form-less-spacing'
       },
       percent_complete: {
         'ui:widget': 'range'
       },
       planned_start_date: {
+        classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
       },
       actual_start_date: {
+        classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
       },
       planned_end_date: {
+        classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
       },
       actual_end_date: {
+        classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
       },
       project_link: {
