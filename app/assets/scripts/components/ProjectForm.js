@@ -63,7 +63,7 @@ export const schema = {
       title: 'تأجيلات ',
       type: 'string'
     },
-    status: {type: 'string', title: 'Project Status (حالة المشروع)', enum: ['Planned', 'Ongoing', 'Closed']},
+    status: {type: 'string', title: 'Project Status (حالة المشروع)', enum: ['Select a status', 'Planned', 'Ongoing', 'Closed']},
     planned_start_date: {type: 'string', title: 'Planned Start Date (تاريخ البدء المخطط)'},
     actual_start_date: {type: 'string', title: 'Actual Start Date (تاريخ البدء الفعلي)'},
     planned_end_date: {type: 'string', title: 'Planned End Date (تاريخ انتهاء المخطط)'},
@@ -295,10 +295,14 @@ class ProjectForm extends React.Component {
           classNames: 'multiform-group_item'
         }
       },
+      name: {
+        classNames: 'section-half'
+      },
       name_ar: {
-        classNames: 'ar'
+        classNames: 'ar section-half section-half-left'
       },
       description: {
+        classNames: 'with-ar',
         'ui:widget': 'textarea'
       },
       description_ar: {
@@ -306,12 +310,15 @@ class ProjectForm extends React.Component {
         'ui:widget': 'textarea'
       },
       published: {
+        classNames: 'section-half',
         'ui:widget': 'radio'
       },
       private: {
+        classNames: 'section-half section-half-left',
         'ui:widget': 'radio'
       },
       amendments: {
+        classNames: 'with-ar',
         'ui:widget': 'textarea'
       },
       amendments_ar: {
@@ -319,14 +326,18 @@ class ProjectForm extends React.Component {
         'ui:widget': 'textarea'
       },
       project_delays: {
+        classNames: 'with-ar',
         'ui:widget': 'textarea'
       },
       project_delays_ar: {
         classNames: 'ar',
         'ui:widget': 'textarea'
       },
+      local_manager: {
+        classNames: 'section-half'
+      },
       local_manager_ar: {
-        classNames: 'ar'
+        classNames: 'ar section-half section-half-left'
       },
       number_served: {
         classNames: 'field-half form-less-spacing',
@@ -334,10 +345,11 @@ class ProjectForm extends React.Component {
           'ui:placeholder': '20000'
         },
         number_served_unit: {
+          classNames: 'padding-right',
           'ui:placeholder': 'Households'
         },
         number_served_unit_ar: {
-          classNames: 'ar'
+          classNames: 'ar form-float-right'
         }
       },
       percent_complete: {

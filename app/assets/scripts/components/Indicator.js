@@ -59,11 +59,11 @@ class Indicator extends React.Component {
 
       return (
         <div className="indicator-display wrapper-content width-medium">
-          <h1>Indicator Name</h1>
+          <h1 className="header-page-main">Indicator Name</h1>
+          <Link className="btn button--primary button-section-header" to={`/indicators/${component.state.id}/edit`}>Edit</Link>
           <ul>
             { rows }
           </ul>
-          <Link className="btn btn-outline-primary" to={`/indicators/${component.state.id}/edit`}>Edit</Link>
         </div>
       );
     } else {

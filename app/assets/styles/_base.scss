@@ -124,13 +124,16 @@ legend {
     }
 
     li {
-      margin: 10px 0;
+      margin-bottom: 2em;
     }
   }
 }
 
-.large textarea {
-  min-height: 400px;
+.large {
+  margin-bottom: 0;
+  textarea {
+    min-height: 400px;
+  }
 }
 
 input {
@@ -144,14 +147,21 @@ input {
 }
 
 .form-group {
-  margin-bottom: 3em;
+  margin-bottom: 4em;
   input, textarea {
     margin-bottom: 2em;
   }
 }
 
+.rjsf {
+  >.form-group {
+    margin-bottom: 0;
+  }
+}
+
 label {
   margin-bottom: .3em;
+  width: 100%;
 }
 
 .radio input {
@@ -161,6 +171,7 @@ label {
 }
 
 .multiform-group {
+  clear: both;
   margin-bottom: 4em;
   .btn-group {
     margin-top: 1.85em;
@@ -195,6 +206,7 @@ label {
     &:first-of-type {
       border-top: 0;
       padding-top: 0;
+      margin-top: 0;
     }
   }
   .form-date {
@@ -203,6 +215,21 @@ label {
       display: none;
     }
   }
+}
+
+.section-half {
+  width: 50%;
+  float: left;
+  input {
+    margin-bottom: 0;
+  }
+  padding-right: 15px;
+}
+
+.section-half-left {
+  padding-right: 0;
+  padding-left: 15px;
+  clear: right;
 }
 
 .field-half {
@@ -229,6 +256,13 @@ label {
   }
 }
 
+.with-ar {
+  margin-bottom: .8em;
+  .form-control {
+    margin-bottom: 0;
+  }
+}
+
 .columns-small {
   input {
     min-width: auto;
@@ -237,6 +271,21 @@ label {
     legend {
       display: none;
     }
+  }
+}
+
+.form-location {
+  legend {
+    display: none;
+  }
+}
+
+.form-group {
+  .form-float-right {
+    float: right;
+  }
+  .padding-right {
+    padding-left: 15px;
   }
 }
 

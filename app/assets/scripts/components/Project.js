@@ -99,7 +99,7 @@ class Project extends React.Component {
       });
 
       return (
-        <div className="project-display">
+        <div className="project-display wrapper-content width-medium">
           <h1 className="header-page-main">Project Name</h1>
           <Link className="btn button--primary button-section-header" to={`/projects/${component.state.id}/edit`}>Edit</Link>
           <ul>

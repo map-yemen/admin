@@ -17,7 +17,7 @@ class Header extends React.Component {
           </nav>
           <div className='nav-log'>
             <ul>
-              <li><button className='button button--primary button--small' onClick={logout}>Logout</button></li>
+              <li><Link onClick={logout}>Logout</Link></li>
             </ul>
           </div>
         </div>
