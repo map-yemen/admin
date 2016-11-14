@@ -35,8 +35,9 @@ class NewIndicator extends React.Component {
     return (
       <div className="wrapper-content width-medium">
         <h1>Add a New Indicator</h1>
-        <IndicatorForm onSubmit={component.handleSubmit} />
-        <Link className="btn button--base-bounded" to="/">Cancel</Link>
+        <IndicatorForm onSubmit={component.handleSubmit}>
+          <Link className="btn button--base-bounded button-group" to="/">Cancel</Link>
+        </IndicatorForm>
      </div>
     );
   }

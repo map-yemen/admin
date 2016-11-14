@@ -35,8 +35,9 @@ class NewProject extends React.Component {
     return (
       <div className="wrapper-content width-medium">
         <h1>Add a New Project</h1>
-        <ProjectForm onSubmit={component.handleSubmit} />
-        <Link className="btn button--base-bounded" to="/">Cancel</Link>
+        <ProjectForm onSubmit={component.handleSubmit}>
+          <Link className="btn button--base-bounded button-group" to="/">Cancel</Link>
+        </ProjectForm>
      </div>
     );
   }

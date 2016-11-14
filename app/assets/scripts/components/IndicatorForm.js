@@ -67,7 +67,10 @@ class IndicatorForm extends React.Component {
       onSubmit={this.props.onSubmit}
       formData={this.props.formData}
       uiSchema = {uiSchema}
-    />;
+    >
+      <button type='submit' className='btn button--primary'>Submit</button>
+      {this.props.children}
+    </Form>;
   }
 
 }
