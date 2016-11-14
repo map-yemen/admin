@@ -36,7 +36,7 @@ export default class DistrictField extends React.Component {
 
     governorates.unshift(<option key={'-1'} value={''}>Governorate</option>);
 
-    return <div className="form-date">
+    return <div className="form-location">
       <legend>{this.props.schema.title}</legend>
       <div className="row">
         <div className="col-sm-6">
