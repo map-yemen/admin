@@ -42,6 +42,8 @@ class Indicator extends React.Component {
         if (sortOrder[a] < sortOrder[b]) { return -1; }
         if (sortOrder[a] > sortOrder[b]) { return 1; }
         return 0;
+      }).filter(key => {
+        return key !== 'name';
       }).map(function (key) {
         if (key === 'data') {
           return (<li key={key} className='large'>
@@ -59,7 +61,7 @@ class Indicator extends React.Component {
 
       return (
         <div className="indicator-display wrapper-content width-medium">
-          <h1 className="header-page-main">Indicator Name</h1>
+          <h1 className="header-page-main">{indicator.name}</h1>
           <Link className="btn button--primary button-section-header" to={`/indicators/${component.state.id}/edit`}>Edit</Link>
           <ul>
             { rows }

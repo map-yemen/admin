@@ -61,6 +61,8 @@ class Project extends React.Component {
         if (sortOrder[a] < sortOrder[b]) { return -1; }
         if (sortOrder[a] > sortOrder[b]) { return 1; }
         return 0;
+      }).filter(key => {
+        return key !== 'name';
       }).map(function (key) {
         if (!keys[key]) { return <div></div>; }
         if (keys[key].type === 'string') {
@@ -100,7 +102,7 @@ class Project extends React.Component {
 
       return (
         <div className="project-display wrapper-content width-medium">
-          <h1 className="header-page-main">Project Name</h1>
+          <h1 className="header-page-main">{project.name}</h1>
           <Link className="btn button--primary button-section-header" to={`/projects/${component.state.id}/edit`}>Edit</Link>
           <ul>
             { rows }
