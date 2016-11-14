@@ -6,8 +6,13 @@ export const schema = {
   required: ['name'],
   properties: {
     name: {type: 'string', title: 'Indicator Name'},
+    name_ar: {type: 'string', title: 'اسم المؤشر'},
     description: {
       title: 'Description',
+      type: 'string'
+    },
+    description_ar: {
+      title: 'تفصيل',
       type: 'string'
     },
     published: {
@@ -20,20 +25,16 @@ export const schema = {
       type: 'boolean',
       enumNames: ['Private', 'Public']
     },
-    category: {
+    sources: {
       type: 'array',
-      title: 'Category',
+      title: 'Sources (مصادر)',
       items: {
-        type: 'string',
-        enum: [
-          'Agriculture Extension & Research',
-          'Agro-industry, Marketing & Trade',
-          'Crops',
-          'Fishing, Aquaculture & Trade',
-          'Livestock',
-          'Rural Infrastructure & Irrigation'
-        ]
+        type: 'string'
       }
+    },
+    units: {
+      type: 'string',
+      title: 'Units (وحدة القياس)'
     },
     data: {
       type: 'string',
@@ -46,7 +47,14 @@ const uiSchema = {
   name: {
     'ui:placeholder': 'Unique name'
   },
+  name_ar: {
+    classNames: 'ar'
+  },
   description: {
+    'ui:widget': 'textarea'
+  },
+  description_ar: {
+    classNames: 'ar',
     'ui:widget': 'textarea'
   },
   published: {

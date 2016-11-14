@@ -9,6 +9,8 @@ const ordering = [
   'description',
   'published',
   'private',
+  'sources',
+  'units',
   'data'
 ];
 
