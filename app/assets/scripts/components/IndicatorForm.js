@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+import DataTypeWidget from './widgets/DataTypeWidget';
 
 export const schema = {
   type: 'object',
@@ -27,12 +28,7 @@ export const schema = {
     },
     category: {
       title: 'Type of Data',
-      type: 'string',
-      enum: [
-        'Sequential',
-        'Diverging',
-        'Categorical'
-      ]
+      type: 'string'
     },
     type: {
       title: 'Type of Indicator',
@@ -75,6 +71,9 @@ const uiSchema = {
     classNames: 'ar',
     'ui:widget': 'textarea'
   },
+  category: {
+    'ui:field': 'datatype'
+  },
   published: {
     'ui:widget': 'radio'
   },
@@ -93,6 +92,9 @@ class IndicatorForm extends React.Component {
       onSubmit={this.props.onSubmit}
       formData={this.props.formData}
       uiSchema = {uiSchema}
+      fields={{
+        'datatype': DataTypeWidget
+      }}
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
