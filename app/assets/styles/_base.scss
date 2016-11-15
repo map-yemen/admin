@@ -323,3 +323,40 @@ label {
 .ar {
   direction: rtl
 }
+
+.field-example {
+  background-color: lighten($background-color, 1%);
+  padding: 1em 1.5em 1.5em;
+  margin-top: 1em;
+  @extend .clearfix;
+  p {
+    font-size: .8em;
+  }
+}
+
+.header-small {
+  font-family: $base-font-family;
+  font-size: .9em;
+  font-weight: $base-font-bold;
+  margin-bottom: .5em;
+}
+
+.header-smallest {
+  font-family: $base-font-family;
+  font-size: .8em;
+  font-weight: $base-font-bold;
+  line-height: 1.3em;
+}
+
+.field-example-item {
+  width: 33%;
+  float: left;
+  &:before {
+    content: "";
+    width: 15em;
+    height: 10em;
+    display: block;
+    background-color: darken($background-color, 10%);
+    margin-bottom: .5em;
+  }
+}
