@@ -89,9 +89,13 @@ export const schema = {
         type: 'string',
         enum: [
           'Select an SDG goal',
-          'SDS Goal 1',
-          'SDS Goal 2',
-          'SDS Goal 3'
+          'Economy',
+          'Energy',
+          'Transparency and Efficiency of Government Institutions',
+          'Knowledge, Innovation and Scientific Research',
+          'Health',
+          'Culture',
+          'Social Justice'
         ]
       }
     },
