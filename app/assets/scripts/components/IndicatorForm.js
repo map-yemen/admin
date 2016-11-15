@@ -25,6 +25,24 @@ export const schema = {
       type: 'boolean',
       enumNames: ['Private', 'Public']
     },
+    category: {
+      title: 'Type of Data',
+      type: 'string',
+      enum: [
+        'Sequential',
+        'Diverging',
+        'Categorical'
+      ]
+    },
+    type: {
+      title: 'Type of Indicator',
+      type: 'string',
+      enum: [
+        'SDS',
+        'SDG',
+        'Other'
+      ]
+    },
     sources: {
       type: 'array',
       title: 'Sources (مصادر)',
