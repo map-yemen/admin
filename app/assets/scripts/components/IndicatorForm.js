@@ -41,14 +41,15 @@ export const schema = {
     },
     sources: {
       type: 'array',
-      title: 'Sources (مصادر)',
+      title: 'Sources - مصادر',
       items: {
+        title: 'Source',
         type: 'string'
       }
     },
     units: {
       type: 'string',
-      title: 'Units (وحدة القياس)'
+      title: 'Units - وحدة القياس'
     },
     data: {
       type: 'string',
@@ -59,13 +60,17 @@ export const schema = {
 
 const uiSchema = {
   name: {
-    'ui:placeholder': 'Unique name'
+    classNames: 'section-half'
   },
   name_ar: {
-    classNames: 'ar'
+    classNames: 'ar section-half section-half-left'
   },
   description: {
+    classNames: 'with-ar',
     'ui:widget': 'textarea'
+  },
+  sources: {
+    classNames: 'multiform-group form-block'
   },
   description_ar: {
     classNames: 'ar',
@@ -75,9 +80,11 @@ const uiSchema = {
     'ui:field': 'datatype'
   },
   published: {
-    'ui:widget': 'radio'
+    'ui:widget': 'radio',
+    classNames: 'section-half'
   },
   private: {
+    classNames: 'section-half section-half-left',
     'ui:widget': 'radio'
   },
   data: {

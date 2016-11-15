@@ -36,13 +36,13 @@ export default function (yearLabel, monthLabel) {
       let months = range(1, 13).map((month) => {
         return <option key={month} value={month}>{month}</option>;
       });
-      months.unshift(<option key={-1} value={-1}>Month</option>);
+      months.unshift(<option key={-1} value={-1}>Select a Month</option>);
 
       const years = range(1900, 2100).map((year) => {
         return <option key={year} value={year}>{year}</option>;
       });
 
-      years.unshift(<option key={-1} value={-1}>Year</option>);
+      years.unshift(<option key={-1} value={-1}>Select a Year</option>);
 
       return <div className="form-date">
         <legend>{this.props.schema.title}</legend>
