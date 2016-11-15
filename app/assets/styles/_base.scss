@@ -146,6 +146,14 @@ input {
   margin-bottom: 1em;
 }
 
+select {
+  background: #fff;
+  border: 1px solid $background-color;
+  border-radius: $base-border-radius;
+  height: 2.5em;
+  min-width: 18em;
+}
+
 .form-group {
   margin-bottom: 4em;
   input, textarea {
@@ -264,7 +272,7 @@ label {
 }
 
 .columns-small {
-  input {
+  input, select {
     min-width: auto;
   }
   .field-object {

@@ -34,7 +34,7 @@ export default class CurrencyField extends React.Component {
         <div className="col-sm-4">
           <label>Currency</label>
           <select name="currency_code" value={currency} onChange={this.onChangeCurrency.bind(this)}>
-            <option value="">Select Currency</option>
+            <option value="">Select a currency</option>
             <option value="AUD">Australian Dollar</option>
             <option value="BRL">Brazilian Real</option>
             <option value="CAD">Canadian Dollar</option>

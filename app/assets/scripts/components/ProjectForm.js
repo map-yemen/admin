@@ -31,7 +31,7 @@ export const schema = {
       enumNames: ['Private', 'Public']
     },
     components: {
-      title: 'Components (مكونات)',
+      title: 'Components - مكونات',
       type: 'array',
       items: {
         type: 'object',
@@ -63,20 +63,20 @@ export const schema = {
       title: 'تأجيلات ',
       type: 'string'
     },
-    status: {type: 'string', title: 'Project Status (حالة المشروع)', enum: ['Select a status', 'Planned', 'Ongoing', 'Closed']},
-    planned_start_date: {type: 'string', title: 'Planned Start Date (تاريخ البدء المخطط)'},
-    actual_start_date: {type: 'string', title: 'Actual Start Date (تاريخ البدء الفعلي)'},
-    planned_end_date: {type: 'string', title: 'Planned End Date (تاريخ انتهاء المخطط)'},
-    actual_end_date: {type: 'string', title: 'Actual End Date (تاريخ انتهاء الفعلي)'},
+    status: {type: 'string', title: 'Project Status - حالة المشروع', enum: ['Select a status', 'Planned', 'Ongoing', 'Closed']},
+    planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء المخطط'},
+    actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء الفعلي'},
+    planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ انتهاء المخطط'},
+    actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ انتهاء الفعلي'},
     local_manager: {type: 'string', title: 'Local Project Manager'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry (الوزارة المسؤولة)', enum: ['Ministry 1', 'Ministry 2', 'Ministry 3']},
-    project_link: {title: 'Project Link (موقع الكتروني)', type: 'string', format: 'uri'},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Ministry 1', 'Ministry 2', 'Ministry 3']},
+    project_link: {title: 'Project Link - موقع الكتروني', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
-      title: 'Number of Beneficiaries (المستفيدين)',
+      title: 'Number of Beneficiaries - المستفيدين',
       properties: {
-        number_served: {type: 'number', title: 'Amount (كمية)', 'description': 'e.g. 2000'},
+        number_served: {type: 'number', title: 'Amount - كمية', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
         number_served_unit_ar: {type: 'string', title: 'وحدة القياس'}
       }
@@ -88,7 +88,7 @@ export const schema = {
         title: 'SDS Goal',
         type: 'string',
         enum: [
-          'Select an SDG goal',
+          'Select an SDS goal',
           'Economy',
           'Energy',
           'Transparency and Efficiency of Government Institutions',
@@ -115,7 +115,7 @@ export const schema = {
     },
     category: {
       type: 'array',
-      title: 'Sub-sectors (الفئات الفرعية)',
+      title: 'Sub-sectors - الفئات الفرعية',
       items: {
         title: 'Sub-sector',
         type: 'string',
@@ -131,7 +131,7 @@ export const schema = {
       }
     },
     location: {
-      title: 'Locations (مواقع)',
+      title: 'Locations - مواقع',
       type: 'array',
       items: {
         type: 'object',
@@ -163,7 +163,7 @@ export const schema = {
 
     },
     budget: {
-      title: 'Budget (ميزانية)',
+      title: 'Budget - ميزانية',
       type: 'array',
       items: {
         type: 'object',
@@ -216,7 +216,7 @@ export const schema = {
           type: {
             type: 'string',
             title: 'Type of Fund',
-            enum: ['Loan', 'Grant']
+            enum: ['Select type of fund', 'Loan', 'Grant']
           },
           date: {
             type: 'string'
@@ -239,7 +239,7 @@ export const schema = {
           status: {
             type: 'string',
             title: 'Status',
-            enum: ['Select an status', 'Partially Implemented', 'Implemented', 'Not Implemented']
+            enum: ['Select a status', 'Partially Implemented', 'Implemented', 'Not Implemented']
           },
           description: {
             type: 'string',
@@ -285,9 +285,12 @@ class ProjectForm extends React.Component {
     this.state.formData = this.props.formData;
     this.state.uiSchema = {
       components: {
-        classNames: 'multiform-group',
+        classNames: 'multiform-group form-block',
         items: {
           classNames: 'multiform-group_item',
+          component: {
+            classNames: 'with-ar'
+          },
           component_ar: {
             classNames: 'ar'
           }
@@ -346,11 +349,9 @@ class ProjectForm extends React.Component {
       number_served: {
         classNames: 'field-half form-less-spacing',
         number_served: {
-          'ui:placeholder': '20000'
         },
         number_served_unit: {
-          classNames: 'padding-right',
-          'ui:placeholder': 'Households'
+          classNames: 'padding-right'
         },
         number_served_unit_ar: {
           classNames: 'ar form-float-right'
@@ -400,14 +401,20 @@ class ProjectForm extends React.Component {
       budget: {
         classNames: 'form-block columns-small multiform-group',
         items: {
-          fund: {'ui:field': 'currency'}
+          fund: {'ui:field': 'currency'},
+          donor_name_ar: {
+            classNames: 'ar'
+          }
         }
       },
       disbursed: {
         classNames: 'form-block columns-small multiform-group',
         items: {
           fund: {'ui:field': 'currency'},
-          date: {'ui:field': 'fund-date'}
+          date: {'ui:field': 'fund-date'},
+          donor_name_ar: {
+            classNames: 'ar'
+          }
         }
       },
       kmi: {
