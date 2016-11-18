@@ -3,6 +3,7 @@ import React, {PropTypes as T} from 'react';
 import IndicatorForm from './IndicatorForm';
 import {Link} from 'react-router';
 
+import { csvToJSON } from '../utils/csv';
 let config = require('../config');
 let apiRoot = config.api_root;
 
@@ -19,14 +20,9 @@ class NewIndicator extends React.Component {
 
   handleSubmit ({formData}) {
     const component = this;
-    const indicatorData = formData.data;
-    if (indicatorData) {
-      const lines = indicatorData.replace(/\r/g, '').split('\n');
-      const header = lines[0].split('\t');
-      const body = lines.slice(1);
-      formData.data = body.map(b => {
-        return Object.assign(...b.split('\t').map((el, i) => ({ [header[i]]: el })));
-      });
+
+    if (formData.data) {
+      formData.data = csvToJSON(formData.data);
     }
 
     return this.props.auth.request(`${apiRoot}/indicators`, 'post', {

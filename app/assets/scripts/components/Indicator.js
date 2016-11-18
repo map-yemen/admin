@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import {schema} from './IndicatorForm.js';
 
+import { jsonToCSV } from '../utils/csv';
 const config = require('../config');
 const apiRoot = config.api_root;
 const ordering = [
@@ -48,9 +49,10 @@ class Indicator extends React.Component {
         return key !== 'name';
       }).map(function (key) {
         if (key === 'data') {
+          const displayData = jsonToCSV(indicator[key]);
           return (<li key={key} className='large'>
             <label>{keys[key].title}</label>
-            <textarea className='form-control' readOnly value={indicator[key]}></textarea>
+            <textarea className='form-control' readOnly value={displayData}></textarea>
           </li>);
         } else if (key === 'private') {
           return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Private' : 'Public' }</li>;

@@ -2,6 +2,7 @@ import React, {PropTypes as T} from 'react';
 import IndicatorForm from './IndicatorForm';
 import { Link } from 'react-router';
 
+import { csvToJSON, jsonToCSV } from '../utils/csv';
 const config = require('../config');
 const apiRoot = config.api_root;
 
@@ -26,10 +27,11 @@ class EditIndicator extends React.Component {
 
     component.props.auth.request(`${apiRoot}/indicators/${id}`, 'get')
       .then(function (resp) {
-        component.setState({
-          indicator: resp,
-          id: id
-        });
+        const indicator = resp;
+        if (indicator.data && indicator.data.data) {
+          indicator.data.data = jsonToCSV(indicator.data.data);
+        }
+        component.setState({ indicator, id });
       }).fail(function (err, msg) {
         console.error('error', err, msg);
       });
@@ -37,15 +39,11 @@ class EditIndicator extends React.Component {
 
   handleSubmit ({formData}) {
     const component = this;
-    const indicatorData = formData.data;
-    if (indicatorData) {
-      const lines = indicatorData.replace(/\r/g, '').split('\n');
-      const header = lines[0].split('\t');
-      const body = lines.slice(1);
-      formData.data = body.map(b => {
-        return Object.assign(...b.split('\t').map((el, i) => ({ [header[i]]: el })));
-      });
+
+    if (formData.data) {
+      formData.data = csvToJSON(formData.data);
     }
+
     return component.props.auth.request(`${apiRoot}/indicators/${component.state.id}`, 'put', {
       data: JSON.stringify(formData)
     }).then(function (resp) {
