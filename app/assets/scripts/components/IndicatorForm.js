@@ -98,7 +98,7 @@ const uiSchema = {
 const validate = function validate (formData, errors) {
   if (formData.data) {
     try {
-      console.log(csvToJSON(formData.data));
+      csvToJSON(formData.data);
     } catch (e) {
       errors.data.addError('Is this a tab separated csv file? Contact an administrator if you\'re having problems adding data');
     }
@@ -108,9 +108,9 @@ const validate = function validate (formData, errors) {
 
 class IndicatorForm extends React.Component {
   render () {
-    console.log(this.props);
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
+      onChange={this.props.onChange}
       formData={this.props.formData}
       uiSchema={uiSchema}
       validate={validate}

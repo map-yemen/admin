@@ -16,6 +16,7 @@ class EditIndicator extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount () {
@@ -65,12 +66,22 @@ class EditIndicator extends React.Component {
       });
   }
 
+  handleChange (e) {
+    // if we have any tabs in the data, replace them with commas
+    if (e.formData.data && /\t/.test(e.formData.data)) {
+      const newData = Object.assign(this.state.indicator.data,
+        { data: e.formData.data.replace(/\t/g, ', ') });
+      this.setState({ indicator: Object.assign(this.state.indicator,
+        { data: newData }) });
+    }
+  }
+
   render () {
     const component = this;
     if (component.state && component.state.indicator) {
       return <div className="wrapper-content width-medium">
         <h1>Edit Indicator</h1>
-        <IndicatorForm onSubmit={component.handleSubmit} formData={component.state.indicator.data}>
+        <IndicatorForm onSubmit={component.handleSubmit} formData={component.state.indicator.data} onChange={component.handleChange}>
           <button className="btn button--base button-group" onClick={component.handleDelete}>Delete</button>
           <Link className="btn button--base-bounded button-group" to={`/projects/${component.state.id}`}>Cancel</Link>
         </IndicatorForm>

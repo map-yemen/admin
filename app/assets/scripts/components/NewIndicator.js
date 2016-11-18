@@ -16,6 +16,10 @@ class NewIndicator extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      formData: {}
+    };
   }
 
   handleSubmit ({formData}) {
@@ -36,12 +40,20 @@ class NewIndicator extends React.Component {
     });
   }
 
+  handleChange (e) {
+    // if we have any tabs in the data, replace them with commas
+    if (e.formData.data && /\t/.test(e.formData.data)) {
+      this.setState({ formData: Object.assign(e.formData,
+        { data: e.formData.data.replace(/\t/g, ', ') }) });
+    }
+  }
+
   render () {
     const component = this;
     return (
       <div className="wrapper-content width-medium">
         <h1>Add a New Indicator</h1>
-        <IndicatorForm onSubmit={component.handleSubmit}>
+        <IndicatorForm onSubmit={component.handleSubmit} formData={component.state.formData} onChange={component.handleChange}>
           <Link className="btn button--base-bounded button-group" to="/">Cancel</Link>
         </IndicatorForm>
      </div>
