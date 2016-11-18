@@ -48,7 +48,7 @@ class Indicator extends React.Component {
       }).filter(key => {
         return key !== 'name';
       }).map(function (key) {
-        if (key === 'data') {
+        if (key === 'data' && indicator[key]) {
           const displayData = jsonToCSV(indicator[key]);
           return (<li key={key} className='large'>
             <label>{keys[key].title}</label>

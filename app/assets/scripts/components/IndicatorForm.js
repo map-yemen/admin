@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+
 import DataTypeWidget from './widgets/DataTypeWidget';
+import { csvToJSON } from '../utils/csv';
 
 export const schema = {
   type: 'object',
@@ -93,12 +95,27 @@ const uiSchema = {
   }
 };
 
+const validate = function validate (formData, errors) {
+  if (formData.data) {
+    try {
+      console.log(csvToJSON(formData.data));
+    } catch (e) {
+      errors.data.addError('Is this a tab separated csv file? Contact an administrator if you\'re having problems adding data');
+    }
+  }
+  return errors;
+};
+
 class IndicatorForm extends React.Component {
   render () {
+    console.log(this.props);
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
       formData={this.props.formData}
-      uiSchema = {uiSchema}
+      uiSchema={uiSchema}
+      validate={validate}
+      liveValidate
+      showErrorList={false}
       fields={{
         'datatype': DataTypeWidget
       }}
