@@ -19,6 +19,16 @@ class NewIndicator extends React.Component {
 
   handleSubmit ({formData}) {
     const component = this;
+    const indicatorData = formData.data;
+    if (indicatorData) {
+      const lines = indicatorData.replace(/\r/g, '').split('\n');
+      const header = lines[0].split('\t');
+      const body = lines.slice(1);
+      formData.data = body.map(b => {
+        return Object.assign(...b.split('\t').map((el, i) => ({ [header[i]]: el })));
+      });
+    }
+
     return this.props.auth.request(`${apiRoot}/indicators`, 'post', {
       data: JSON.stringify(formData)
     }).then(function (resp) {
