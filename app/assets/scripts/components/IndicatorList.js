@@ -26,6 +26,7 @@ class IndicatorList extends React.Component {
       return (<div></div>);
     }
     const {list} = component.state;
+    list.sort((a, b) => moment(b.created_at) - moment(a.created_at));
     const listItems = list.map((item) => {
       return (
         <tr key={item.id}>
