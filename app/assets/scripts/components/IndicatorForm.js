@@ -107,10 +107,17 @@ const validate = function validate (formData, errors) {
 };
 
 class IndicatorForm extends React.Component {
+  onError (errors) {
+    if (errors.length) {
+      window.scroll(0, 0);
+    }
+  }
+
   render () {
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
       onChange={this.props.onChange}
+      onError={this.onError.bind(this)}
       formData={this.props.formData}
       uiSchema={uiSchema}
       validate={validate}

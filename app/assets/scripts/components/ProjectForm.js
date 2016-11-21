@@ -447,11 +447,18 @@ class ProjectForm extends React.Component {
     }
   }
 
+  onError (errors) {
+    if (errors.length) {
+      window.scroll(0, 0);
+    }
+  }
+
   render () {
     return <Form schema={this.state.schema}
       onSubmit={this.props.onSubmit}
       formData={this.state.formData}
       onChange = {this.onChange.bind(this)}
+      onError= {this.onError.bind(this)}
       fields={{
         'short-date': DateFieldFactory('Year', 'Month'),
         'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
