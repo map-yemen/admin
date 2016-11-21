@@ -70,7 +70,7 @@ export const schema = {
     actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ انتهاء الفعلي'},
     local_manager: {type: 'string', title: 'Local Project Manager'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Ministry 1', 'Ministry 2', 'Ministry 3']},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry 1', 'Ministry 2', 'Ministry 3']},
     project_link: {title: 'Project Link - موقع الكتروني', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
@@ -239,7 +239,7 @@ export const schema = {
           status: {
             type: 'string',
             title: 'Status',
-            enum: ['Select a status', 'Partially Implemented', 'Implemented', 'Not Implemented']
+            enum: ['Select a status', 'Not Implemented', 'Partially Implemented', 'Implemented']
           },
           description: {
             type: 'string',
