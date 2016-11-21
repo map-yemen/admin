@@ -89,13 +89,18 @@ export const schema = {
         type: 'string',
         enum: [
           'Select an SDS goal',
-          'Economy',
-          'Energy',
-          'Transparency and Efficiency of Government Institutions',
-          'Knowledge, Innovation and Scientific Research',
-          'Health',
           'Culture',
-          'Social Justice'
+          'Domestic Policy',
+          'Economic Development',
+          'Education & Training',
+          'Energy',
+          'Environment',
+          'Health',
+          'Knowledge, Innovation and Scientific Research',
+          'National Security and Foreign Policy',
+          'Social Justice',
+          'Transparency and Efficiency of Government Institutions',
+          'Urban Development'
         ]
       }
     },
