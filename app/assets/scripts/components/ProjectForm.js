@@ -229,7 +229,7 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['status', 'activity', 'description', 'target', 'kpi', 'date'],
+        required: ['status', 'target', 'kpi', 'date'],
         properties: {
           component: {
             type: 'string',
