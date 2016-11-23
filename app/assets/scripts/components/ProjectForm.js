@@ -23,6 +23,7 @@ export const schema = {
     published: {
       title: 'Visibility',
       type: 'boolean',
+      defaut: 'Draft',
       enumNames: ['Published', 'Draft']
     },
     private: {
@@ -464,6 +465,7 @@ class ProjectForm extends React.Component {
       formData={this.state.formData}
       onChange = {this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
+      noValidate={((this.state.formData.published === 'Draft') ? 'true' : 'false')}
       fields={{
         'short-date': DateFieldFactory('Year', 'Month'),
         'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
