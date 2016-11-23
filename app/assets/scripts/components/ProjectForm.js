@@ -23,7 +23,7 @@ export const schema = {
     published: {
       title: 'Visibility',
       type: 'boolean',
-      defaut: 'Draft',
+      default: false,
       enumNames: ['Published', 'Draft']
     },
     private: {
@@ -441,16 +441,16 @@ class ProjectForm extends React.Component {
   }
 
   onChange ({formData}) {
+    let schema = cloneDeep(this.state.schema);
     if (formData.components) {
       const componentEnums = formData.components.filter((component) => {
         return component && component.component && component.component.length > 0;
       }).map((component) => `${component.component} - ${component.component_ar}`);
       if (componentEnums.length > 0) {
-        let schema = cloneDeep(this.state.schema);
         schema.properties.kmi.items.properties.component.enum = componentEnums;
-        this.setState({schema: schema, formData: formData});
       }
     }
+    this.setState({schema: schema, formData: formData});
   }
 
   onError (errors) {
@@ -460,12 +460,16 @@ class ProjectForm extends React.Component {
   }
 
   render () {
+    let isDraft = true;
+    if (this.state.formData && this.state.formData.published) {
+      isDraft = !this.state.formData.published;
+    }
     return <Form schema={this.state.schema}
       onSubmit={this.props.onSubmit}
       formData={this.state.formData}
       onChange = {this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
-      noValidate={((this.state.formData.published === 'Draft') ? 'true' : 'false')}
+      noValidate={isDraft}
       fields={{
         'short-date': DateFieldFactory('Year', 'Month'),
         'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
