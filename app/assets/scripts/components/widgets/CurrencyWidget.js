@@ -40,6 +40,7 @@ export default class CurrencyField extends React.Component {
             <option value="CAD">Canadian Dollar</option>
             <option value="CZK">Czech Koruna</option>
             <option value="DKK">Danish Krone</option>
+            <option value="EGP">Egyptian Pound</option>
             <option value="EUR">Euro</option>
             <option value="HKD">Hong Kong Dollar</option>
             <option value="HUF">Hungarian Forint </option>
