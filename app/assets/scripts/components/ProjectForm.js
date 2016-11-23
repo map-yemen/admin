@@ -251,6 +251,10 @@ export const schema = {
         type: 'object',
         required: ['status', 'target', 'kpi', 'date'],
         properties: {
+          kpi: {
+            type: 'string',
+            title: 'KPI'
+          },
           component: {
             type: 'string',
             title: 'Component',
@@ -276,10 +280,6 @@ export const schema = {
           target: {
             type: 'string',
             title: 'Target'
-          },
-          kpi: {
-            type: 'string',
-            title: 'KPI'
           },
           date: {
             type: 'string',
