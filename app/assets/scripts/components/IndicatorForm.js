@@ -15,13 +15,13 @@ export const schema = {
       type: 'string'
     },
     description_ar: {
-      title: 'تفصيل',
+      title: 'الوصف',
       type: 'string'
     },
     published: {
-      title: 'Visibility',
+      title: 'Visibility - مدى وضوح المشروع',
       type: 'boolean',
-      enumNames: ['Published', 'Draft']
+      enumNames: ['Published - تم النشر/ الاصدار', 'Draft - مسودة (نسخة أولية)']
     },
     private: {
       title: 'Privacy',
@@ -29,21 +29,22 @@ export const schema = {
       enumNames: ['Private', 'Public']
     },
     category: {
-      title: 'Type of Data',
+      title: 'Type of Data - نمط البيانات',
       type: 'string'
     },
     type: {
-      title: 'Type of Indicator',
+      title: 'Type of Indicator - نوع المؤشر',
       type: 'string',
       enum: [
-        'SDS',
-        'SDG',
-        'Other'
+        'Select an Indicator',
+        'SDS Indicator - مؤشرات استراتيجية التنمية المُستدامة',
+        'SDG Indicator - مؤشرات أهداف التنمية المُستدامة',
+        'Other Development Indicator - مؤشرات إنمائية أخرى'
       ]
     },
     sources: {
       type: 'array',
-      title: 'Sources - مصادر',
+      title: 'Sources - المصادر',
       items: {
         title: 'Source',
         type: 'string'
@@ -51,11 +52,11 @@ export const schema = {
     },
     units: {
       type: 'string',
-      title: 'Units - وحدة القياس'
+      title: 'Unit - وحدة القياس'
     },
     data: {
       type: 'string',
-      title: 'Data'
+      title: 'Data - البيانات'
     }
   }
 };

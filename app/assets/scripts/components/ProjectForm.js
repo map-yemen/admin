@@ -21,10 +21,10 @@ export const schema = {
       type: 'string'
     },
     published: {
-      title: 'Visibility',
+      title: 'Visibility - مدى وضوح المشروع',
       type: 'boolean',
       default: false,
-      enumNames: ['Published', 'Draft']
+      enumNames: ['Published - تم النشر/ الاصدار', 'Draft - مسودة (نسخة أولية)']
     },
     private: {
       title: 'Privacy',
@@ -32,7 +32,7 @@ export const schema = {
       enumNames: ['Private', 'Public']
     },
     components: {
-      title: 'Components - مكونات',
+      title: 'Project Components - مكونات المشروع (الأهداف المحددة وأنشطة المشروع)',
       type: 'array',
       items: {
         type: 'object',
@@ -42,7 +42,7 @@ export const schema = {
             type: 'string'
           },
           component_ar: {
-            title: 'مكون',
+            title: 'المكون',
             type: 'string'
           }
         }
@@ -53,7 +53,7 @@ export const schema = {
       type: 'string'
     },
     amendments_ar: {
-      title: 'تعديلات',
+      title: 'تعديلات المشروع',
       type: 'string'
     },
     project_delays: {
@@ -61,46 +61,46 @@ export const schema = {
       type: 'string'
     },
     project_delays_ar: {
-      title: 'تأجيلات ',
+      title: 'حالات التأخير في المشروع',
       type: 'string'
     },
-    status: {type: 'string', title: 'Project Status - حالة المشروع', enum: ['Select a status', 'Planned', 'Ongoing', 'Closed']},
-    planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء المخطط'},
-    actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء الفعلي'},
-    planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ انتهاء المخطط'},
-    actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ انتهاء الفعلي'},
+    status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع', enum: ['Select a status - يُرجى اختيار وضع محدد (حالة محددة)', 'Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']},
+    planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
+    actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
+    planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط'},
+    actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي'},
     local_manager: {type: 'string', title: 'Local Project Manager'},
-    local_manager_ar: {type: 'string', title: 'المدير المحلي'},
+    local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع'},
     responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry 1', 'Ministry 2', 'Ministry 3']},
-    project_link: {title: 'Project Link - موقع الكتروني', type: 'string', format: 'uri'},
+    project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
-      title: 'Number of Beneficiaries - المستفيدين',
+      title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات (عدد الأطراف المستفيدة)',
       properties: {
-        number_served: {type: 'number', title: 'Amount - كمية', 'description': 'e.g. 2000'},
+        number_served: {type: 'number', title: 'Amount - الكمية (المقدار)', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
-        number_served_unit_ar: {type: 'string', title: 'وحدة القياس'}
+        number_served_unit_ar: {type: 'string', title: 'الفئة (الوحدة)'}
       }
     },
     sds_indicator: {
       title: 'SDS Goals',
       type: 'array',
       items: {
-        title: 'SDS Goal',
+        title: 'SDS Goal - أهداف استراتيجية التنمية المُستدامة',
         type: 'string',
         enum: [
-          'Select an SDS goal',
-          'Culture',
-          'Domestic Policy',
+          'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
+          'Culture - الثقافة',
+          'Domestic Policy - ',
           'Economic Development',
           'Education & Training',
-          'Energy',
+          'Energy - الطاقة',
           'Environment',
-          'Health',
-          'Knowledge, Innovation and Scientific Research',
+          'Health -  الصحة',
+          'Knowledge, Innovation and Scientific Research - المعرفة والابتكار والبحث العلمي',
           'National Security and Foreign Policy',
           'Social Justice',
-          'Transparency and Efficiency of Government Institutions',
+          'Transparency and Efficiency of Government Institutions - شفافية وكفاءة المؤسسات الحكومية',
           'Urban Development'
         ]
       }
@@ -109,10 +109,10 @@ export const schema = {
       title: 'SDG Goals',
       type: 'array',
       items: {
-        title: 'SDG Goal',
+        title: 'SDG Goal - أهداف التنمية المستدامة',
         type: 'string',
         enum: [
-          'Select an SDG goal',
+          'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
           'End poverty in all its forms everywhere',
           'End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
           'Ensure healthy lies and promote well being for all at all ages',
@@ -135,23 +135,23 @@ export const schema = {
     },
     category: {
       type: 'array',
-      title: 'Sub-sectors - الفئات الفرعية',
+      title: 'Sub-sectors - القطاعات الفرعية',
       items: {
-        title: 'Sub-sector',
+        title: 'Sub-sector - القطاع الفرعي',
         type: 'string',
         enum: [
-          'Select a sub-sector',
-          'Agriculture Extension & Research',
-          'Agro-industry, Marketing & Trade',
-          'Crops',
-          'Fishing, Aquaculture & Forestry',
-          'Livestock',
-          'Rural Infrastructure & Irrigation'
+          'Select a sub-sector - يُرحى اختيار قطاع فرعي',
+          'Agriculture Extension & Research - الارشاد الزراعي والبحث',
+          'Agro-industry, Marketing & Trade - الصناعات الزراعية والتسويق والتجارة',
+          'Crops - المحاصيل',
+          'Fishing, Aquaculture & Forestry - صيد الأسماك وتربية الأحياء المائية وعلم التحريج',
+          'Livestock - الثروة الحيوانية (الماشية)',
+          'Rural Infrastructure & Irrigation - البنية التحتية بالمناطق الريفية والري'
         ]
       }
     },
     location: {
-      title: 'Locations - مواقع',
+      title: 'Locations - النطاق الجغرافي',
       type: 'array',
       items: {
         type: 'object',
@@ -161,11 +161,11 @@ export const schema = {
             required: ['governorate'],
             properties: {
               governorate: {
-                title: 'Governorate',
+                title: 'Governorate - المحافظة',
                 type: 'string'
               },
               district: {
-                title: 'District',
+                title: 'District - المركز',
                 type: 'string'
               }
             }
@@ -183,7 +183,7 @@ export const schema = {
 
     },
     budget: {
-      title: 'Budget - ميزانية',
+      title: 'Budget - يُرجى اختيار عملة التداول',
       type: 'array',
       items: {
         type: 'object',
@@ -204,13 +204,13 @@ export const schema = {
           },
           donor_name_ar: {
             type: 'string',
-            title: 'المانح'
+            title: 'الجهة المانحة'
           }
         }
       }
     },
     disbursed: {
-      title: 'Disbursed Funds',
+      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)',
       type: 'array',
       items: {
         type: 'object',
@@ -245,7 +245,7 @@ export const schema = {
       }
     },
     kmi: {
-      title: 'Key Monitoring Indicators',
+      title: 'Key Monitoring Indicators - مؤشرات الرصد الرئيسية',
       type: 'array',
       items: {
         type: 'object',
@@ -263,7 +263,7 @@ export const schema = {
           status: {
             type: 'string',
             title: 'Status',
-            enum: ['Select a status', 'Not Implemented', 'Partially Implemented', 'Implemented']
+            enum: ['Select a status - يُرجى اختيار الوضع/ الحالة', 'Not Implemented - لم يتحقق', 'Partially Implemented - تحقق جزئياً', 'Implemented - تحقق بالكامل']
           },
           description: {
             type: 'string',
@@ -271,15 +271,15 @@ export const schema = {
           },
           baseline: {
             type: 'string',
-            title: 'Baseline'
+            title: 'Baseline - تقييم خط الأساس (التقييم الأولي/المبدئي)'
           },
           current: {
             type: 'string',
-            title: 'Current'
+            title: 'Current - الحالي'
           },
           target: {
             type: 'string',
-            title: 'Target'
+            title: 'Target - المُستهدف'
           },
           date: {
             type: 'string',
