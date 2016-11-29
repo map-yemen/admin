@@ -32,9 +32,9 @@ export default class CurrencyField extends React.Component {
       <legend>{this.props.schema.title}</legend>
       <div className="row">
         <div className="col-sm-4">
-          <label>Currency</label>
-          <select name="currency_code" value={currency} onChange={this.onChangeCurrency.bind(this)}>
-            <option value="">Select a currency</option>
+          <label>Currency - العملة</label>
+          <select className="select-sm" name="currency_code" value={currency} onChange={this.onChangeCurrency.bind(this)}>
+            <option value="">Select a currency - يُرجى اختيار عملة التداول</option>
             <option value="AUD">Australian Dollar</option>
             <option value="BRL">Brazilian Real</option>
             <option value="CAD">Canadian Dollar</option>
@@ -62,19 +62,19 @@ export default class CurrencyField extends React.Component {
           </select>
         </div>
         <div className="col-sm-4">
-          <label>Original Amount</label>
+          <label>Original Amount - المبلغ الأصلي</label>
           <input className="form-control" type="number" value={original} step="1"
             onChange={this.onChange('original')} />
         </div>
         <div className="col-sm-4">
-          <label>Exchange Rate</label>
+          <label>Exchange Rate - سعر الصرف</label>
           <input className="form-control" type="number" value={rate} step="0.01"
             onChange={this.onChange('rate')} />
         </div>
       </div>
       <div className="row" >
         <div className="col-sm-4">
-          <label>Amount</label>
+          <label>Amount - المبلغ</label>
           <input className="form-control" type="number" value={amount} disabled/>
         </div>
       </div>
