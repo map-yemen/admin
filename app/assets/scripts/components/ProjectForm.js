@@ -279,14 +279,14 @@ export const schema = {
           date: {
             type: 'string',
             title: 'Monitoring Date'
-          },
-          reportLink: {
-            type: 'string',
-            title: 'Report Link',
-            format: 'uri'
           }
         }
       }
+    },
+    reportLink: {
+      type: 'string',
+      title: 'Report Link',
+      format: 'uri'
     }
   }
 };
@@ -440,28 +440,33 @@ class ProjectForm extends React.Component {
           },
           description: {
             'ui:widget': 'textarea'
-          },
-          reportLink: {
-            'ui:placeholder': 'http://'
           }
         }
+      },
+      reportLink: {
+        title: 'Report link',
+        'ui:placeholder': 'http://'
       }
     };
   }
 
   onChange ({formData}) {
+    console.log(formData.components[0]);
     let schema = cloneDeep(this.state.schema);
     if (formData.components) {
       const componentEnums = formData.components.filter((component) => {
         return component && component.component && component.component.length > 0;
-      }).map((component) => `${component.component} - ${component.component_ar}`);
+      }).map((component) => {
+        let componentArText = component.component_ar || '';
+        let componentEnText = component.component || '';
+        return `${componentEnText} - ${componentArText}`;
+      });
       if (componentEnums.length > 0) {
         schema.properties.kmi.items.properties.component.enum = componentEnums;
       }
     }
     this.setState({schema: schema, formData: formData});
   }
-
   onError (errors) {
     if (errors.length) {
       window.scroll(0, 0);
@@ -470,12 +475,25 @@ class ProjectForm extends React.Component {
 
   render () {
     let isDraft = true;
-    if (this.state.formData && this.state.formData.published) {
-      isDraft = !this.state.formData.published;
+    const {schema, formData} = this.state;
+    if (formData && formData.published) {
+      isDraft = !formData.published;
     }
-    return <Form schema={this.state.schema}
+    if (formData.components) {
+      const componentEnums = formData.components.filter((component) => {
+        return component && component.component && component.component.length > 0;
+      }).map((component) => {
+        let componentArText = component.component_ar || '';
+        let componentEnText = component.component || '';
+        return `${componentEnText} - ${componentArText}`;
+      });
+      if (componentEnums.length > 0) {
+        schema.properties.kmi.items.properties.component.enum = componentEnums;
+      }
+    }
+    return <Form schema={schema}
       onSubmit={this.props.onSubmit}
-      formData={this.state.formData}
+      formData={formData}
       onChange = {this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
       noValidate={isDraft}
@@ -491,7 +509,7 @@ class ProjectForm extends React.Component {
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
-      </Form>;
+    </Form>;
   }
 }
 
