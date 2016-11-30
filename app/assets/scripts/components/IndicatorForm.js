@@ -32,6 +32,20 @@ export const schema = {
       title: 'Type of Data - نمط البيانات',
       type: 'string'
     },
+    theme: {
+      title: 'Theme - موضوع',
+      type: 'string',
+      enum: [
+        'Select a Theme',
+        'Education & Training',
+        'Health',
+        'Economy',
+        'Agriculture',
+        'Domestic Policy',
+        'Energy',
+        'Environment'
+      ]
+    },
     type: {
       title: 'Type of Indicator - نوع المؤشر',
       type: 'string',
