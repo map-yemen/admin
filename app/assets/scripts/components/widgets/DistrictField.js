@@ -1,6 +1,14 @@
 import React from 'react';
 import districtNames from '../../utils/districtNames';
 
+let governorateMap = {};
+let reverseGovernorateMap = {};
+Object.keys(districtNames).forEach((governorate) => {
+  let marker = districtNames[governorate][0]['governorate_marker'];
+  governorateMap[governorate] = marker;
+  reverseGovernorateMap[marker] = governorate;
+});
+
   /**
    * District widget with Governorate & district dropdowns
    */
@@ -24,14 +32,16 @@ export default class DistrictField extends React.Component {
 
   render () {
     const {governorate, district} = this.state;
-    let districts = (governorate === '' ? [] : districtNames[governorate].map((district) => {
-      return <option key={district} value={district}>{district}</option>;
+    const chosenGovernorate = reverseGovernorateMap[governorate] || '';
+
+    let districts = (chosenGovernorate === '' ? [] : districtNames[chosenGovernorate].map((district) => {
+      return <option key={district['district_marker']} value={district['district_marker']}>{district['district']}</option>;
     }));
     if (districts.length) districts.unshift(<option key={'-2'} value={'All'}>All Districts</option>);
     districts.unshift(<option key={'-1'} value={''}>District</option>);
 
-    const governorates = Object.keys(districtNames).map((governorate) => {
-      return <option key={governorate} value={governorate}>{governorate}</option>;
+    const governorates = Object.keys(governorateMap).map((governorate) => {
+      return <option key={governorateMap[governorate]} value={governorateMap[governorate]}>{governorate}</option>;
     });
 
     governorates.unshift(<option key={'-1'} value={''}>Governorate</option>);
