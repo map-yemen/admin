@@ -11,7 +11,7 @@ export const schema = {
   required: ['name'],
   properties: {
     name: {type: 'string', title: 'Project Name', 'description': 'Please make sure this is a unique name'},
-    name_ar: {type: 'string', title: 'اسم المشروع'},
+    name_ar: {type: 'string', title: 'اسم المشروع', 'description': 'يُرجى التحقق من تخصيص اسم مُميز'},
     description: {
       title: 'Objective',
       type: 'string'
@@ -21,10 +21,10 @@ export const schema = {
       type: 'string'
     },
     published: {
-      title: 'Visibility - مدى وضوح المشروع',
+      title: 'Visibility - مدى وضوح المشروع', 'description': 'Draft information will be saved but not published on the website',
       type: 'boolean',
       default: false,
-      enumNames: ['Published - تم النشر/ الاصدار', 'Draft - مسودة (نسخة أولية)']
+      enumNames: ['Ready for publishing - جاهز للنشر', 'Draft - مسودة']
     },
     private: {
       title: 'Privacy',
@@ -49,7 +49,7 @@ export const schema = {
       }
     },
     amendments: {
-      title: 'Project Amendments',
+      title: 'Project Amendments', 'description': 'Please indicate if there have been any major amendments to the project (for example a change in project objective, location, etc.)',
       type: 'string'
     },
     amendments_ar: {
@@ -57,7 +57,7 @@ export const schema = {
       type: 'string'
     },
     project_delays: {
-      title: 'Project Delays',
+      title: 'Project Delays', 'description': 'Please indicate any major delays in the project implementation, including the  cause of the delay',
       type: 'string'
     },
     project_delays_ar: {
@@ -68,18 +68,18 @@ export const schema = {
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط'},
-    actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي'},
-    local_manager: {type: 'string', title: 'Local Project Manager'},
+    actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي', 'description': 'In case of project delays, extension, or cancellation.'},
+    local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry 1', 'Ministry 2', 'Ministry 3']},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry of Agriculture and Land Reclamation', 'Ministry 2', 'Ministry 3']},
     project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
-      title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات (عدد الأطراف المستفيدة)',
+      title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات ',
       properties: {
-        number_served: {type: 'number', title: 'Amount - الكمية (المقدار)', 'description': 'e.g. 2000'},
+        number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
-        number_served_unit_ar: {type: 'string', title: 'الفئة (الوحدة)'}
+        number_served_unit_ar: {type: 'string', title: 'الفئة'}
       }
     },
     sds_indicator: {
@@ -90,18 +90,18 @@ export const schema = {
         type: 'string',
         enum: [
           'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
-          'Culture - الثقافة',
-          'Domestic Policy - ',
-          'Economic Development',
-          'Education & Training',
-          'Energy - الطاقة',
-          'Environment',
-          'Health -  الصحة',
-          'Knowledge, Innovation and Scientific Research - المعرفة والابتكار والبحث العلمي',
-          'National Security and Foreign Policy',
-          'Social Justice',
-          'Transparency and Efficiency of Government Institutions - شفافية وكفاءة المؤسسات الحكومية',
-          'Urban Development'
+          'Pillar 8: Culture - الثقافة',
+          'Pillar 12: Domestic Policy - ',
+          'Pillar 1: Economic Development',
+          'Pillar 7: Education & Training',
+          'Pillar 2: Energy - الطاقة',
+          'Pillar 9: Environment',
+          'Pillar 6: Health -  الصحة',
+          'Pillar 3: Knowledge, Innovation and Scientific Research - المعرفة والابتكار والبحث العلمي',
+          'Pillar 11: National Security and Foreign Policy',
+          'Pillar 5: Social Justice',
+          'Pillar 4: Transparency and Efficiency of Government Institutions - شفافية وكفاءة المؤسسات الحكومية',
+          'Pillar 10: Urban Development'
         ]
       }
     },
@@ -113,23 +113,23 @@ export const schema = {
         type: 'string',
         enum: [
           'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
-          'End poverty in all its forms everywhere',
-          'End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
-          'Ensure healthy lies and promote well being for all at all ages',
-          'Ensure inclusive and equitable education and promote lifelong learning opportunities for all',
-          'Achieve gender equality and empower all women and girls',
-          'Ensure availability and sustainable management of water and sanitation for all',
-          'Ensure access to affordable, reliable, sustainable, and modern energy for all',
-          'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
-          'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
-          'Reduce inequality within and among countries',
-          'Make cities and human settlements inclusive, safe, resilient, and sustainable',
-          'Ensure sustainable consumption and production patterns',
-          'Take urgent action to combat climate change and its impacts',
-          'Conserve and sustainably use the oceans and marine resources for sustainable development',
-          'Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification and halt and reverse land degradation and halt biodiversity loss',
-          'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels',
-          'Strengthen the means of implementation and revitalize the global partnership for sustainable development'
+          'Goal 1: End poverty in all its forms everywhere',
+          'Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
+          'Goal 3: Ensure healthy lies and promote well being for all at all ages',
+          'Goal 4: Ensure inclusive and equitable education and promote lifelong learning opportunities for all',
+          'Goal 5: Achieve gender equality and empower all women and girls',
+          'Goal 6: Ensure availability and sustainable management of water and sanitation for all',
+          'Goal 7: Ensure access to affordable, reliable, sustainable, and modern energy for all',
+          'Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
+          'Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
+          'Goal 10: Reduce inequality within and among countries',
+          'Goal 11: Make cities and human settlements inclusive, safe, resilient, and sustainable',
+          'Goal 12: Ensure sustainable consumption and production patterns',
+          'Goal 13: Take urgent action to combat climate change and its impacts',
+          'Goal 14: Conserve and sustainably use the oceans and marine resources for sustainable development',
+          'Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification and halt and reverse land degradation and halt biodiversity loss',
+          'Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels',
+          'Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development'
         ]
       }
     },
@@ -144,8 +144,8 @@ export const schema = {
           'Agriculture Extension & Research - الارشاد الزراعي والبحث',
           'Agro-industry, Marketing & Trade - الصناعات الزراعية والتسويق والتجارة',
           'Crops - المحاصيل',
-          'Fishing, Aquaculture & Forestry - صيد الأسماك وتربية الأحياء المائية وعلم التحريج',
-          'Livestock - الثروة الحيوانية (الماشية)',
+          'Fishing, Aquaculture & Forestry - صيد الأسماك و الزراعة المائية وعلم التحريج',
+          'Livestock - الثروة الحيوانية',
           'Rural Infrastructure & Irrigation - البنية التحتية بالمناطق الريفية والري'
         ]
       }
@@ -183,7 +183,7 @@ export const schema = {
 
     },
     budget: {
-      title: 'Budget - يُرجى اختيار عملة التداول',
+      title: 'Budget - الميزانية',
       type: 'array',
       items: {
         type: 'object',
@@ -210,7 +210,7 @@ export const schema = {
       }
     },
     disbursed: {
-      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)',
+      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)', 'description': 'Disbursed funds will only be visible for logged in users',
       type: 'array',
       items: {
         type: 'object',
@@ -271,7 +271,7 @@ export const schema = {
           },
           baseline: {
             type: 'string',
-            title: 'Baseline - تقييم خط الأساس (التقييم الأولي/المبدئي)'
+            title: 'Baseline - تقييم خط الأساس'
           },
           current: {
             type: 'string',
@@ -279,7 +279,7 @@ export const schema = {
           },
           target: {
             type: 'string',
-            title: 'Target - المُستهدف'
+            title: 'Target - الهدف'
           },
           date: {
             type: 'string',
