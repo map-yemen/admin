@@ -48,13 +48,13 @@ export default function (yearLabel, monthLabel) {
         <legend>{this.props.schema.title}</legend>
         <div className="row">
           <div className="col-sm-6">
-            <label>{yearLabel} - عام</label>
+            <label>{yearLabel}</label>
             <select className="form-control" value={Number(year)} onChange={this.onChange('year')}>
             {years}
             </select>
           </div>
           <div className="col-sm-6">
-            <label>{monthLabel} - شهر</label>
+            <label>{monthLabel}</label>
             <select className="form-control" value={Number(month)} onChange={this.onChange('month')}>
             {months}
             </select>
