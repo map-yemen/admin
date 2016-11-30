@@ -26,11 +26,6 @@ export const schema = {
       default: false,
       enumNames: ['Ready for publishing - جاهز للنشر', 'Draft - مسودة']
     },
-    private: {
-      title: 'Privacy',
-      type: 'boolean',
-      enumNames: ['Private', 'Public']
-    },
     components: {
       title: 'Project Components - مكونات المشروع (الأهداف المحددة وأنشطة المشروع)',
       type: 'array',
