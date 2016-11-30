@@ -23,11 +23,6 @@ export const schema = {
       type: 'boolean',
       enumNames: ['Published - تم النشر/ الاصدار', 'Draft - مسودة (نسخة أولية)']
     },
-    private: {
-      title: 'Privacy',
-      type: 'boolean',
-      enumNames: ['Private', 'Public']
-    },
     category: {
       title: 'Type of Data - نمط البيانات',
       type: 'string'

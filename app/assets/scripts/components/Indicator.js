@@ -48,14 +48,13 @@ class Indicator extends React.Component {
       }).filter(key => {
         return key !== 'name';
       }).map(function (key) {
+        if (!keys[key]) return <div></div>;
         if (key === 'data' && indicator[key]) {
           const displayData = jsonToCSV(indicator[key]);
           return (<li key={key} className='large'>
             <label>{keys[key].title}</label>
             <textarea className='form-control' readOnly value={displayData}></textarea>
           </li>);
-        } else if (key === 'private') {
-          return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Private' : 'Public' }</li>;
         } else if (key === 'published') {
           return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Published' : 'Draft' }</li>;
         } else if (keys[key].type === 'string') {

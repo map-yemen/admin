@@ -8,7 +8,6 @@ const ordering = [
   'name',
   'description',
   'published',
-  'private',
   'project_delays',
   'status',
   'planned_start_date',
@@ -67,8 +66,6 @@ class Project extends React.Component {
         if (!keys[key]) { return <div></div>; }
         if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(project[key]) }</li>;
-        } else if (key === 'private') {
-          return <li key={key}><label>{keys[key].title}</label>{ project[key] ? 'Private' : 'Public' }</li>;
         } else if (key === 'published') {
           return <li key={key}><label>{keys[key].title}</label>{ project[key] ? 'Published' : 'Draft' }</li>;
         } else if (key === 'number_served') {
