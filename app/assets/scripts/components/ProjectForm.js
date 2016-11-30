@@ -67,7 +67,7 @@ export const schema = {
     status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع', enum: ['Select a status - يُرجى اختيار وضع محدد (حالة محددة)', 'Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
-    planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط'},
+    planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
     actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي', 'description': 'In case of project delays, extension, or cancellation.'},
     local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع'},
@@ -83,33 +83,33 @@ export const schema = {
       }
     },
     sds_indicator: {
-      title: 'SDS Goals',
+      title: 'SDS Goals - أهداف استراتيجية التنمية المُستدامة',
       type: 'array',
       items: {
-        title: 'SDS Goal - أهداف استراتيجية التنمية المُستدامة',
+        title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
         type: 'string',
         enum: [
           'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
-          'Pillar 8: Culture - الثقافة',
-          'Pillar 12: Domestic Policy - ',
           'Pillar 1: Economic Development',
-          'Pillar 7: Education & Training',
           'Pillar 2: Energy - الطاقة',
-          'Pillar 9: Environment',
-          'Pillar 6: Health -  الصحة',
           'Pillar 3: Knowledge, Innovation and Scientific Research - المعرفة والابتكار والبحث العلمي',
-          'Pillar 11: National Security and Foreign Policy',
-          'Pillar 5: Social Justice',
           'Pillar 4: Transparency and Efficiency of Government Institutions - شفافية وكفاءة المؤسسات الحكومية',
-          'Pillar 10: Urban Development'
+          'Pillar 5: Social Justice',
+          'Pillar 6: Health - الصحة',
+          'Pillar 7: Education & Training',
+          'Pillar 8: Culture - الثقافة',
+          'Pillar 9: Environment',
+          'Pillar 10: Urban Development',
+          'Pillar 11: National Security and Foreign Policy',
+          'Pillar 12: Domestic Policy - '
         ]
       }
     },
     sdg_indicator: {
-      title: 'SDG Goals',
+      title: 'SDG Goals - أهداف التنمية المستدامة',
       type: 'array',
       items: {
-        title: 'SDG Goal - أهداف التنمية المستدامة',
+        title: 'SDG Goal - هدف التنمية المستدامة',
         type: 'string',
         enum: [
           'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
@@ -210,7 +210,7 @@ export const schema = {
       }
     },
     disbursed: {
-      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)', 'description': 'Disbursed funds will only be visible for logged in users',
+      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)', 'description': 'Disbursed funds will only be visible to logged in users',
       type: 'array',
       items: {
         type: 'object',
@@ -236,7 +236,7 @@ export const schema = {
           type: {
             type: 'string',
             title: 'Type of Fund',
-            enum: ['Select type of fund', 'Loan', 'Grant']
+            enum: ['Select type of fund', 'Loan - قرض', 'Grant - منحة']
           },
           date: {
             type: 'string'
@@ -485,8 +485,8 @@ class ProjectForm extends React.Component {
       onError= {this.onError.bind(this)}
       noValidate={isDraft}
       fields={{
-        'short-date': DateFieldFactory('Year', 'Month'),
-        'fund-date': DateFieldFactory('Year Disbursed', 'Month Disbursed'),
+        'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
+        'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف', 'Month Disbursed - شهر الصرف'),
         'monitoring-date': DateFieldFactory('Monitoring Date - Year', 'Monitoring Date - Month'),
         'district': DistrictField,
         'marker': LocationField,

@@ -25,7 +25,7 @@ export default class LocationField extends React.Component {
     return (
       <div className="row">
         <div className="col-sm-6">
-          <label>Latitude</label>
+          <label>Latitude - النطاق</label>
           <input className="form-control" type="number" value={lat} step="0.00001"
             onChange={this.onChange('lat')} />
         </div>
