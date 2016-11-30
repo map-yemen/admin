@@ -284,14 +284,14 @@ export const schema = {
           date: {
             type: 'string',
             title: 'Monitoring Date'
-          },
-          reportLink: {
-            type: 'string',
-            title: 'Report Link',
-            format: 'uri'
           }
         }
       }
+    },
+    reportLink: {
+      type: 'string',
+      title: 'Report Link',
+      format: 'uri'
     }
   }
 };
@@ -445,11 +445,12 @@ class ProjectForm extends React.Component {
           },
           description: {
             'ui:widget': 'textarea'
-          },
-          reportLink: {
-            'ui:placeholder': 'http://'
           }
         }
+      },
+      reportLink: {
+        title: 'Report link',
+        'ui:placeholder': 'http://'
       }
     };
   }
@@ -496,7 +497,7 @@ class ProjectForm extends React.Component {
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
-      </Form>;
+    </Form>;
   }
 }
 
