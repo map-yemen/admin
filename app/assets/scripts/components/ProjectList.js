@@ -1,6 +1,7 @@
 import React, {PropTypes as T} from 'react';
 import { Link } from 'react-router';
 import moment from 'moment';
+import {reverseGovernorateMap, districtLookup} from '../utils/locationNames';
 
 const config = require('../config');
 const apiRoot = config.api_root;
@@ -28,11 +29,29 @@ class ProjectList extends React.Component {
     const {list} = component.state;
     list.sort((a, b) => moment(b.created_at) - moment(a.created_at));
     const listItems = list.map((item) => {
+      let locations;
+      if (item.location) {
+        locations = item.location.map(l => {
+          let districtName = ''; let governorateName = '';
+          let retval = '';
+          if (l.district.governorate) {
+            governorateName = reverseGovernorateMap[l.district.governorate];
+            retval += governorateName;
+
+            if (l.district.district) {
+              districtName = districtLookup(l.district.governorate, l.district.district);
+              retval += (' - ' + districtName);
+            }
+          }
+          return retval;
+        }).join(', ');
+      }
+
       return (
         <tr key={item.id}>
           <td><Link to={`/projects/${item.id}`} className="link--primary">{item.name}</Link></td>
           <td>{item.categories && item.categories.join(', ')}</td>
-          <td>{item.location && item.location.map(l => `${l.district.governorate} ${l.district.district ? '-' : ''} ${l.district.district}`).join(', ')}</td>
+          <td>{locations}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>
           <td>{item.published ? '✓' : ''}</td>
