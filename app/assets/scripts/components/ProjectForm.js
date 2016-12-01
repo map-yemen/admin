@@ -20,7 +20,7 @@ export const schema = {
       type: 'string'
     },
     published: {
-      title: 'Visibility - مدى وضوح المشروع', 'description': 'Draft information will be saved but not published on the website',
+      title: 'Visibility - مدى وضوح المشروع', 'description': 'Draft information will be saved but not published on the website - سيتم حفظ معلومات المسودة ولكن لن يتم نشرها على الموقع',
       type: 'boolean',
       default: false,
       enumNames: ['Ready for publishing - جاهز للنشر', 'Draft - مسودة']
@@ -30,7 +30,7 @@ export const schema = {
       type: 'string'
     },
     amendments_ar: {
-      title: 'تعديلات المشروع',
+      title: 'تعديلات المشروع', 'description': 'يرجى بيان إذا ما كانت هناك أي تعديلات رئيسية في المشروع (على سبيل المثال تغيير في أهداف المشروع، أو أماكن التنفيذ، وما إلى ذلك)',
       type: 'string'
     },
     project_delays: {
@@ -39,7 +39,7 @@ export const schema = {
       type: 'string'
     },
     project_delays_ar: {
-      title: 'حالات التأخير في المشروع',
+      title: 'حالات التأخير في المشروع', 'description': 'يرجى الإشارة إلى أي تأخيرات كبيرة في تنفيذ المشروع، و يرجى تحديد سبب هذا التأخير',
       type: 'string'
     },
     corrective_action: {
@@ -56,8 +56,8 @@ export const schema = {
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
     actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي', 'description': 'In case of project delays, extension, or cancellation.'},
     local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
-    local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry of Agriculture and Land Reclamation', 'Ministry 2', 'Ministry 3']},
+    local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع', 'description': 'يرجى إضافة اسم المدير المسؤول في الوزارة أو الهيئة الوطنية'},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry of Agriculture and Land Reclamation - وزارة الزراعة واستصلاح الأراضي', 'Ministry 2', 'Ministry 3']},
     project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
@@ -65,7 +65,7 @@ export const schema = {
       properties: {
         number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
-        number_served_unit_ar: {type: 'string', title: 'الفئة'}
+        number_served_unit_ar: {type: 'string', title: 'الفئة', 'description': 'مثال: الاسر المستفيدة'}
       }
     },
     sds_indicator: {
@@ -76,16 +76,16 @@ export const schema = {
         type: 'string',
         enum: [
           'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
-          'Pillar 1: Economic Development',
-          'Pillar 2: Energy - الطاقة',
-          'Pillar 3: Knowledge, Innovation and Scientific Research - المعرفة والابتكار والبحث العلمي',
-          'Pillar 4: Transparency and Efficiency of Government Institutions - شفافية وكفاءة المؤسسات الحكومية',
-          'Pillar 5: Social Justice',
-          'Pillar 6: Health - الصحة',
-          'Pillar 7: Education & Training',
-          'Pillar 8: Culture - الثقافة',
-          'Pillar 9: Environment',
-          'Pillar 10: Urban Development',
+          'Pillar 1: Economic Development - المحور الأول: التنمية الاقتصادية',
+          'Pillar 2: Energy - المحور الثاني: الطاقة',
+          'Pillar 3: Knowledge, Innovation and Scientific Research - المحور الثالث: المعرفة والابتكار والبحث العلمي',
+          'Pillar 4: Transparency and Efficiency of Government Institutions - المحور الرابع: شفافية وكفاءة المؤسسات الحكومية',
+          'Pillar 5: Social Justice - المحور الخامس: العدالة الاجتماعية',
+          'Pillar 6: Health - المحور السادس: الصحة',
+          'Pillar 7: Education & Training - المحور السابع: التعليم والتدريب',
+          'Pillar 8: Culture - المحور الثامن: الثقافة',
+          'Pillar 9: Environment - المحور التاسع: البيئة',
+          'Pillar 10: Urban Development - المحور العاشر: التنمية العمرانية',
           'Pillar 11: National Security and Foreign Policy',
           'Pillar 12: Domestic Policy - '
         ]
@@ -196,7 +196,7 @@ export const schema = {
       }
     },
     disbursed: {
-      title: 'Disbursed Funds - التمويل الصادر (التمويل المدفوع)', 'description': 'Disbursed funds will only be visible to logged in users',
+      title: 'Disbursed Funds - التمويل الصادر/ المدفوع', 'description': 'Disbursed funds will only be visible to logged in users - المعلومات عن الأموال المصروفة تظهر فقط عند تسجيل الدخول عبر كلمة المرور',
       type: 'array',
       items: {
         type: 'object',
@@ -251,7 +251,6 @@ export const schema = {
           },
           component_ar: {
             title: 'المكون',
-            description: 'الأهداف المحددة وأنشطة المشروع',
             type: 'string'
           },
           status: {
@@ -273,7 +272,7 @@ export const schema = {
           },
           current: {
             type: 'string',
-            title: 'Current - الحالي'
+            title: 'Current - التقييم الحالي'
           },
           target: {
             type: 'string',
@@ -288,7 +287,7 @@ export const schema = {
     },
     reportLink: {
       type: 'string',
-      title: 'Report Link',
+      title: 'Report Link - الرابط الالكتروني لتقرير الرصد',
       format: 'uri'
     }
   }
@@ -362,7 +361,7 @@ class ProjectForm extends React.Component {
         classNames: 'section-half'
       },
       local_manager_ar: {
-        classNames: 'ar section-half section-half-left'
+        classNames: 'ar section-half section-half-left label-lower'
       },
       number_served: {
         classNames: 'field-half form-less-spacing',
@@ -420,6 +419,9 @@ class ProjectForm extends React.Component {
         classNames: 'form-block columns-small multiform-group',
         items: {
           fund: {'ui:field': 'currency'},
+          donor_name: {
+            classNames: 'with-ar'
+          },
           donor_name_ar: {
             classNames: 'ar'
           }
@@ -430,6 +432,9 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
+          donor_name: {
+            classNames: 'with-ar'
+          },
           donor_name_ar: {
             classNames: 'ar'
           }
@@ -440,6 +445,9 @@ class ProjectForm extends React.Component {
         items: {
           date: {
             'ui:field': 'monitoring-date'
+          },
+          kpi: {
+            classNames: 'with-ar'
           },
           kpi_ar: {
             classNames: 'ar'
@@ -452,6 +460,9 @@ class ProjectForm extends React.Component {
           },
           component_ar: {
             classNames: 'ar'
+          },
+          description: {
+            classNames: 'with-ar'
           },
           description_ar: {
             'ui:widget': 'textarea',
@@ -485,8 +496,8 @@ class ProjectForm extends React.Component {
       noValidate={isDraft}
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
-        'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف', 'Month Disbursed - شهر الصرف'),
-        'monitoring-date': DateFieldFactory('Monitoring Date - Year', 'Monitoring Date - Month'),
+        'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)', 'Month Disbursed - تاريخ الصرف (شهر)'),
+        'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)', 'Monitoring Date (Month) - تاريخ الرصد (شهر)'),
         'district': DistrictField,
         'marker': LocationField,
         'currency': CurrencyField

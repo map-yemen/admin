@@ -25,12 +25,12 @@ export default class LocationField extends React.Component {
     return (
       <div className="row">
         <div className="col-sm-6">
-          <label>Latitude - النطاق</label>
+          <label>Latitude - خط العرض</label>
           <input className="form-control" type="number" value={lat} step="0.00001"
             onChange={this.onChange('lat')} />
         </div>
         <div className="col-sm-6">
-          <label>Longitude</label>
+          <label>Longitude - خط الطول</label>
           <input className="form-control" type="number" value={lon} step="0.00001"
             onChange={this.onChange('lon')} />
         </div>
