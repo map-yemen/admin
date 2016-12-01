@@ -38,7 +38,7 @@ export default function (yearLabel, monthLabel) {
       });
       months.unshift(<option key={-1} value={-1}>Select a Month</option>);
 
-      const years = range(1900, 2100).map((year) => {
+      const years = range(1970, 2045).map((year) => {
         return <option key={year} value={year}>{year}</option>;
       });
 
