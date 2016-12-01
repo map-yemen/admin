@@ -250,6 +250,10 @@ export const schema = {
             type: 'string',
             title: 'KPI'
           },
+          kpi_ar: {
+            type: 'string',
+            title: 'مؤشرات الأداء الرئيسية'
+          },
           component: {
             type: 'string',
             title: 'Component',
@@ -263,6 +267,10 @@ export const schema = {
           description: {
             type: 'string',
             title: 'Implementation Description'
+          },
+          description_ar: {
+            type: 'string',
+            title: 'وصف عملية التنفيذ'
           },
           baseline: {
             type: 'string',
@@ -438,8 +446,15 @@ class ProjectForm extends React.Component {
           date: {
             'ui:field': 'monitoring-date'
           },
+          kpi_ar: {
+            classNames: 'ar'
+          },
           description: {
             'ui:widget': 'textarea'
+          },
+          description_ar: {
+            'ui:widget': 'textarea',
+            classNames: 'ar'
           }
         }
       },
