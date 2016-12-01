@@ -1,13 +1,6 @@
 import React from 'react';
+import { governorateMap, reverseGovernorateMap } from '../../utils/locationNames';
 import districtNames from '../../utils/districtNames';
-
-let governorateMap = {};
-let reverseGovernorateMap = {};
-Object.keys(districtNames).forEach((governorate) => {
-  let marker = districtNames[governorate][0]['governorate_marker'];
-  governorateMap[governorate] = marker;
-  reverseGovernorateMap[marker] = governorate;
-});
 
   /**
    * District widget with Governorate & district dropdowns

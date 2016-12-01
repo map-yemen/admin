@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {schema} from './ProjectForm.js';
+import {reverseGovernorateMap, districtLookup} from '../utils/locationNames';
 
 const config = require('../config');
 const apiRoot = config.api_root;
@@ -72,14 +73,19 @@ class Project extends React.Component {
           return <li key={key}><label>{keys[key].title}</label>{ project[key].number_served + ' ' + project[key].number_served_unit}</li>;
         } else if (key === 'location') {
           const locations = project[key].map((location) => {
-            let district = location.district;
-            if (district.district) {
-              return <li>{district.district + ', ' + district.governorate}</li>;
-            } else if (district.governorate) {
-              return <li>{district.governorate}</li>;
-            } else {
-              return <li></li>;
+            let districtObj = location.district;
+            let governorateName = null;
+            if (districtObj.governorate) {
+              governorateName = reverseGovernorateMap[districtObj.governorate];
+              if (districtObj.district) {
+                let districtName = districtLookup(districtObj.governorate, districtObj.district);
+                return <li>{districtName + ', ' + governorateName}</li>;
+              } else {
+                return <li>{governorateName}</li>;
+              }
             }
+
+            return <li></li>;
           });
           return <li key={key}><label>{keys[key].title}</label><ul>{locations}</ul></li>;
         } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'category') {
