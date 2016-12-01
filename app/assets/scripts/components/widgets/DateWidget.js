@@ -17,8 +17,7 @@ export default function (yearLabel, monthLabel) {
     }
 
     readyForChange () {
-      return this.state.month && this.state.year &&
-      this.state.month !== -1 && this.state.year !== -1;
+      return this.state.year && this.state.year !== -1;
     }
 
     onChange (name) {
