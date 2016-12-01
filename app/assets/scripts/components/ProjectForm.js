@@ -453,16 +453,14 @@ class ProjectForm extends React.Component {
             classNames: 'ar'
           },
           description: {
-            'ui:widget': 'textarea'
+            'ui:widget': 'textarea',
+            classNames: 'with-ar'
           },
           component: {
             classNames: 'with-ar'
           },
           component_ar: {
             classNames: 'ar'
-          },
-          description: {
-            classNames: 'with-ar'
           },
           description_ar: {
             'ui:widget': 'textarea',
