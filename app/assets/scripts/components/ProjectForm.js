@@ -1,6 +1,5 @@
 import React from 'react';
-import Form from 'react-jsonschema-form';
-import {cloneDeep} from 'lodash';
+import Form from 'react-jsonschema-form/dist/react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
@@ -25,23 +24,6 @@ export const schema = {
       type: 'boolean',
       default: false,
       enumNames: ['Ready for publishing - جاهز للنشر', 'Draft - مسودة']
-    },
-    components: {
-      title: 'Project Components - مكونات المشروع (الأهداف المحددة وأنشطة المشروع)',
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          component: {
-            title: 'Component',
-            type: 'string'
-          },
-          component_ar: {
-            title: 'المكون',
-            type: 'string'
-          }
-        }
-      }
     },
     amendments: {
       title: 'Project Amendments', 'description': 'Please indicate if there have been any major amendments to the project (for example a change in project objective, location, etc.)',
@@ -255,9 +237,13 @@ export const schema = {
             title: 'مؤشرات الأداء الرئيسية'
           },
           component: {
-            type: 'string',
             title: 'Component',
-            enum: []
+            type: 'string'
+          },
+          component_ar: {
+            title: 'المكون',
+            description: 'الأهداف المحددة وأنشطة المشروع',
+            type: 'string'
           },
           status: {
             type: 'string',
@@ -310,13 +296,7 @@ class ProjectForm extends React.Component {
       components: {
         classNames: 'multiform-group form-block',
         items: {
-          classNames: 'multiform-group_item',
-          component: {
-            classNames: 'with-ar'
-          },
-          component_ar: {
-            classNames: 'ar'
-          }
+          classNames: 'multiform-group_item'
         }
       },
       category: {
@@ -452,6 +432,12 @@ class ProjectForm extends React.Component {
           description: {
             'ui:widget': 'textarea'
           },
+          component: {
+            classNames: 'with-ar'
+          },
+          component_ar: {
+            classNames: 'ar'
+          },
           description_ar: {
             'ui:widget': 'textarea',
             classNames: 'ar'
@@ -465,23 +451,6 @@ class ProjectForm extends React.Component {
     };
   }
 
-  onChange ({formData}) {
-    console.log(formData.components[0]);
-    let schema = cloneDeep(this.state.schema);
-    if (formData.components) {
-      const componentEnums = formData.components.filter((component) => {
-        return component && component.component && component.component.length > 0;
-      }).map((component) => {
-        let componentArText = component.component_ar || '';
-        let componentEnText = component.component || '';
-        return `${componentEnText} - ${componentArText}`;
-      });
-      if (componentEnums.length > 0) {
-        schema.properties.kmi.items.properties.component.enum = componentEnums;
-      }
-    }
-    this.setState({schema: schema, formData: formData});
-  }
   onError (errors) {
     if (errors.length) {
       window.scroll(0, 0);
@@ -494,22 +463,9 @@ class ProjectForm extends React.Component {
     if (formData && formData.published) {
       isDraft = !formData.published;
     }
-    if (formData.components) {
-      const componentEnums = formData.components.filter((component) => {
-        return component && component.component && component.component.length > 0;
-      }).map((component) => {
-        let componentArText = component.component_ar || '';
-        let componentEnText = component.component || '';
-        return `${componentEnText} - ${componentArText}`;
-      });
-      if (componentEnums.length > 0) {
-        schema.properties.kmi.items.properties.component.enum = componentEnums;
-      }
-    }
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
       formData={formData}
-      onChange = {this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
       noValidate={isDraft}
       fields={{

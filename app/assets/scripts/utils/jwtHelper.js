@@ -25,5 +25,5 @@ export function isTokenExpired (token) {
 
 export function isEditor (token) {
   const decoded = decode(token);
-  return decoded.roles.indexOf('edit') > -1;
+  return decoded.roles && decoded.roles.indexOf('edit') > -1;
 }
