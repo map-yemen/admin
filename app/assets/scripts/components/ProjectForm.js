@@ -494,8 +494,8 @@ class ProjectForm extends React.Component {
       noValidate={isDraft}
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
-        'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)', 'Month Disbursed - تاريخ الصرف (شهر)'),
-        'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)', 'Monitoring Date (Month) - تاريخ الرصد (شهر)'),
+        'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
+        'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
         'district': DistrictField,
         'marker': LocationField,
         'currency': CurrencyField
