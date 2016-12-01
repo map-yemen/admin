@@ -34,12 +34,21 @@ export const schema = {
       type: 'string'
     },
     project_delays: {
-      title: 'Project Delays', 'description': 'Please indicate any major delays in the project implementation, including the  cause of the delay',
+      title: 'Project Delays',
+      description: 'Please indicate any major delays in the project implementation, including the  cause of the delay',
       type: 'string'
     },
     project_delays_ar: {
       title: 'حالات التأخير في المشروع',
       type: 'string'
+    },
+    corrective_action: {
+      type: 'string',
+      title: 'Corrective Action'
+    },
+    corrective_action_ar: {
+      type: 'string',
+      title: 'Corrective Action'
     },
     status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع', enum: ['Select a status - يُرجى اختيار وضع محدد (حالة محددة)', 'Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
@@ -318,6 +327,12 @@ class ProjectForm extends React.Component {
       description_ar: {
         classNames: 'ar',
         'ui:widget': 'textarea'
+      },
+      corrective_action: {
+        classNames: 'with-ar'
+      },
+      corrective_action_ar: {
+        classNames: 'ar'
       },
       published: {
         classNames: 'section-half',
