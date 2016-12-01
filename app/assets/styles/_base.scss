@@ -368,3 +368,14 @@ label {
     margin-bottom: .5em;
   }
 }
+
+.indicator-checkbox {
+  input[type="checkbox"] {
+    margin: 1em;
+    display: inline;
+  }
+
+  .field-boolean {
+    margin-bottom: 0;
+  }
+}

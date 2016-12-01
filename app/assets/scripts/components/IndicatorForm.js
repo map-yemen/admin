@@ -41,15 +41,23 @@ export const schema = {
         'Environment'
       ]
     },
-    type: {
+    indicator_type: {
       title: 'Type of Indicator - نوع المؤشر',
-      type: 'string',
-      enum: [
-        'Select an Indicator',
-        'SDS Indicator - مؤشرات استراتيجية التنمية المُستدامة',
-        'SDG Indicator - مؤشرات أهداف التنمية المُستدامة',
-        'Other Development Indicator - مؤشرات إنمائية أخرى'
-      ]
+      type: 'object',
+      properties: {
+        sds: {
+          title: 'SDS Indicator - مؤشرات استراتيجية التنمية المُستدامة',
+          type: 'boolean'
+        },
+        sdg: {
+          title: 'SDG Indicator - مؤشرات أهداف التنمية المُستدامة',
+          type: 'boolean'
+        },
+        other: {
+          title: 'Other Development Indicator - مؤشرات إنمائية أخرى',
+          type: 'boolean'
+        }
+      }
     },
     sources: {
       type: 'array',
@@ -87,6 +95,9 @@ const uiSchema = {
   description_ar: {
     classNames: 'ar',
     'ui:widget': 'textarea'
+  },
+  indicator_type: {
+    classNames: 'indicator-checkbox'
   },
   category: {
     'ui:field': 'datatype'
