@@ -1,2143 +1,2359 @@
 export default {
-  'Dakahlia': [
+  "Alexandria": [
     {
-      'district': 'Meet Selsabil',
-      'governorate_marker': '12',
-      'district_marker': 1217
+      "district": "Al Amaria",
+      "governorate_marker": 2,
+      "district_marker": 213,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "العامرية"
     },
     {
-      'district': 'Nabroh',
-      'governorate_marker': '12',
-      'district_marker': 1221
+      "district": "Al Atarin",
+      "governorate_marker": 2,
+      "district_marker": 206,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "العطارين"
     },
     {
-      'district': 'Al Gamalia',
-      'governorate_marker': '12',
-      'district_marker': 1215
+      "district": "Al Dkhela",
+      "governorate_marker": 2,
+      "district_marker": 212,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "الداخلة"
     },
     {
-      'district': 'Al Mattaria',
-      'governorate_marker': '12',
-      'district_marker': 1206
+      "district": "Al Gomrok",
+      "governorate_marker": 2,
+      "district_marker": 210,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "الجمرك"
     },
     {
-      'district': 'Al Manzala',
-      'governorate_marker': '12',
-      'district_marker': 1207
+      "district": "Al Lban",
+      "governorate_marker": 2,
+      "district_marker": 209,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "اللبان"
     },
     {
-      'district': 'Bilkas',
-      'governorate_marker': '12',
-      'district_marker': 1208
+      "district": "Al Manshia",
+      "governorate_marker": 2,
+      "district_marker": 207,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "المنشية"
     },
     {
-      'district': 'Dekrnes',
-      'governorate_marker': '12',
-      'district_marker': 1209
+      "district": "Al Montzh First",
+      "governorate_marker": 2,
+      "district_marker": 201,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "المنتزه أول"
     },
     {
-      'district': 'Talkha',
-      'governorate_marker': '12',
-      'district_marker': 1211
+      "district": "Al Raml",
+      "governorate_marker": 2,
+      "district_marker": 202,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "الرمل"
     },
     {
-      'district': 'Mansoura',
-      'governorate_marker': '12',
-      'district_marker': 1201
+      "district": "Alexandria Harbour",
+      "governorate_marker": 2,
+      "district_marker": 215,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "مياء الاسكندرية"
     },
     {
-      'district': 'Mansoura',
-      'governorate_marker': '12',
-      'district_marker': 1202
+      "district": "Alsahel Alshamali",
+      "governorate_marker": 33,
+      "district_marker": 3308,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "الساحل الشمالي"
     },
     {
-      'district': 'Gamasa',
-      'governorate_marker': '12',
-      'district_marker': 1220
+      "district": "Bab Sharki",
+      "governorate_marker": 2,
+      "district_marker": 204,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "باب شرق"
     },
     {
-      'district': 'Meet Gamr',
-      'governorate_marker': '12',
-      'district_marker': 1212
+      "district": "Borg Al Arab",
+      "governorate_marker": 2,
+      "district_marker": 214,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "برج العرب"
     },
     {
-      'district': 'Aga',
-      'governorate_marker': '12',
-      'district_marker': 1204
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Senbilawin',
-      'governorate_marker': '12',
-      'district_marker': 1205
+      "district": "Karmoz",
+      "governorate_marker": 2,
+      "district_marker": 208,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "كرموز"
     },
     {
-      'district': 'Mansoura',
-      'governorate_marker': '12',
-      'district_marker': 1203
+      "district": "Mina Al Bassl",
+      "governorate_marker": 2,
+      "district_marker": 211,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "مينا البصل"
     },
     {
-      'district': 'Bani Ebeed',
-      'governorate_marker': '12',
-      'district_marker': 1218
+      "district": "Moharm Bek",
+      "governorate_marker": 2,
+      "district_marker": 205,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "محرم بك"
     },
     {
-      'district': 'Tamy Al Madid',
-      'governorate_marker': '12',
-      'district_marker': 1216
+      "district": "New Borg Al Arab City",
+      "governorate_marker": 2,
+      "district_marker": 216,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "مدينة برج العرب الجديدة"
     },
     {
-      'district': 'Sherbin',
-      'governorate_marker': '12',
-      'district_marker': 1210
-    },
-    {
-      'district': 'Mahlat Damna',
-      'governorate_marker': '12',
-      'district_marker': 1219
-    },
-    {
-      'district': 'Meet Gamr',
-      'governorate_marker': '12',
-      'district_marker': 1213
-    },
-    {
-      'district': 'Menit Al Nasr',
-      'governorate_marker': '12',
-      'district_marker': 1214
+      "district": "Seedy Gaber",
+      "governorate_marker": 2,
+      "district_marker": 203,
+      "governorate_ar": "اسكندرية‎‎",
+      "district_ar": "سيدي جابر"
     }
   ],
-  'Fayoum': [
+  "Aswan": [
     {
-      'district': 'Abshway',
-      'governorate_marker': '23',
-      'district_marker': 2303
+      "district": "Abu Simbel",
+      "governorate_marker": 28,
+      "district_marker": 2807,
+      "governorate_ar": "أسوان",
+      "district_ar": "أبو سمبل"
     },
     {
-      'district': 'Itsa',
-      'governorate_marker': '23',
-      'district_marker': 2304
+      "district": "Aswan",
+      "governorate_marker": 28,
+      "district_marker": 2801,
+      "governorate_ar": "أسوان",
+      "district_ar": "أسوان"
     },
     {
-      'district': 'Al Fayyum',
-      'governorate_marker': '23',
-      'district_marker': 2302
+      "district": "Daraw",
+      "governorate_marker": 28,
+      "district_marker": 2806,
+      "governorate_ar": "أسوان",
+      "district_ar": "درو"
     },
     {
-      'district': 'Snors',
-      'governorate_marker': '23',
-      'district_marker': 2305
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "أسوان",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Tamia',
-      'governorate_marker': '23',
-      'district_marker': 2306
+      "district": "Edfu",
+      "governorate_marker": 28,
+      "district_marker": 2803,
+      "governorate_ar": "أسوان",
+      "district_ar": "إدفو"
     },
     {
-      'district': 'Al Fayyum',
-      'governorate_marker': '23',
-      'district_marker': 2301
+      "district": "Kom Ombo",
+      "governorate_marker": 28,
+      "district_marker": 2804,
+      "governorate_ar": "أسوان",
+      "district_ar": "كوم أمبو"
     },
     {
-      'district': 'Youssif Al Sedik',
-      'governorate_marker': '23',
-      'district_marker': 2307
+      "district": "Nasr",
+      "governorate_marker": 28,
+      "district_marker": 2805,
+      "governorate_ar": "أسوان",
+      "district_ar": "ناصر"
     },
     {
-      'district': 'New Fayoum City',
-      'governorate_marker': '23',
-      'district_marker': 2308
+      "district": "New Aswan City",
+      "governorate_marker": 28,
+      "district_marker": 2808,
+      "governorate_ar": "أسوان",
+      "district_ar": "مدينة أسوان الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '23',
-      'district_marker': 2399
+      "district": "New Toshka City",
+      "governorate_marker": 28,
+      "district_marker": 2809,
+      "governorate_ar": "أسوان",
+      "district_ar": "مدينة توشكى الجديدة"
     }
   ],
-  'Gharbia': [
+  "Asyut": [
     {
-      'district': 'Samanod',
-      'governorate_marker': '16',
-      'district_marker': 1610
+      "district": "Abnob",
+      "governorate_marker": 25,
+      "district_marker": 2504,
+      "governorate_ar": "أسيوط",
+      "district_ar": "أسيوط"
     },
     {
-      'district': 'Tanta',
-      'governorate_marker': '16',
-      'district_marker': 1601
+      "district": "Abo Teeg",
+      "governorate_marker": 25,
+      "district_marker": 2505,
+      "governorate_ar": "أسيوط",
+      "district_ar": "ديروط"
     },
     {
-      'district': 'Al Mahala Al Kobra',
-      'governorate_marker': '16',
-      'district_marker': 1605
+      "district": "Al Badari",
+      "governorate_marker": 25,
+      "district_marker": 2506,
+      "governorate_ar": "أسيوط",
+      "district_ar": "البداري"
     },
     {
-      'district': 'Al Mahala Al Kobra',
-      'governorate_marker': '16',
-      'district_marker': 1606
+      "district": "Al Fath",
+      "governorate_marker": 25,
+      "district_marker": 2513,
+      "governorate_ar": "أسيوط",
+      "district_ar": "الفتح"
     },
     {
-      'district': 'Tanta',
-      'governorate_marker': '16',
-      'district_marker': 1602
+      "district": "Al Ganaeem",
+      "governorate_marker": 25,
+      "district_marker": 2508,
+      "governorate_ar": "أسيوط",
+      "district_ar": "الغنايم"
     },
     {
-      'district': 'Al Santa',
-      'governorate_marker': '16',
-      'district_marker': 1604
+      "district": "Al Kossia",
+      "governorate_marker": 25,
+      "district_marker": 2509,
+      "governorate_ar": "أسيوط",
+      "district_ar": "القوصية"
     },
     {
-      'district': 'El Mahala  El  Kobra',
-      'governorate_marker': '16',
-      'district_marker': 1607
+      "district": "Assiout",
+      "governorate_marker": 25,
+      "district_marker": 2503,
+      "governorate_ar": "أسيوط",
+      "district_ar": "أبنوب"
     },
     {
-      'district': 'Basyon',
-      'governorate_marker': '16',
-      'district_marker': 1608
+      "district": "Dairot",
+      "governorate_marker": 25,
+      "district_marker": 2510,
+      "governorate_ar": "أسيوط",
+      "district_ar": "أبو تيج"
     },
     {
-      'district': 'Zefta',
-      'governorate_marker': '16',
-      'district_marker': 1609
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "أسيوط",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Tanta',
-      'governorate_marker': '16',
-      'district_marker': 1603
+      "district": "Manfalot",
+      "governorate_marker": 25,
+      "district_marker": 2512,
+      "governorate_ar": "أسيوط",
+      "district_ar": "منفلوط"
     },
     {
-      'district': 'Kator',
-      'governorate_marker': '16',
-      'district_marker': 1611
+      "district": "New Assiout City",
+      "governorate_marker": 25,
+      "district_marker": 2514,
+      "governorate_ar": "أسيوط",
+      "district_ar": "مدينة أسيوط الجديدة"
     },
     {
-      'district': 'Kafr Al Ziat',
-      'governorate_marker': '16',
-      'district_marker': 1612
+      "district": "Sadfa",
+      "governorate_marker": 25,
+      "district_marker": 2511,
+      "governorate_ar": "أسيوط",
+      "district_ar": "صدفا"
+    },
+    {
+      "district": "Sahal Sleem",
+      "governorate_marker": 25,
+      "district_marker": 2507,
+      "governorate_ar": "أسيوط",
+      "district_ar": "ساحل سليم"
     }
   ],
-  'Giza': [
+  "Behera": [
     {
-      'district': 'Al Badrashin',
-      'governorate_marker': '21',
-      'district_marker': 2110
+      "district": "Abo Al Matamir",
+      "governorate_marker": 18,
+      "district_marker": 1803,
+      "governorate_ar": "البحيرة",
+      "district_ar": "أبو المطامير"
     },
     {
-      'district': 'Al Hawamdiyya',
-      'governorate_marker': '21',
-      'district_marker': 2108
+      "district": "Abo Homs",
+      "governorate_marker": 18,
+      "district_marker": 1804,
+      "governorate_ar": "البحيرة",
+      "district_ar": "أبو  حمص"
     },
     {
-      'district': 'Giza',
-      'governorate_marker': '21',
-      'district_marker': 2104
+      "district": "Al Delngat",
+      "governorate_marker": 18,
+      "district_marker": 1805,
+      "governorate_ar": "البحيرة",
+      "district_ar": "الدلنجات"
     },
     {
-      'district': 'Al Doki',
-      'governorate_marker': '21',
-      'district_marker': 2103
+      "district": "Al Mahmodia",
+      "governorate_marker": 18,
+      "district_marker": 1806,
+      "governorate_ar": "البحيرة",
+      "district_ar": "المحمودية"
     },
     {
-      'district': 'Al Agoza',
-      'governorate_marker': '21',
-      'district_marker': 2102
+      "district": "Al Natron Valley",
+      "governorate_marker": 18,
+      "district_marker": 1814,
+      "governorate_ar": "البحيرة",
+      "district_ar": "وادي النطرون"
     },
     {
-      'district': '6th of October City',
-      'governorate_marker': '21',
-      'district_marker': 2107
+      "district": "Al Rahmania",
+      "governorate_marker": 18,
+      "district_marker": 1815,
+      "governorate_ar": "البحيرة",
+      "district_ar": "الرحمانية"
     },
     {
-      'district': 'Bulaq Al Dakrur',
-      'governorate_marker': '21',
-      'district_marker': 2105
+      "district": "Badr",
+      "governorate_marker": 18,
+      "district_marker": 1818,
+      "governorate_ar": "البحيرة",
+      "district_ar": "بدر"
     },
     {
-      'district': 'Al Giza',
-      'governorate_marker': '21',
-      'district_marker': 2109
+      "district": "Damnhor",
+      "governorate_marker": 18,
+      "district_marker": 1802,
+      "governorate_ar": "البحيرة",
+      "district_ar": "دمنهور"
     },
     {
-      'district': 'Atfîh',
-      'governorate_marker': '21',
-      'district_marker': 2115
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "البحيرة",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Shikh Zaied',
-      'governorate_marker': '21',
-      'district_marker': 2119
+      "district": "Edko",
+      "governorate_marker": 18,
+      "district_marker": 1816,
+      "governorate_ar": "البحيرة",
+      "district_ar": "إدكو"
     },
     {
-      'district': 'Al Saf',
-      'governorate_marker': '21',
-      'district_marker': 2111
+      "district": "Etay Al Barod",
+      "governorate_marker": 18,
+      "district_marker": 1807,
+      "governorate_ar": "البحيرة",
+      "district_ar": "إيتاي البارود"
     },
     {
-      'district': 'Al Ayyat',
-      'governorate_marker': '21',
-      'district_marker': 2112
+      "district": "Hosh Eisa",
+      "governorate_marker": 18,
+      "district_marker": 1808,
+      "governorate_ar": "البحيرة",
+      "district_ar": "حوش عيسى"
     },
     {
-      'district': 'Usim',
-      'governorate_marker': '21',
-      'district_marker': 2116
+      "district": "Kafr Al Dwar",
+      "governorate_marker": 18,
+      "district_marker": 1811,
+      "governorate_ar": "البحيرة",
+      "district_ar": "كفر الدوار"
     },
     {
-      'district': 'Pyramids',
-      'governorate_marker': '21',
-      'district_marker': 2106
+      "district": "Koom Hamada",
+      "governorate_marker": 18,
+      "district_marker": 1813,
+      "governorate_ar": "البحيرة",
+      "district_ar": "كوم حماده"
     },
     {
-      'district': 'Al Umraniyya',
-      'governorate_marker': '21',
-      'district_marker': 2118
+      "district": "Rashid",
+      "governorate_marker": 18,
+      "district_marker": 1809,
+      "governorate_ar": "البحيرة",
+      "district_ar": "رشيد"
     },
     {
-      'district': 'Al Wahat Baharya',
-      'governorate_marker': '21',
-      'district_marker': 2114
+      "district": "Shobra Kheet",
+      "governorate_marker": 18,
+      "district_marker": 1810,
+      "governorate_ar": "البحيرة",
+      "district_ar": "شبراخيت"
     },
     {
-      'district': 'Al Warraq',
-      'governorate_marker': '21',
-      'district_marker': 2117
-    },
-    {
-      'district': '',
-      'governorate_marker': '21',
-      'district_marker': 2101
-    },
-    {
-      'district': '6th of October City',
-      'governorate_marker': '21',
-      'district_marker': 2121
-    },
-    {
-      'district': 'Kirdasa',
-      'governorate_marker': '21',
-      'district_marker': 2120
-    },
-    {
-      'district': 'Imbaba',
-      'governorate_marker': '21',
-      'district_marker': 2113
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '21',
-      'district_marker': 2199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '21',
-      'district_marker': 2199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '21',
-      'district_marker': 2199
+      "district": "West Of Nobaria",
+      "governorate_marker": 18,
+      "district_marker": 1817,
+      "governorate_ar": "البحيرة",
+      "district_ar": "غرب النوبارية"
     }
   ],
-  'Ismailia': [
+  "Beni Suef": [
     {
-      'district': 'East Kantra',
-      'governorate_marker': '19',
-      'district_marker': 1908
+      "district": "Ahnasia",
+      "governorate_marker": 22,
+      "district_marker": 2206,
+      "governorate_ar": "بني سويف",
+      "district_ar": "أهناسيا"
     },
     {
-      'district': 'Ismailia',
-      'governorate_marker': '19',
-      'district_marker': 1901
+      "district": "Al Fishn",
+      "governorate_marker": 22,
+      "district_marker": 2204,
+      "governorate_ar": "بني سويف",
+      "district_ar": "الفشن"
     },
     {
-      'district': 'Ismailia',
-      'governorate_marker': '19',
-      'district_marker': 1903
+      "district": "Al Wasty",
+      "governorate_marker": 22,
+      "district_marker": 2205,
+      "governorate_ar": "بني سويف",
+      "district_ar": "الواسطى"
     },
     {
-      'district': 'Ismailia',
-      'governorate_marker': '19',
-      'district_marker': 1902
+      "district": "Beba",
+      "governorate_marker": 22,
+      "district_marker": 2207,
+      "governorate_ar": "بني سويف",
+      "district_ar": "ببا"
     },
     {
-      'district': 'Ismailia',
-      'governorate_marker': '19',
-      'district_marker': 1904
+      "district": "Beni Suef",
+      "governorate_marker": 22,
+      "district_marker": 2202,
+      "governorate_ar": "بني سويف",
+      "district_ar": "بني سويف"
     },
     {
-      'district': 'Al Tal Elkebeer',
-      'governorate_marker': '19',
-      'district_marker': 1905
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "بني سويف",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Kantara',
-      'governorate_marker': '19',
-      'district_marker': 1906
+      "district": "Naser",
+      "governorate_marker": 22,
+      "district_marker": 2209,
+      "governorate_ar": "بني سويف",
+      "district_ar": "ناصر"
     },
     {
-      'district': 'Fayed',
-      'governorate_marker': '19',
-      'district_marker': 1907
+      "district": "New Beni Suef",
+      "governorate_marker": 22,
+      "district_marker": 2203,
+      "governorate_ar": "بني سويف",
+      "district_ar": "مدينة بني سويف الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '19',
-      'district_marker': 1999
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '19',
-      'district_marker': 1999
+      "district": "Smsta",
+      "governorate_marker": 22,
+      "district_marker": 2208,
+      "governorate_ar": "بني سويف",
+      "district_ar": "سمطا"
     }
   ],
-  'Qalioubia': [
+  "Cairo": [
     {
-      'district': 'Al Khosos',
-      'governorate_marker': '14',
-      'district_marker': 1412
+      "district": "15th of May",
+      "governorate_marker": 1,
+      "district_marker": 103,
+      "governorate_ar": "القاهرة",
+      "district_ar": "مدينة ١٥ مايو"
     },
     {
-      'district': 'Al Oboor',
-      'governorate_marker': '14',
-      'district_marker': 1413
+      "district": "Abdeen",
+      "governorate_marker": 1,
+      "district_marker": 109,
+      "governorate_ar": "القاهرة",
+      "district_ar": "عبدين"
     },
     {
-      'district': 'Shobra Al Khima',
-      'governorate_marker': '14',
-      'district_marker': 1406
+      "district": "Ain Shams",
+      "governorate_marker": 1,
+      "district_marker": 130,
+      "governorate_ar": "القاهرة",
+      "district_ar": "عين شمس"
     },
     {
-      'district': 'Banha',
-      'governorate_marker': '14',
-      'district_marker': 1401
+      "district": "Al Basatin",
+      "governorate_marker": 1,
+      "district_marker": 135,
+      "governorate_ar": "القاهرة",
+      "district_ar": "البساتين"
     },
     {
-      'district': 'Shobra Al Khima',
-      'governorate_marker': '14',
-      'district_marker': 1407
+      "district": "Al Darb  El Ahmr",
+      "governorate_marker": 1,
+      "district_marker": 114,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الدرب الأحمر"
     },
     {
-      'district': '',
-      'governorate_marker': '14',
-      'district_marker': 1409
+      "district": "Al Gamalia",
+      "governorate_marker": 12,
+      "district_marker": 1215,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الجمالية"
     },
     {
-      'district': 'Khaha',
-      'governorate_marker': '14',
-      'district_marker': 1414
+      "district": "Al Khalifa",
+      "governorate_marker": 1,
+      "district_marker": 108,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الخليفة"
     },
     {
-      'district': 'Al Khanka',
-      'governorate_marker': '14',
-      'district_marker': 1403
+      "district": "Al Marg",
+      "governorate_marker": 1,
+      "district_marker": 136,
+      "governorate_ar": "القاهرة",
+      "district_ar": "المرج"
     },
     {
-      'district': 'Al Knater Al Khiria',
-      'governorate_marker': '14',
-      'district_marker': 1404
+      "district": "Al Mataria",
+      "governorate_marker": 1,
+      "district_marker": 125,
+      "governorate_ar": "القاهرة",
+      "district_ar": "المطرية"
     },
     {
-      'district': 'Banha',
-      'governorate_marker': '14',
-      'district_marker': 1402
+      "district": "Al Mosky",
+      "governorate_marker": 1,
+      "district_marker": 105,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الموسكي"
     },
     {
-      'district': 'Shbin Al Knanater',
-      'governorate_marker': '14',
-      'district_marker': 1405
+      "district": "Al Nozha",
+      "governorate_marker": 1,
+      "district_marker": 129,
+      "governorate_ar": "القاهرة",
+      "district_ar": "النزهة"
     },
     {
-      'district': 'Tokh',
-      'governorate_marker': '14',
-      'district_marker': 1408
+      "district": "Al Sahel",
+      "governorate_marker": 1,
+      "district_marker": 121,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الساحل"
     },
     {
-      'district': 'Kaliob',
-      'governorate_marker': '14',
-      'district_marker': 1410
+      "district": "Al Salam",
+      "governorate_marker": 1,
+      "district_marker": 132,
+      "governorate_ar": "القاهرة",
+      "district_ar": "السلام"
     },
     {
-      'district': 'Kafr Shokr',
-      'governorate_marker': '14',
-      'district_marker': 1411
+      "district": "Al Sayda Zeinab",
+      "governorate_marker": 1,
+      "district_marker": 107,
+      "governorate_ar": "القاهرة",
+      "district_ar": "السيدة زينب"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '14',
-      'district_marker': 1499
+      "district": "Al Shrook",
+      "governorate_marker": 1,
+      "district_marker": 140,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الشروق"
+    },
+    {
+      "district": "Al Tbeen",
+      "governorate_marker": 1,
+      "district_marker": 101,
+      "governorate_ar": "القاهرة",
+      "district_ar": "التبين"
+    },
+    {
+      "district": "Al Waily",
+      "governorate_marker": 1,
+      "district_marker": 122,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الوايلي"
+    },
+    {
+      "district": "Al Zaher",
+      "governorate_marker": 1,
+      "district_marker": 117,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الظاهر"
+    },
+    {
+      "district": "Al Zawya Al Hamraa",
+      "governorate_marker": 1,
+      "district_marker": 131,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الزاوية الحمراء"
+    },
+    {
+      "district": "Al Zayton",
+      "governorate_marker": 1,
+      "district_marker": 124,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الزيتون"
+    },
+    {
+      "district": "Bab Al Sharia",
+      "governorate_marker": 1,
+      "district_marker": 116,
+      "governorate_ar": "القاهرة",
+      "district_ar": "باب الشعرية"
+    },
+    {
+      "district": "Badr",
+      "governorate_marker": 18,
+      "district_marker": 1818,
+      "governorate_ar": "القاهرة",
+      "district_ar": "بدر"
+    },
+    {
+      "district": "Bolak",
+      "governorate_marker": 1,
+      "district_marker": 112,
+      "governorate_ar": "القاهرة",
+      "district_ar": "بولاق"
+    },
+    {
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "القاهرة",
+      "district_ar": "صحراء"
+    },
+    {
+      "district": "El  Azbakia",
+      "governorate_marker": 1,
+      "district_marker": 113,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الأزبكية"
+    },
+    {
+      "district": "El Sharabia",
+      "governorate_marker": 1,
+      "district_marker": 118,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الشرابية"
+    },
+    {
+      "district": "First Nasr City",
+      "governorate_marker": 1,
+      "district_marker": 126,
+      "governorate_ar": "القاهرة",
+      "district_ar": "مدينة نصر أول"
+    },
+    {
+      "district": "Hadaek Al Koba",
+      "governorate_marker": 1,
+      "district_marker": 123,
+      "governorate_ar": "القاهرة",
+      "district_ar": "حدائق القبة"
+    },
+    {
+      "district": "Helwan",
+      "governorate_marker": 1,
+      "district_marker": 102,
+      "governorate_ar": "القاهرة",
+      "district_ar": "حلوان"
+    },
+    {
+      "district": "Kasr  El  Nile",
+      "governorate_marker": 1,
+      "district_marker": 111,
+      "governorate_ar": "القاهرة",
+      "district_ar": "قصر النيل"
+    },
+    {
+      "district": "Maadi",
+      "governorate_marker": 1,
+      "district_marker": 104,
+      "governorate_ar": "القاهرة",
+      "district_ar": "المعادي"
+    },
+    {
+      "district": "Misr Al Gadidah",
+      "governorate_marker": 1,
+      "district_marker": 128,
+      "governorate_ar": "القاهرة",
+      "district_ar": "مصر الجديدة"
+    },
+    {
+      "district": "Misr Al Kadima",
+      "governorate_marker": 1,
+      "district_marker": 106,
+      "governorate_ar": "القاهرة",
+      "district_ar": "مصر القديمة"
+    },
+    {
+      "district": "Monsha'at Nasser",
+      "governorate_marker": 1,
+      "district_marker": 134,
+      "governorate_ar": "القاهرة",
+      "district_ar": "منشأة ناصر"
+    },
+    {
+      "district": "Nasr City",
+      "governorate_marker": 1,
+      "district_marker": 127,
+      "governorate_ar": "القاهرة",
+      "district_ar": "مدينة نصر"
+    },
+    {
+      "district": "New Cairo",
+      "governorate_marker": 1,
+      "district_marker": 137,
+      "governorate_ar": "القاهرة",
+      "district_ar": "القاهرة الجديدة"
+    },
+    {
+      "district": "Rod El Farg",
+      "governorate_marker": 1,
+      "district_marker": 120,
+      "governorate_ar": "القاهرة",
+      "district_ar": "روض الفرج"
+    },
+    {
+      "district": "Shobra",
+      "governorate_marker": 1,
+      "district_marker": 119,
+      "governorate_ar": "القاهرة",
+      "district_ar": "شبرا"
+    },
+    {
+      "district": "Zamalek",
+      "governorate_marker": 1,
+      "district_marker": 133,
+      "governorate_ar": "القاهرة",
+      "district_ar": "الزمالك"
     }
   ],
-  'Luxor': [
+  "Dakahlia": [
     {
-      'district': 'Luxor',
-      'governorate_marker': '29',
-      'district_marker': 2901
+      "district": "Aga",
+      "governorate_marker": 12,
+      "district_marker": 1204,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "أجا"
     },
     {
-      'district': 'Luxor',
-      'governorate_marker': '29',
-      'district_marker': 2902
+      "district": "Al Gamalia",
+      "governorate_marker": 12,
+      "district_marker": 1215,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "الجمالية"
     },
     {
-      'district': 'Teba',
-      'governorate_marker': '29',
-      'district_marker': 2903
+      "district": "Al Manzala",
+      "governorate_marker": 12,
+      "district_marker": 1207,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "المنزلة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '29',
-      'district_marker': 2999
+      "district": "Al Mattaria",
+      "governorate_marker": 12,
+      "district_marker": 1206,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "المطرية"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '29',
-      'district_marker': 2999
+      "district": "Al Senbilawin",
+      "governorate_marker": 12,
+      "district_marker": 1205,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "السنبلاوين"
     },
     {
-      'district': 'Arment',
-      'governorate_marker': '29',
-      'district_marker': 2904
+      "district": "Bani Ebeed",
+      "governorate_marker": 12,
+      "district_marker": 1218,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "بني عبيد"
     },
     {
-      'district': 'Esna',
-      'governorate_marker': '29',
-      'district_marker': 2905
+      "district": "Bilkas",
+      "governorate_marker": 12,
+      "district_marker": 1208,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "بلقيس"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '29',
-      'district_marker': 2999
+      "district": "Dekrnes",
+      "governorate_marker": 12,
+      "district_marker": 1209,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "دكرنس"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '29',
-      'district_marker': 2999
+      "district": "Gamasa",
+      "governorate_marker": 12,
+      "district_marker": 1220,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "جمصة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '29',
-      'district_marker': 2999
+      "district": "Mahlat Damna",
+      "governorate_marker": 12,
+      "district_marker": 1219,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "محلة دمنة"
+    },
+    {
+      "district": "Mansoura",
+      "governorate_marker": 12,
+      "district_marker": 1201,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "المنصورة"
+    },
+    {
+      "district": "Meet Gamr",
+      "governorate_marker": 12,
+      "district_marker": 1212,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "ميت غمر"
+    },
+    {
+      "district": "Meet Selsabil",
+      "governorate_marker": 12,
+      "district_marker": 1217,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "ميت سلسيل"
+    },
+    {
+      "district": "Menit Al Nasr",
+      "governorate_marker": 12,
+      "district_marker": 1214,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "منية النصر"
+    },
+    {
+      "district": "Nabroh",
+      "governorate_marker": 12,
+      "district_marker": 1221,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "نبروه الدقهلية"
+    },
+    {
+      "district": "Sherbin",
+      "governorate_marker": 12,
+      "district_marker": 1210,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "شربين"
+    },
+    {
+      "district": "Talkha",
+      "governorate_marker": 12,
+      "district_marker": 1211,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "طلخا"
+    },
+    {
+      "district": "Tamy Al Madid",
+      "governorate_marker": 12,
+      "district_marker": 1216,
+      "governorate_ar": "الدقهلية",
+      "district_ar": "تمى الأمديد"
     }
   ],
-  'Menia': [
+  "Damietta": [
     {
-      'district': 'Abo Korkas',
-      'governorate_marker': '24',
-      'district_marker': 2404
+      "district": "Al Zarka",
+      "governorate_marker": 11,
+      "district_marker": 1107,
+      "governorate_ar": "دمياط",
+      "district_ar": "الزرقا دمياط"
     },
     {
-      'district': 'Al Adowa',
-      'governorate_marker': '24',
-      'district_marker': 2405
+      "district": "Damietta",
+      "governorate_marker": 11,
+      "district_marker": 1102,
+      "governorate_ar": "دمياط",
+      "district_ar": "دمياط"
     },
     {
-      'district': 'Al Menia',
-      'governorate_marker': '24',
-      'district_marker': 2402
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "دمياط",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Der Mowas',
-      'governorate_marker': '24',
-      'district_marker': 2407
+      "district": "Farskor",
+      "governorate_marker": 11,
+      "district_marker": 1103,
+      "governorate_ar": "دمياط",
+      "district_ar": "فارسكور"
     },
     {
-      'district': 'Samalot',
-      'governorate_marker': '24',
-      'district_marker': 2408
+      "district": "Kafr Sa'ad",
+      "governorate_marker": 11,
+      "district_marker": 1104,
+      "governorate_ar": "دمياط",
+      "district_ar": "كفر سعد"
     },
     {
-      'district': 'Al Menia',
-      'governorate_marker': '24',
-      'district_marker': 2401
+      "district": "New Damietta City",
+      "governorate_marker": 11,
+      "district_marker": 1105,
+      "governorate_ar": "دمياط",
+      "district_ar": "مدينة دمياط الجديدة"
     },
     {
-      'district': 'New Menia City',
-      'governorate_marker': '24',
-      'district_marker': 2403
+      "district": "New Damietta Harbour Department",
+      "governorate_marker": 11,
+      "district_marker": 1108,
+      "governorate_ar": "دمياط",
+      "district_ar": "مديرية ميناء دمياط الجديد"
     },
     {
-      'district': 'Milwy Qism',
-      'governorate_marker': '24',
-      'district_marker': 2411
-    },
-    {
-      'district': 'Beni Mazar',
-      'governorate_marker': '24',
-      'district_marker': 2406
-    },
-    {
-      'district': 'Matay',
-      'governorate_marker': '24',
-      'district_marker': 2409
-    },
-    {
-      'district': 'Mghagha',
-      'governorate_marker': '24',
-      'district_marker': 2410
-    },
-    {
-      'district': 'Milwy',
-      'governorate_marker': '24',
-      'district_marker': 2412
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '24',
-      'district_marker': 2499
+      "district": "Ras Al Bar",
+      "governorate_marker": 11,
+      "district_marker": 1106,
+      "governorate_ar": "دمياط",
+      "district_ar": "رأس البر"
     }
   ],
-  'Monoufia': [
+  "Fayoum": [
     {
-      'district': 'Shbin  Al Kom',
-      'governorate_marker': '17',
-      'district_marker': 1701
+      "district": "Abshway",
+      "governorate_marker": 23,
+      "district_marker": 2303,
+      "governorate_ar": "الفيوم",
+      "district_ar": "إبشواي"
     },
     {
-      'district': 'Sers Elliana',
-      'governorate_marker': '17',
-      'district_marker': 1710
+      "district": "Al Fayyum",
+      "governorate_marker": 23,
+      "district_marker": 2302,
+      "governorate_ar": "الفيوم",
+      "district_ar": "الفيوم"
     },
     {
-      'district': 'Monof',
-      'governorate_marker': '17',
-      'district_marker': 1712
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الفيوم",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Ashmon',
-      'governorate_marker': '17',
-      'district_marker': 1703
+      "district": "Itsa",
+      "governorate_marker": 23,
+      "district_marker": 2304,
+      "governorate_ar": "الفيوم",
+      "district_ar": "إطسا"
     },
     {
-      'district': 'Al Bagor',
-      'governorate_marker': '17',
-      'district_marker': 1704
+      "district": "New Fayoum City",
+      "governorate_marker": 23,
+      "district_marker": 2308,
+      "governorate_ar": "الفيوم",
+      "district_ar": "مدينة الفيوم الجديدة"
     },
     {
-      'district': "Al Shohda'a",
-      'governorate_marker': '17',
-      'district_marker': 1705
+      "district": "Snors",
+      "governorate_marker": 23,
+      "district_marker": 2305,
+      "governorate_ar": "الفيوم",
+      "district_ar": "سنورس"
     },
     {
-      'district': 'Berkt Al Sabh',
-      'governorate_marker': '17',
-      'district_marker': 1706
+      "district": "Tamia",
+      "governorate_marker": 23,
+      "district_marker": 2306,
+      "governorate_ar": "الفيوم",
+      "district_ar": "طامية"
     },
     {
-      'district': 'Tala',
-      'governorate_marker': '17',
-      'district_marker': 1707
-    },
-    {
-      'district': 'Shbin  Al Kom',
-      'governorate_marker': '17',
-      'district_marker': 1702
-    },
-    {
-      'district': 'Kewsina',
-      'governorate_marker': '17',
-      'district_marker': 1708
-    },
-    {
-      'district': 'Monof',
-      'governorate_marker': '17',
-      'district_marker': 1709
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '17',
-      'district_marker': 1799
+      "district": "Youssif Al Sedik",
+      "governorate_marker": 23,
+      "district_marker": 2307,
+      "governorate_ar": "الفيوم",
+      "district_ar": "يوسف الصديق"
     }
   ],
-  'AL MONOFIA': [
+  "Gharbia": [
     {
-      'district': ' MARKAS\'',
-      'governorate_marker': 'Monoufia',
-      'district_marker': 17
+      "district": "Al Mahala Al Kobra",
+      "governorate_marker": 16,
+      "district_marker": 1605,
+      "governorate_ar": "الغربية",
+      "district_ar": "المحلة الكبرى"
+    },
+    {
+      "district": "Al Mehala Al Kobra",
+      "governorate_marker": 16,
+      "district_marker": 1607,
+      "governorate_ar": "الغربية",
+      "district_ar": "المحلة الكبرى"
+    },
+    {
+      "district": "Al Santa",
+      "governorate_marker": 16,
+      "district_marker": 1604,
+      "governorate_ar": "الغربية",
+      "district_ar": "السنطة"
+    },
+    {
+      "district": "Basyon",
+      "governorate_marker": 16,
+      "district_marker": 1608,
+      "governorate_ar": "الغربية",
+      "district_ar": "بسيون"
+    },
+    {
+      "district": "El Mahala  El  Kobra",
+      "governorate_marker": 16,
+      "district_marker": 1606,
+      "governorate_ar": "الغربية",
+      "district_ar": "المحلة الكبرى"
+    },
+    {
+      "district": "Kafr Al Ziat",
+      "governorate_marker": 16,
+      "district_marker": 1612,
+      "governorate_ar": "الغربية",
+      "district_ar": "كفر الزيات"
+    },
+    {
+      "district": "Kator",
+      "governorate_marker": 16,
+      "district_marker": 1611,
+      "governorate_ar": "الغربية",
+      "district_ar": "قطور"
+    },
+    {
+      "district": "Samanod",
+      "governorate_marker": 16,
+      "district_marker": 1610,
+      "governorate_ar": "الغربية",
+      "district_ar": "سمنود"
+    },
+    {
+      "district": "Tanta",
+      "governorate_marker": 16,
+      "district_marker": 1601,
+      "governorate_ar": "الغربية",
+      "district_ar": "طنطا"
+    },
+    {
+      "district": "Zefta",
+      "governorate_marker": 16,
+      "district_marker": 1609,
+      "governorate_ar": "الغربية",
+      "district_ar": "زفتى"
     }
   ],
-  'Sharqia': [
+  "Giza": [
     {
-      'district': 'Fakous',
-      'governorate_marker': '13',
-      'district_marker': 1311
+      "district": "6th of October City",
+      "governorate_marker": 21,
+      "district_marker": 2107,
+      "governorate_ar": "الجيزة",
+      "district_ar": "مدينة السادس من أكتوبر"
     },
     {
-      'district': '10th of Ramadan',
-      'governorate_marker': '13',
-      'district_marker': 1309
+      "district": "Al Agoza",
+      "governorate_marker": 21,
+      "district_marker": 2102,
+      "governorate_ar": "الجيزة",
+      "district_ar": "العجوزة"
     },
     {
-      'district': '10th of Ramadan',
-      'governorate_marker': '13',
-      'district_marker': 1321
+      "district": "Al Ayyat",
+      "governorate_marker": 21,
+      "district_marker": 2112,
+      "governorate_ar": "الجيزة",
+      "district_ar": "العياط"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '13',
-      'district_marker': 1399
+      "district": "Al Badrashin",
+      "governorate_marker": 21,
+      "district_marker": 2110,
+      "governorate_ar": "الجيزة",
+      "district_ar": "البدرشين"
     },
     {
-      'district': 'New Salhia',
-      'governorate_marker': '13',
-      'district_marker': 1307
+      "district": "Al Doki",
+      "governorate_marker": 21,
+      "district_marker": 2103,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الدقي"
     },
     {
-      'district': 'Al Karin',
-      'governorate_marker': '13',
-      'district_marker': 1320
+      "district": "Al Giza",
+      "governorate_marker": 21,
+      "district_marker": 2109,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الجيزة"
     },
     {
-      'district': 'Al Kenaiat',
-      'governorate_marker': '13',
-      'district_marker': 1318
+      "district": "Al Hawamdiyya",
+      "governorate_marker": 21,
+      "district_marker": 2108,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الحوامدية"
     },
     {
-      'district': 'Zakazik',
-      'governorate_marker': '13',
-      'district_marker': 1301
+      "district": "Al Saf",
+      "governorate_marker": 21,
+      "district_marker": 2111,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الصف"
     },
     {
-      'district': 'Zakazik',
-      'governorate_marker': '13',
-      'district_marker': 1302
+      "district": "Al Shikh Zaied",
+      "governorate_marker": 21,
+      "district_marker": 2119,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الشيخ زايد"
     },
     {
-      'district': 'Abo Hamad',
-      'governorate_marker': '13',
-      'district_marker': 1304
+      "district": "Al Umraniyya",
+      "governorate_marker": 21,
+      "district_marker": 2118,
+      "governorate_ar": "الجيزة",
+      "district_ar": "العمرانية"
     },
     {
-      'district': 'Abo Kbeer',
-      'governorate_marker': '13',
-      'district_marker': 1305
+      "district": "Al Wahat Baharya",
+      "governorate_marker": 21,
+      "district_marker": 2114,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الواحات البحرية"
     },
     {
-      'district': 'Al Hesinia',
-      'governorate_marker': '13',
-      'district_marker': 1306
+      "district": "Al Warraq",
+      "governorate_marker": 21,
+      "district_marker": 2117,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الوراق"
     },
     {
-      'district': 'Al Zakazik',
-      'governorate_marker': '13',
-      'district_marker': 1303
+      "district": "Atfîh",
+      "governorate_marker": 21,
+      "district_marker": 2115,
+      "governorate_ar": "الجيزة",
+      "district_ar": "أطفيح"
     },
     {
-      'district': 'Belbes',
-      'governorate_marker': '13',
-      'district_marker': 1308
+      "district": "Bulaq Al Dakrur",
+      "governorate_marker": 21,
+      "district_marker": 2105,
+      "governorate_ar": "الجيزة",
+      "district_ar": "بولاق الدكرور"
     },
     {
-      'district': 'Derb Nagm',
-      'governorate_marker': '13',
-      'district_marker': 1310
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الجيزة",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Fakous',
-      'governorate_marker': '13',
-      'district_marker': 1312
+      "district": "Giza",
+      "governorate_marker": 21,
+      "district_marker": 2104,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الجيزة"
     },
     {
-      'district': 'Kafr Sakr',
-      'governorate_marker': '13',
-      'district_marker': 1313
+      "district": "Imbaba",
+      "governorate_marker": 21,
+      "district_marker": 2101,
+      "governorate_ar": "الجيزة",
+      "district_ar": "إمبابة"
     },
     {
-      'district': 'Al Ebrahimia',
-      'governorate_marker': '13',
-      'district_marker': 1317
+      "district": "Kirdasa",
+      "governorate_marker": 21,
+      "district_marker": 2120,
+      "governorate_ar": "الجيزة",
+      "district_ar": "كرداسة"
     },
     {
-      'district': 'Awlad Sakr',
-      'governorate_marker': '13',
-      'district_marker': 1319
+      "district": "Pyramids",
+      "governorate_marker": 21,
+      "district_marker": 2106,
+      "governorate_ar": "الجيزة",
+      "district_ar": "الهرم"
     },
     {
-      'district': 'Mashtol Al Sook',
-      'governorate_marker': '13',
-      'district_marker': 1316
-    },
-    {
-      'district': 'Menia Al Kamh',
-      'governorate_marker': '13',
-      'district_marker': 1314
-    },
-    {
-      'district': 'Hahia',
-      'governorate_marker': '13',
-      'district_marker': 1315
+      "district": "Usim",
+      "governorate_marker": 21,
+      "district_marker": 2116,
+      "governorate_ar": "الجيزة",
+      "district_ar": "أوسيم"
     }
   ],
-  'Suez': [
+  "Ismailia": [
     {
-      'district': 'Al Arbaeen',
-      'governorate_marker': '4',
-      'district_marker': 402
+      "district": "Al Kantara",
+      "governorate_marker": 19,
+      "district_marker": 1906,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "القنطرة"
     },
     {
-      'district': 'Al Ganain',
-      'governorate_marker': '4',
-      'district_marker': 405
+      "district": "Al Tal Elkebeer",
+      "governorate_marker": 19,
+      "district_marker": 1905,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "التل الكبير"
     },
     {
-      'district': 'Suez',
-      'governorate_marker': '4',
-      'district_marker': 401
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Ataka',
-      'governorate_marker': '4',
-      'district_marker': 403
+      "district": "East Kantra",
+      "governorate_marker": 19,
+      "district_marker": 1908,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "قنطرة شرق"
     },
     {
-      'district': 'Faisal',
-      'governorate_marker': '4',
-      'district_marker': 404
+      "district": "Fayed",
+      "governorate_marker": 19,
+      "district_marker": 1907,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "فايد"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '4',
-      'district_marker': 499
-    },
-    {
-      'district': 'Suez Harbour Department',
-      'governorate_marker': '4',
-      'district_marker': 406
+      "district": "Ismailia",
+      "governorate_marker": 19,
+      "district_marker": 1901,
+      "governorate_ar": "الإسماعيلية",
+      "district_ar": "الإسماعيلية"
     }
   ],
-  'Behera': [
+  "Kafr El Sheikh": [
     {
-      'district': 'Abo Al Matamir',
-      'governorate_marker': '18',
-      'district_marker': 1803
+      "district": "Al Brolos",
+      "governorate_marker": 15,
+      "district_marker": 1503,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "البرلس"
     },
     {
-      'district': 'Abo Homs',
-      'governorate_marker': '18',
-      'district_marker': 1804
+      "district": "Al Hamol",
+      "governorate_marker": 15,
+      "district_marker": 1511,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "الحمول"
     },
     {
-      'district': 'Edko',
-      'governorate_marker': '18',
-      'district_marker': 1816
+      "district": "Al Reyad",
+      "governorate_marker": 15,
+      "district_marker": 1512,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "الرياض"
     },
     {
-      'district': 'Al Delngat',
-      'governorate_marker': '18',
-      'district_marker': 1805
+      "district": "Beala",
+      "governorate_marker": 15,
+      "district_marker": 1504,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "بيلا"
     },
     {
-      'district': 'Al Rahmania',
-      'governorate_marker': '18',
-      'district_marker': 1815
+      "district": "Desok",
+      "governorate_marker": 15,
+      "district_marker": 1505,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "دسوق"
     },
     {
-      'district': 'Al Mahmodia',
-      'governorate_marker': '18',
-      'district_marker': 1806
+      "district": "Fowa",
+      "governorate_marker": 15,
+      "district_marker": 1508,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "فوه"
     },
     {
-      'district': 'Etay Al Barod',
-      'governorate_marker': '18',
-      'district_marker': 1807
+      "district": "Kafr Al Shikh",
+      "governorate_marker": 15,
+      "district_marker": 1501,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "كفر الشيخ"
     },
     {
-      'district': 'Badr',
-      'governorate_marker': '18',
-      'district_marker': 1818
+      "district": "Kelin",
+      "governorate_marker": 15,
+      "district_marker": 1509,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "قلين"
     },
     {
-      'district': 'Hosh Eisa',
-      'governorate_marker': '18',
-      'district_marker': 1808
+      "district": "Motobs",
+      "governorate_marker": 15,
+      "district_marker": 1510,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "موتوباس"
     },
     {
-      'district': 'Damnhor',
-      'governorate_marker': '18',
-      'district_marker': 1802
-    },
-    {
-      'district': 'Rashid',
-      'governorate_marker': '18',
-      'district_marker': 1809
-    },
-    {
-      'district': 'Shobra Kheet',
-      'governorate_marker': '18',
-      'district_marker': 1810
-    },
-    {
-      'district': 'Damnhor',
-      'governorate_marker': '18',
-      'district_marker': 1801
-    },
-    {
-      'district': 'West Of Nobaria',
-      'governorate_marker': '18',
-      'district_marker': 1817
-    },
-    {
-      'district': 'Kafr Al Dwar',
-      'governorate_marker': '18',
-      'district_marker': 1811
-    },
-    {
-      'district': 'Kafr Al Dwar',
-      'governorate_marker': '18',
-      'district_marker': 1812
-    },
-    {
-      'district': 'Koom Hamada',
-      'governorate_marker': '18',
-      'district_marker': 1813
-    },
-    {
-      'district': 'Al Natron Valley',
-      'governorate_marker': '18',
-      'district_marker': 1814
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '18',
-      'district_marker': 1899
+      "district": "Sedi Salem",
+      "governorate_marker": 15,
+      "district_marker": 1507,
+      "governorate_ar": "كفر الشيخ",
+      "district_ar": "سيدي سالم"
     }
   ],
-  'Alexandria': [
+  "Luxor": [
     {
-      'district': 'Al Raml',
-      'governorate_marker': '2',
-      'district_marker': 202
+      "district": "Arment",
+      "governorate_marker": 29,
+      "district_marker": 2904,
+      "governorate_ar": "الأقصر",
+      "district_ar": "أرمنت"
     },
     {
-      'district': 'Al Gomrok',
-      'governorate_marker': '2',
-      'district_marker': 210
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الأقصر",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Atarin',
-      'governorate_marker': '2',
-      'district_marker': 206
+      "district": "Esna",
+      "governorate_marker": 29,
+      "district_marker": 2905,
+      "governorate_ar": "الأقصر",
+      "district_ar": "إسنا"
     },
     {
-      'district': 'Al Lban',
-      'governorate_marker': '2',
-      'district_marker': 209
+      "district": "Luxor",
+      "governorate_marker": 29,
+      "district_marker": 2901,
+      "governorate_ar": "الأقصر",
+      "district_ar": "الأقصر"
     },
     {
-      'district': 'Al Manshia',
-      'governorate_marker': '2',
-      'district_marker': 207
-    },
-    {
-      'district': 'Bab Sharki',
-      'governorate_marker': '2',
-      'district_marker': 204
-    },
-    {
-      'district': 'Al Dkhela',
-      'governorate_marker': '2',
-      'district_marker': 212
-    },
-    {
-      'district': 'Al Amaria',
-      'governorate_marker': '2',
-      'district_marker': 213
-    },
-    {
-      'district': 'Al Montzh First',
-      'governorate_marker': '2',
-      'district_marker': 201
-    },
-    {
-      'district': 'Borg Al Arab',
-      'governorate_marker': '2',
-      'district_marker': 214
-    },
-    {
-      'district': 'Al Raml',
-      'governorate_marker': '2',
-      'district_marker': 217
-    },
-    {
-      'district': 'Seedy Gaber',
-      'governorate_marker': '2',
-      'district_marker': 203
-    },
-    {
-      'district': 'Karmoz',
-      'governorate_marker': '2',
-      'district_marker': 208
-    },
-    {
-      'district': 'Moharm Bek',
-      'governorate_marker': '2',
-      'district_marker': 205
-    },
-    {
-      'district': 'New Borg Al Arab City',
-      'governorate_marker': '2',
-      'district_marker': 216
-    },
-    {
-      'district': 'Mina Al Bassl',
-      'governorate_marker': '2',
-      'district_marker': 211
-    },
-    {
-      'district': 'Alsahel Alshamali',
-      'governorate_marker': '2',
-      'district_marker': 218
-    },
-    {
-      'district': 'Alexandria Harbour',
-      'governorate_marker': '2',
-      'district_marker': 215
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '2',
-      'district_marker': 299
+      "district": "Teba",
+      "governorate_marker": 29,
+      "district_marker": 2903,
+      "governorate_ar": "الأقصر",
+      "district_ar": "طيبة"
     }
   ],
-  'Asyut': [
+  "Matrouh": [
     {
-      'district': 'Abnob',
-      'governorate_marker': '25',
-      'district_marker': 2504
+      "district": "Al Dab'a",
+      "governorate_marker": 33,
+      "district_marker": 3304,
+      "governorate_ar": "مطروح",
+      "district_ar": "الضبعة "
     },
     {
-      'district': 'Abo Teeg',
-      'governorate_marker': '25',
-      'district_marker': 2505
+      "district": "Al Hammam",
+      "governorate_marker": 33,
+      "district_marker": 3302,
+      "governorate_ar": "مطروح",
+      "district_ar": "الحمام"
     },
     {
-      'district': 'Assiout',
-      'governorate_marker': '25',
-      'district_marker': 2503
+      "district": "Al Sallum",
+      "governorate_marker": 33,
+      "district_marker": 3303,
+      "governorate_ar": "مطروح",
+      "district_ar": "السلوم"
     },
     {
-      'district': 'New Assiout City',
-      'governorate_marker': '25',
-      'district_marker': 2514
+      "district": "Alsahel Alshamali",
+      "governorate_marker": 33,
+      "district_marker": 3308,
+      "governorate_ar": "مطروح",
+      "district_ar": "الساحل الشمالي"
     },
     {
-      'district': 'Al Badari',
-      'governorate_marker': '25',
-      'district_marker': 2506
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "مطروح",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Ganaeem',
-      'governorate_marker': '25',
-      'district_marker': 2508
+      "district": "Marina Al Alameen",
+      "governorate_marker": 33,
+      "district_marker": 3307,
+      "governorate_ar": "مطروح",
+      "district_ar": "مارينا العلمين"
     },
     {
-      'district': 'Al Fath',
-      'governorate_marker': '25',
-      'district_marker': 2513
+      "district": "Marsa Matrouh",
+      "governorate_marker": 33,
+      "district_marker": 3301,
+      "governorate_ar": "مطروح",
+      "district_ar": "مرسى مطروح"
     },
     {
-      'district': 'Al Kossia',
-      'governorate_marker': '25',
-      'district_marker': 2509
+      "district": "Sidi Barrani",
+      "governorate_marker": 33,
+      "district_marker": 3305,
+      "governorate_ar": "مطروح",
+      "district_ar": "سيدي براني"
     },
     {
-      'district': 'Dairot',
-      'governorate_marker': '25',
-      'district_marker': 2510
-    },
-    {
-      'district': 'Sahal Sleem',
-      'governorate_marker': '25',
-      'district_marker': 2507
-    },
-    {
-      'district': 'Sadfa',
-      'governorate_marker': '25',
-      'district_marker': 2511
-    },
-    {
-      'district': 'Assiout',
-      'governorate_marker': '25',
-      'district_marker': 2501
-    },
-    {
-      'district': 'Assiout',
-      'governorate_marker': '25',
-      'district_marker': 2502
-    },
-    {
-      'district': 'Manfalot',
-      'governorate_marker': '25',
-      'district_marker': 2512
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '25',
-      'district_marker': 2599
+      "district": "Siwa",
+      "governorate_marker": 33,
+      "district_marker": 3306,
+      "governorate_ar": "مطروح",
+      "district_ar": "سيوة"
     }
   ],
-  'Aswan': [
+  "Menia": [
     {
-      'district': 'Abu Simbel',
-      'governorate_marker': '28',
-      'district_marker': 2807
+      "district": "Abo Korkas",
+      "governorate_marker": 24,
+      "district_marker": 2404,
+      "governorate_ar": "المنيا",
+      "district_ar": "أبو قرقاص"
     },
     {
-      'district': 'Edfu',
-      'governorate_marker': '28',
-      'district_marker': 2803
+      "district": "Al Adowa",
+      "governorate_marker": 24,
+      "district_marker": 2405,
+      "governorate_ar": "المنيا",
+      "district_ar": "العدوة"
     },
     {
-      'district': 'New Toshka City',
-      'governorate_marker': '28',
-      'district_marker': 2809
+      "district": "Al Menia",
+      "governorate_marker": 24,
+      "district_marker": 2402,
+      "governorate_ar": "المنيا",
+      "district_ar": "المنيا"
     },
     {
-      'district': 'Daraw',
-      'governorate_marker': '28',
-      'district_marker': 2806
+      "district": "Beni Mazar",
+      "governorate_marker": 24,
+      "district_marker": 2406,
+      "governorate_ar": "المنيا",
+      "district_ar": "بني مزار"
     },
     {
-      'district': 'Aswan',
-      'governorate_marker': '28',
-      'district_marker': 2801
+      "district": "Der Mowas",
+      "governorate_marker": 24,
+      "district_marker": 2407,
+      "governorate_ar": "المنيا",
+      "district_ar": "ديرمواس"
     },
     {
-      'district': 'Aswan',
-      'governorate_marker': '28',
-      'district_marker': 2802
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "المنيا",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Nasr',
-      'governorate_marker': '28',
-      'district_marker': 2805
+      "district": "Matay",
+      "governorate_marker": 24,
+      "district_marker": 2409,
+      "governorate_ar": "المنيا",
+      "district_ar": "مطاي"
     },
     {
-      'district': 'Kom Ombo',
-      'governorate_marker': '28',
-      'district_marker': 2804
+      "district": "Mghagha",
+      "governorate_marker": 24,
+      "district_marker": 2410,
+      "governorate_ar": "المنيا",
+      "district_ar": "مغاغة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '28',
-      'district_marker': 2899
+      "district": "Milwy",
+      "governorate_marker": 24,
+      "district_marker": 2412,
+      "governorate_ar": "المنيا",
+      "district_ar": "ملوي المنيا"
     },
     {
-      'district': 'New Aswan City',
-      'governorate_marker': '28',
-      'district_marker': 2808
+      "district": "Milwy Qism",
+      "governorate_marker": 24,
+      "district_marker": 2411,
+      "governorate_ar": "المنيا",
+      "district_ar": "قسم ملوي"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '28',
-      'district_marker': 2899
+      "district": "New Menia City",
+      "governorate_marker": 24,
+      "district_marker": 2403,
+      "governorate_ar": "المنيا",
+      "district_ar": "مدينة المنيا الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '28',
-      'district_marker': 2899
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '28',
-      'district_marker': 2899
+      "district": "Samalot",
+      "governorate_marker": 24,
+      "district_marker": 2408,
+      "governorate_ar": "المنيا",
+      "district_ar": "سمالوط"
     }
   ],
-  'Beni Suef': [
+  "Monoufia": [
     {
-      'district': 'Al Fishn',
-      'governorate_marker': '22',
-      'district_marker': 2204
+      "district": "Al Bagor",
+      "governorate_marker": 17,
+      "district_marker": 1704,
+      "governorate_ar": "المنوفية",
+      "district_ar": "البجور"
     },
     {
-      'district': 'Al Wasty',
-      'governorate_marker': '22',
-      'district_marker': 2205
+      "district": "Al Shohda'a",
+      "governorate_marker": 17,
+      "district_marker": 1705,
+      "governorate_ar": "المنوفية",
+      "district_ar": "الشهداء"
     },
     {
-      'district': 'Ahnasia',
-      'governorate_marker': '22',
-      'district_marker': 2206
+      "district": "Ashmon",
+      "governorate_marker": 17,
+      "district_marker": 1703,
+      "governorate_ar": "المنوفية",
+      "district_ar": "أشمون"
     },
     {
-      'district': 'Beba',
-      'governorate_marker': '22',
-      'district_marker': 2207
+      "district": "Berkt Al Sabh",
+      "governorate_marker": 17,
+      "district_marker": 1706,
+      "governorate_ar": "المنوفية",
+      "district_ar": "بركة السبع"
     },
     {
-      'district': 'Beni Suef',
-      'governorate_marker': '22',
-      'district_marker': 2202
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "المنوفية",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Smsta',
-      'governorate_marker': '22',
-      'district_marker': 2208
+      "district": "Elsadat City",
+      "governorate_marker": 17,
+      "district_marker": 1711,
+      "governorate_ar": "المنوفية",
+      "district_ar": "مدينة السادات"
     },
     {
-      'district': 'Beni Suef',
-      'governorate_marker': '22',
-      'district_marker': 2201
+      "district": "Kewsina",
+      "governorate_marker": 17,
+      "district_marker": 1708,
+      "governorate_ar": "المنوفية",
+      "district_ar": "قويسنا"
     },
     {
-      'district': 'New Beni Suef',
-      'governorate_marker': '22',
-      'district_marker': 2203
+      "district": "Monof",
+      "governorate_marker": 17,
+      "district_marker": 1712,
+      "governorate_ar": "المنوفية",
+      "district_ar": "منوف"
     },
     {
-      'district': 'Naser',
-      'governorate_marker': '22',
-      'district_marker': 2209
+      "district": "Sers Elliana",
+      "governorate_marker": 17,
+      "district_marker": 1710,
+      "governorate_ar": "المنوفية",
+      "district_ar": "سرس الليان"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '22',
-      'district_marker': 2299
+      "district": "Shbin  Al Kom",
+      "governorate_marker": 17,
+      "district_marker": 1701,
+      "governorate_ar": "المنوفية",
+      "district_ar": "شبين الكوم"
+    },
+    {
+      "district": "Shbin Al Kom",
+      "governorate_marker": 17,
+      "district_marker": 1702,
+      "governorate_ar": "المنوفية",
+      "district_ar": "شبين الكوم"
+    },
+    {
+      "district": "Tala",
+      "governorate_marker": 17,
+      "district_marker": 1707,
+      "governorate_ar": "المنوفية",
+      "district_ar": "تلا"
     }
   ],
-  'Cairo': [
+  "New Valley": [
     {
-      'district': '15th of May',
-      'governorate_marker': '1',
-      'district_marker': 103
+      "district": "Al Dakhla",
+      "governorate_marker": 32,
+      "district_marker": 3202,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "الداخلة"
     },
     {
-      'district': 'El Azbakia',
-      'governorate_marker': '1',
-      'district_marker': 113
+      "district": "Al Farafra",
+      "governorate_marker": 32,
+      "district_marker": 3203,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "الفرافرة"
     },
     {
-      'district': 'Al Basatin',
-      'governorate_marker': '1',
-      'district_marker': 135
+      "district": "Al Kharga",
+      "governorate_marker": 32,
+      "district_marker": 3201,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "الخارجة"
     },
     {
-      'district': 'Al Tbeen',
-      'governorate_marker': '1',
-      'district_marker': 101
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Gamalia',
-      'governorate_marker': '1',
-      'district_marker': 115
+      "district": "Paris",
+      "governorate_marker": 32,
+      "district_marker": 3204,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "باريس"
     },
     {
-      'district': 'Al Khalifa',
-      'governorate_marker': '1',
-      'district_marker': 108
-    },
-    {
-      'district': 'Al Darb El Ahmr',
-      'governorate_marker': '1',
-      'district_marker': 114
-    },
-    {
-      'district': 'Al Zawya Al Hamraa',
-      'governorate_marker': '1',
-      'district_marker': 131
-    },
-    {
-      'district': 'Zamalek',
-      'governorate_marker': '1',
-      'district_marker': 133
-    },
-    {
-      'district': 'Al Zayton',
-      'governorate_marker': '1',
-      'district_marker': 124
-    },
-    {
-      'district': 'First Nasr City',
-      'governorate_marker': '1',
-      'district_marker': 121
-    },
-    {
-      'district': 'Al Salam',
-      'governorate_marker': '1',
-      'district_marker': 132
-    },
-    {
-      'district': 'Al Sayda Zeinab',
-      'governorate_marker': '1',
-      'district_marker': 107
-    },
-    {
-      'district': 'El Sharabia',
-      'governorate_marker': '1',
-      'district_marker': 118
-    },
-    {
-      'district': 'Al Shrook',
-      'governorate_marker': '1',
-      'district_marker': 140
-    },
-    {
-      'district': 'Al Zaher',
-      'governorate_marker': '1',
-      'district_marker': 117
-    },
-    {
-      'district': 'Al Marg',
-      'governorate_marker': '1',
-      'district_marker': 136
-    },
-    {
-      'district': 'Al Mataria',
-      'governorate_marker': '1',
-      'district_marker': 125
-    },
-    {
-      'district': 'Abdeen',
-      'governorate_marker': '1',
-      'district_marker': 104
-    },
-    {
-      'district': 'Al Gamalia',
-      'governorate_marker': '1',
-      'district_marker': 110
-    },
-    {
-      'district': 'Al Nozha',
-      'governorate_marker': '1',
-      'district_marker': 129
-    },
-    {
-      'district': 'Al Waily',
-      'governorate_marker': '1',
-      'district_marker': 122
-    },
-    {
-      'district': 'New Cairo',
-      'governorate_marker': '1',
-      'district_marker': 137
-    },
-    {
-      'district': 'Nasr City',
-      'governorate_marker': '1',
-      'district_marker': 126
-    },
-    {
-      'district': 'Bab Al Sharia',
-      'governorate_marker': '1',
-      'district_marker': 116
-    },
-    {
-      'district': 'Badr',
-      'governorate_marker': '1',
-      'district_marker': 141
-    },
-    {
-      'district': 'Bolak',
-      'governorate_marker': '1',
-      'district_marker': 112
-    },
-    {
-      'district': 'New Cairo',
-      'governorate_marker': '1',
-      'district_marker': 139
-    },
-    {
-      'district': 'Nasr City',
-      'governorate_marker': '1',
-      'district_marker': 127
-    },
-    {
-      'district': 'New Cairo',
-      'governorate_marker': '1',
-      'district_marker': 138
-    },
-    {
-      'district': 'Hadaek Al Koba',
-      'governorate_marker': '1',
-      'district_marker': 123
-    },
-    {
-      'district': 'Helwan',
-      'governorate_marker': '1',
-      'district_marker': 102
-    },
-    {
-      'district': 'Rod El Farg',
-      'governorate_marker': '1',
-      'district_marker': 120
-    },
-    {
-      'district': 'Shobra',
-      'governorate_marker': '1',
-      'district_marker': 119
-    },
-    {
-      'district': 'Al Mosky',
-      'governorate_marker': '1',
-      'district_marker': 105
-    },
-    {
-      'district': 'Abdeen',
-      'governorate_marker': '1',
-      'district_marker': 109
-    },
-    {
-      'district': 'Ain Shams',
-      'governorate_marker': '1',
-      'district_marker': 130
-    },
-    {
-      'district': 'Kasr  El  Nile',
-      'governorate_marker': '1',
-      'district_marker': 111
-    },
-    {
-      'district': 'Misr Al Gadidah',
-      'governorate_marker': '1',
-      'district_marker': 128
-    },
-    {
-      'district': 'Misr Al Kadima',
-      'governorate_marker': '1',
-      'district_marker': 106
-    },
-    {
-      'district': "Monsha'at Nasser",
-      'governorate_marker': '1',
-      'district_marker': 134
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '1',
-      'district_marker': 199
-    },
-    {
-      'district': 'Al Sahel',
-      'governorate_marker': '',
-      'district_marker': null
-    },
-    {
-      'district': 'Maadi',
-      'governorate_marker': '',
-      'district_marker': null
+      "district": "Shark Elowinat",
+      "governorate_marker": 32,
+      "district_marker": 3205,
+      "governorate_ar": "الوادي الجديد",
+      "district_ar": "شرق العوينات"
     }
   ],
-  'Damietta': [
+  "North Sinai": [
     {
-      'district': 'Al Zarka',
-      'governorate_marker': '11',
-      'district_marker': 1107
+      "district": "Al Areesh",
+      "governorate_marker": 34,
+      "district_marker": 3401,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "العريش"
     },
     {
-      'district': 'Damietta',
-      'governorate_marker': '11',
-      'district_marker': 1102
+      "district": "Al Hasna",
+      "governorate_marker": 34,
+      "district_marker": 3406,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "الحسنة"
     },
     {
-      'district': 'Ras Al Bar',
-      'governorate_marker': '11',
-      'district_marker': 1106
+      "district": "Al Kassima",
+      "governorate_marker": 34,
+      "district_marker": 3411,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "القسيمة"
     },
     {
-      'district': 'Farskor',
-      'governorate_marker': '11',
-      'district_marker': 1103
+      "district": "Al Shekh Zwid",
+      "governorate_marker": 34,
+      "district_marker": 3408,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "الشيخ زويد"
     },
     {
-      'district': 'Damietta',
-      'governorate_marker': '11',
-      'district_marker': 1101
+      "district": "Bir Al Abd",
+      "governorate_marker": 34,
+      "district_marker": 3405,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "بئر العبد"
     },
     {
-      'district': 'Damietta',
-      'governorate_marker': '11',
-      'district_marker': 1109
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "صحراء"
     },
     {
-      'district': "Kafr Sa'ad",
-      'governorate_marker': '11',
-      'district_marker': 1104
+      "district": "Nakl",
+      "governorate_marker": 34,
+      "district_marker": 3407,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "نخل"
     },
     {
-      'district': 'New Damietta City',
-      'governorate_marker': '11',
-      'district_marker': 1105
+      "district": "Rafh",
+      "governorate_marker": 34,
+      "district_marker": 3409,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "رفح"
     },
     {
-      'district': 'New Damietta Harbour Department',
-      'governorate_marker': '11',
-      'district_marker': 1108
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '11',
-      'district_marker': 1199
+      "district": "Rmana",
+      "governorate_marker": 34,
+      "district_marker": 3410,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "رمانة"
     }
   ],
-  'Kafr El Sheikh': [
+  "Port Said": [
     {
-      'district': 'Al Brolos',
-      'governorate_marker': '15',
-      'district_marker': 1503
+      "district": "Al Arab",
+      "governorate_marker": 3,
+      "district_marker": 302,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "العرب"
     },
     {
-      'district': 'Al Hamol',
-      'governorate_marker': '15',
-      'district_marker': 1511
+      "district": "Al Dawahy",
+      "governorate_marker": 3,
+      "district_marker": 305,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "الضواحي"
     },
     {
-      'district': 'Al Reyad',
-      'governorate_marker': '15',
-      'district_marker': 1512
+      "district": "Al Ganob",
+      "governorate_marker": 3,
+      "district_marker": 306,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "جنوب"
     },
     {
-      'district': 'Beala',
-      'governorate_marker': '15',
-      'district_marker': 1504
+      "district": "Al Manakh",
+      "governorate_marker": 3,
+      "district_marker": 303,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "المناخ"
     },
     {
-      'district': 'Desok',
-      'governorate_marker': '15',
-      'district_marker': 1505
+      "district": "Al Manasra",
+      "governorate_marker": 3,
+      "district_marker": 310,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "المناصرة"
     },
     {
-      'district': 'Desok',
-      'governorate_marker': '15',
-      'district_marker': 1506
+      "district": "Al Shark",
+      "governorate_marker": 3,
+      "district_marker": 301,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "شرق"
     },
     {
-      'district': 'Sedi Salem',
-      'governorate_marker': '15',
-      'district_marker': 1507
+      "district": "Al Zohor",
+      "governorate_marker": 3,
+      "district_marker": 307,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "الزهور"
     },
     {
-      'district': 'Kafr Al Shikh',
-      'governorate_marker': '15',
-      'district_marker': 1501
+      "district": "Mubark  - East Of Al Tafreah",
+      "governorate_marker": 3,
+      "district_marker": 309,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "مبارك – شرق التفريعة"
     },
     {
-      'district': 'Fowa',
-      'governorate_marker': '15',
-      'district_marker': 1508
+      "district": "Port Foa'ad",
+      "governorate_marker": 3,
+      "district_marker": 308,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "بورفؤاد"
     },
     {
-      'district': 'Kelin',
-      'governorate_marker': '15',
-      'district_marker': 1509
-    },
-    {
-      'district': 'Kafr Al Shikh',
-      'governorate_marker': '15',
-      'district_marker': 1502
-    },
-    {
-      'district': 'Motobs',
-      'governorate_marker': '15',
-      'district_marker': 1510
+      "district": "Port Saed Harbour Department",
+      "governorate_marker": 3,
+      "district_marker": 312,
+      "governorate_ar": "بورسعيد",
+      "district_ar": "مديرية ميناء بورسعيد"
     }
   ],
-  'Matrouh': [
+  "Qalioubia": [
     {
-      'district': 'Alsahel Alshamali',
-      'governorate_marker': '33',
-      'district_marker': 3308
+      "district": "Al Khanka",
+      "governorate_marker": 14,
+      "district_marker": 1403,
+      "governorate_ar": "القليوبية",
+      "district_ar": "الخانكة"
     },
     {
-      'district': 'Al Hammam',
-      'governorate_marker': '33',
-      'district_marker': 3302
+      "district": "Al Khosos",
+      "governorate_marker": 14,
+      "district_marker": 1412,
+      "governorate_ar": "القليوبية",
+      "district_ar": "الخصوص"
     },
     {
-      'district': 'Al Sallum',
-      'governorate_marker': '33',
-      'district_marker': 3303
+      "district": "Al Knater Al Khiria",
+      "governorate_marker": 14,
+      "district_marker": 1404,
+      "governorate_ar": "القليوبية",
+      "district_ar": "القناطر الخيرية"
     },
     {
-      'district': "Al Dab'a",
-      'governorate_marker': '33',
-      'district_marker': 3304
+      "district": "Al Oboor",
+      "governorate_marker": 14,
+      "district_marker": 1413,
+      "governorate_ar": "القليوبية",
+      "district_ar": "العبور"
     },
     {
-      'district': 'Sidi Barrani',
-      'governorate_marker': '33',
-      'district_marker': 3305
+      "district": "Banha",
+      "governorate_marker": 14,
+      "district_marker": 1401,
+      "governorate_ar": "القليوبية",
+      "district_ar": "بنها"
     },
     {
-      'district': 'Siwa',
-      'governorate_marker': '33',
-      'district_marker': 3306
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "القليوبية",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Marina Al Alameen',
-      'governorate_marker': '33',
-      'district_marker': 3307
+      "district": "Kafr Shokr",
+      "governorate_marker": 14,
+      "district_marker": 1411,
+      "governorate_ar": "القليوبية",
+      "district_ar": "كفر شكر"
     },
     {
-      'district': 'Marsa Matrouh',
-      'governorate_marker': '33',
-      'district_marker': 3301
+      "district": "Kaliob",
+      "governorate_marker": 14,
+      "district_marker": 1409,
+      "governorate_ar": "القليوبية",
+      "district_ar": "قليوب"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
+      "district": "Khaha",
+      "governorate_marker": 14,
+      "district_marker": 1414,
+      "governorate_ar": "القليوبية",
+      "district_ar": "قها"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
+      "district": "Shbin Al Knanater",
+      "governorate_marker": 14,
+      "district_marker": 1405,
+      "governorate_ar": "القليوبية",
+      "district_ar": "شبين القناطر"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
+      "district": "Shobra Al Khima",
+      "governorate_marker": 14,
+      "district_marker": 1406,
+      "governorate_ar": "القليوبية",
+      "district_ar": "شبرا الخيمة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '33',
-      'district_marker': 3399
+      "district": "Tokh",
+      "governorate_marker": 14,
+      "district_marker": 1408,
+      "governorate_ar": "القليوبية",
+      "district_ar": "طوخ"
     }
   ],
-  'New Valley': [
+  "Qena": [
     {
-      'district': 'Al Kharga',
-      'governorate_marker': '32',
-      'district_marker': 3201
+      "district": "Abo Tesht",
+      "governorate_marker": 27,
+      "district_marker": 2703,
+      "governorate_ar": "قنا",
+      "district_ar": "أبو تشت"
     },
     {
-      'district': 'Al Dakhla',
-      'governorate_marker': '32',
-      'district_marker': 3202
+      "district": "Al Waqf",
+      "governorate_marker": 27,
+      "district_marker": 2712,
+      "governorate_ar": "قنا",
+      "district_ar": "الوقف"
     },
     {
-      'district': 'Al Farafra',
-      'governorate_marker': '32',
-      'district_marker': 3203
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "قنا",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Paris',
-      'governorate_marker': '32',
-      'district_marker': 3204
+      "district": "Farshut",
+      "governorate_marker": 27,
+      "district_marker": 2710,
+      "governorate_ar": "قنا",
+      "district_ar": "فرشوط"
     },
     {
-      'district': 'Shark Elowinat',
-      'governorate_marker': '32',
-      'district_marker': 3205
+      "district": "Nagi Hammadi",
+      "governorate_marker": 27,
+      "district_marker": 2706,
+      "governorate_ar": "قنا",
+      "district_ar": "نجع حمادي"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '32',
-      'district_marker': 3299
+      "district": "Naqada",
+      "governorate_marker": 27,
+      "district_marker": 2709,
+      "governorate_ar": "قنا",
+      "district_ar": "نقادة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '32',
-      'district_marker': 3299
+      "district": "New Qena City",
+      "governorate_marker": 27,
+      "district_marker": 2713,
+      "governorate_ar": "قنا",
+      "district_ar": "مدينة قنا الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '32',
-      'district_marker': 3299
+      "district": "Qena",
+      "governorate_marker": 27,
+      "district_marker": 2701,
+      "governorate_ar": "قنا",
+      "district_ar": "قنا"
+    },
+    {
+      "district": "Qift",
+      "governorate_marker": 27,
+      "district_marker": 2711,
+      "governorate_ar": "قنا",
+      "district_ar": "قفط"
+    },
+    {
+      "district": "Qous",
+      "governorate_marker": 27,
+      "district_marker": 2707,
+      "governorate_ar": "قنا",
+      "district_ar": "قوص"
     }
   ],
-  'North Sinai': [
+  "Red Sea": [
     {
-      'district': 'Al Hasna',
-      'governorate_marker': '34',
-      'district_marker': 3406
+      "district": "Al Qusir",
+      "governorate_marker": 31,
+      "district_marker": 3102,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "القصير"
     },
     {
-      'district': 'Al Shekh Zwid',
-      'governorate_marker': '34',
-      'district_marker': 3408
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Al Kassima',
-      'governorate_marker': '34',
-      'district_marker': 3411
+      "district": "Halaib",
+      "governorate_marker": 31,
+      "district_marker": 3107,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "حلايب"
     },
     {
-      'district': 'Al Areesh',
-      'governorate_marker': '34',
-      'district_marker': 3401
+      "district": "Hurghada",
+      "governorate_marker": 31,
+      "district_marker": 3101,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "الغردقة"
     },
     {
-      'district': 'Bir Al Abd',
-      'governorate_marker': '34',
-      'district_marker': 3405
+      "district": "Marsa Alam",
+      "governorate_marker": 31,
+      "district_marker": 3104,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "مرسى علم"
     },
     {
-      'district': 'Al Areesh',
-      'governorate_marker': '34',
-      'district_marker': 3403
+      "district": "Ra's Gharib",
+      "governorate_marker": 31,
+      "district_marker": 3105,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "رأس غريب"
     },
     {
-      'district': 'Al Areesh',
-      'governorate_marker': '34',
-      'district_marker': 3402
+      "district": "Safaga",
+      "governorate_marker": 31,
+      "district_marker": 3103,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "سفاجة"
     },
     {
-      'district': 'Al Areesh',
-      'governorate_marker': '34',
-      'district_marker': 3404
-    },
-    {
-      'district': 'Rafh',
-      'governorate_marker': '34',
-      'district_marker': 3409
-    },
-    {
-      'district': 'Rmana',
-      'governorate_marker': '34',
-      'district_marker': 3410
-    },
-    {
-      'district': 'Nakl',
-      'governorate_marker': '34',
-      'district_marker': 3407
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '34',
-      'district_marker': 3499
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '34',
-      'district_marker': 3499
+      "district": "Shalateen",
+      "governorate_marker": 31,
+      "district_marker": 3106,
+      "governorate_ar": "البحر الأحمر",
+      "district_ar": "شلاتين"
     }
   ],
-  'Port Said': [
+  "Sharqia": [
     {
-      'district': 'Al Ganob',
-      'governorate_marker': '3',
-      'district_marker': 306
+      "district": "10th of Ramadan",
+      "governorate_marker": 13,
+      "district_marker": 1309,
+      "governorate_ar": "الشرقية",
+      "district_ar": "العاشر من رمضان"
     },
     {
-      'district': 'Al Zohor',
-      'governorate_marker': '3',
-      'district_marker': 307
+      "district": "Abo Hamad",
+      "governorate_marker": 13,
+      "district_marker": 1304,
+      "governorate_ar": "الشرقية",
+      "district_ar": "أبو حماد"
     },
     {
-      'district': 'Al Shark',
-      'governorate_marker': '3',
-      'district_marker': 301
+      "district": "Abo Kbeer",
+      "governorate_marker": 13,
+      "district_marker": 1305,
+      "governorate_ar": "الشرقية",
+      "district_ar": "أبو كبير"
     },
     {
-      'district': 'Al Dawahy',
-      'governorate_marker': '3',
-      'district_marker': 305
+      "district": "Al Ebrahimia",
+      "governorate_marker": 13,
+      "district_marker": 1317,
+      "governorate_ar": "الشرقية",
+      "district_ar": "الإبراهيمية"
     },
     {
-      'district': 'Al Arab',
-      'governorate_marker': '3',
-      'district_marker': 302
+      "district": "Al Hesinia",
+      "governorate_marker": 13,
+      "district_marker": 1306,
+      "governorate_ar": "الشرقية",
+      "district_ar": "الحسينية"
     },
     {
-      'district': 'Al Manakh',
-      'governorate_marker': '3',
-      'district_marker': 303
+      "district": "Al Karin",
+      "governorate_marker": 13,
+      "district_marker": 1320,
+      "governorate_ar": "الشرقية",
+      "district_ar": "القرين"
     },
     {
-      'district': 'Al Manasra',
-      'governorate_marker': '3',
-      'district_marker': 310
+      "district": "Al Kenaiat",
+      "governorate_marker": 13,
+      "district_marker": 1318,
+      "governorate_ar": "الشرقية",
+      "district_ar": "القنايات"
     },
     {
-      'district': 'Al Ganob',
-      'governorate_marker': '3',
-      'district_marker': 311
+      "district": "Al Zakazik",
+      "governorate_marker": 13,
+      "district_marker": 1303,
+      "governorate_ar": "الشرقية",
+      "district_ar": "الزقازيق"
     },
     {
-      'district': "Port Foa'ad",
-      'governorate_marker': '3',
-      'district_marker': 308
+      "district": "Awlad Sakr",
+      "governorate_marker": 13,
+      "district_marker": 1319,
+      "governorate_ar": "الشرقية",
+      "district_ar": "أولاد صقر"
     },
     {
-      'district': 'Mubark  - East Of Al Tafreah',
-      'governorate_marker': '3',
-      'district_marker': 309
+      "district": "Belbes",
+      "governorate_marker": 13,
+      "district_marker": 1308,
+      "governorate_ar": "الشرقية",
+      "district_ar": "بلبيس"
     },
     {
-      'district': 'Port Saed Harbour Department',
-      'governorate_marker': '3',
-      'district_marker': 312
+      "district": "Derb Nagm",
+      "governorate_marker": 13,
+      "district_marker": 1310,
+      "governorate_ar": "الشرقية",
+      "district_ar": "درب نجم"
     },
     {
-      'district': "Port Foa'ad",
-      'governorate_marker': '3',
-      'district_marker': 304
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "الشرقية",
+      "district_ar": "صحراء"
+    },
+    {
+      "district": "Fakous",
+      "governorate_marker": 13,
+      "district_marker": 1311,
+      "governorate_ar": "الشرقية",
+      "district_ar": "فاقوس"
+    },
+    {
+      "district": "Hahia",
+      "governorate_marker": 13,
+      "district_marker": 1315,
+      "governorate_ar": "الشرقية",
+      "district_ar": "ههيا"
+    },
+    {
+      "district": "Kafr Sakr",
+      "governorate_marker": 13,
+      "district_marker": 1313,
+      "governorate_ar": "الشرقية",
+      "district_ar": "كفر صقر"
+    },
+    {
+      "district": "Mashtol Al Sook",
+      "governorate_marker": 13,
+      "district_marker": 1316,
+      "governorate_ar": "الشرقية",
+      "district_ar": "مشتول السوق"
+    },
+    {
+      "district": "Menia Al Kamh",
+      "governorate_marker": 13,
+      "district_marker": 1314,
+      "governorate_ar": "الشرقية",
+      "district_ar": "منيا القمح"
+    },
+    {
+      "district": "New Salhia",
+      "governorate_marker": 13,
+      "district_marker": 1307,
+      "governorate_ar": "الشرقية",
+      "district_ar": "الصالحية الجديدة"
+    },
+    {
+      "district": "Zakazik",
+      "governorate_marker": 13,
+      "district_marker": 1301,
+      "governorate_ar": "الشرقية",
+      "district_ar": "الزقازيق"
     }
   ],
-  'Qena': [
+  "Sohag": [
     {
-      'district': 'Abo Tesht',
-      'governorate_marker': '27',
-      'district_marker': 2703
+      "district": "Akhmeem",
+      "governorate_marker": 26,
+      "district_marker": 2604,
+      "governorate_ar": "سوهاج",
+      "district_ar": "أخميم"
     },
     {
-      'district': 'Al Waqf',
-      'governorate_marker': '27',
-      'district_marker': 2712
+      "district": "Al Bleena",
+      "governorate_marker": 26,
+      "district_marker": 2605,
+      "governorate_ar": "سوهاج",
+      "district_ar": "البلينا"
     },
     {
-      'district': 'Nagi Hammadi',
-      'governorate_marker': '27',
-      'district_marker': 2706
+      "district": "Al Monsha'ah",
+      "governorate_marker": 26,
+      "district_marker": 2607,
+      "governorate_ar": "سوهاج",
+      "district_ar": "المنشأة"
     },
     {
-      'district': 'Farshut',
-      'governorate_marker': '27',
-      'district_marker': 2710
+      "district": "Al Mragha",
+      "governorate_marker": 26,
+      "district_marker": 2606,
+      "governorate_ar": "سوهاج",
+      "district_ar": "المراغة"
     },
     {
-      'district': 'Qena',
-      'governorate_marker': '27',
-      'district_marker': 2701
+      "district": "Al Osirat",
+      "governorate_marker": 26,
+      "district_marker": 2617,
+      "governorate_ar": "سوهاج",
+      "district_ar": "العسيرات"
     },
     {
-      'district': 'Qift',
-      'governorate_marker': '27',
-      'district_marker': 2711
+      "district": "Alkawthr",
+      "governorate_marker": 26,
+      "district_marker": 2616,
+      "governorate_ar": "سوهاج",
+      "district_ar": "الكوثر"
     },
     {
-      'district': 'Qena',
-      'governorate_marker': '27',
-      'district_marker': 2702
+      "district": "Dar Al Salam",
+      "governorate_marker": 26,
+      "district_marker": 2608,
+      "governorate_ar": "سوهاج",
+      "district_ar": "دار السلام"
     },
     {
-      'district': 'Qous',
-      'governorate_marker': '27',
-      'district_marker': 2707
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "سوهاج",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Naqada',
-      'governorate_marker': '27',
-      'district_marker': 2709
+      "district": "Gerga",
+      "governorate_marker": 26,
+      "district_marker": 2610,
+      "governorate_ar": "سوهاج",
+      "district_ar": "جرجا"
     },
     {
-      'district': 'Nagi Hammadi',
-      'governorate_marker': '27',
-      'district_marker': 2708
+      "district": "New Akhmem City",
+      "governorate_marker": 26,
+      "district_marker": 2618,
+      "governorate_ar": "سوهاج",
+      "district_ar": "مدينة أخميم الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "New Sohag City",
+      "governorate_marker": 26,
+      "district_marker": 2619,
+      "governorate_ar": "سوهاج",
+      "district_ar": "مدينة سوهاج الجديدة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "Sakalta",
+      "governorate_marker": 26,
+      "district_marker": 2612,
+      "governorate_ar": "سوهاج",
+      "district_ar": "ساقلتة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "Sohag",
+      "governorate_marker": 26,
+      "district_marker": 2603,
+      "governorate_ar": "سوهاج",
+      "district_ar": "سوهاج"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "Tahta",
+      "governorate_marker": 26,
+      "district_marker": 2614,
+      "governorate_ar": "سوهاج",
+      "district_ar": "طهطا"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "Tama",
+      "governorate_marker": 26,
+      "district_marker": 2613,
+      "governorate_ar": "سوهاج",
+      "district_ar": "طما"
     },
     {
-      'district': 'New Qena City',
-      'governorate_marker': '27',
-      'district_marker': 2713
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '27',
-      'district_marker': 2799
+      "district": "Western Gohina",
+      "governorate_marker": 26,
+      "district_marker": 2611,
+      "governorate_ar": "سوهاج",
+      "district_ar": "جهينة غرب"
     }
   ],
-  'Red Sea': [
+  "South Sinai": [
     {
-      'district': 'Shalateen',
-      'governorate_marker': '31',
-      'district_marker': 3106
+      "district": "Abo Redis",
+      "governorate_marker": 35,
+      "district_marker": 3503,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "أبود رديس"
     },
     {
-      'district': 'Al Qusir',
-      'governorate_marker': '31',
-      'district_marker': 3102
+      "district": "Abo Redis Desert",
+      "governorate_marker": 35,
+      "district_marker": 3599,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "صحراء أبو رديس"
     },
     {
-      'district': 'Hurghada',
-      'governorate_marker': '31',
-      'district_marker': 3101
+      "district": "Al Toor",
+      "governorate_marker": 35,
+      "district_marker": 3501,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "الطور"
     },
     {
-      'district': 'Hurghada',
-      'governorate_marker': '31',
-      'district_marker': 3108
+      "district": "Dahab",
+      "governorate_marker": 35,
+      "district_marker": 3506,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "دهب"
     },
     {
-      'district': 'Halaib',
-      'governorate_marker': '31',
-      'district_marker': 3107
+      "district": "Nuwayba",
+      "governorate_marker": 35,
+      "district_marker": 3507,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "نويبع"
     },
     {
-      'district': "Ra's Gharib",
-      'governorate_marker': '31',
-      'district_marker': 3105
+      "district": "Ras Sedr",
+      "governorate_marker": 35,
+      "district_marker": 3502,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "رأس سدر"
     },
     {
-      'district': 'Safaga',
-      'governorate_marker': '31',
-      'district_marker': 3103
+      "district": "Saint Katrin",
+      "governorate_marker": 35,
+      "district_marker": 3504,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "سانت كاترين"
     },
     {
-      'district': 'Marsa Alam',
-      'governorate_marker': '31',
-      'district_marker': 3104
+      "district": "Sharm Al Shiekh",
+      "governorate_marker": 35,
+      "district_marker": 3505,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "شرم الشيخ"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '31',
-      'district_marker': 3199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '31',
-      'district_marker': 3199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '31',
-      'district_marker': 3199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '31',
-      'district_marker': 3199
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '31',
-      'district_marker': 3199
+      "district": "Taba",
+      "governorate_marker": 35,
+      "district_marker": 3508,
+      "governorate_ar": "شمال سيناء",
+      "district_ar": "طابا"
     }
   ],
-  'Sohag': [
+  "Suez": [
     {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
+      "district": "Al Arbaeen",
+      "governorate_marker": 4,
+      "district_marker": 402,
+      "governorate_ar": "السويس",
+      "district_ar": "الأربعين"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
+      "district": "Al Ganain",
+      "governorate_marker": 4,
+      "district_marker": 405,
+      "governorate_ar": "السويس",
+      "district_ar": "الجناين"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
+      "district": "Ataka",
+      "governorate_marker": 4,
+      "district_marker": 403,
+      "governorate_ar": "السويس",
+      "district_ar": "العتاقة"
     },
     {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
+      "district": "Desert",
+      "governorate_marker": 26,
+      "district_marker": 2699,
+      "governorate_ar": "السويس",
+      "district_ar": "صحراء"
     },
     {
-      'district': 'Akhmeem',
-      'governorate_marker': '26',
-      'district_marker': 2604
+      "district": "Faisal",
+      "governorate_marker": 4,
+      "district_marker": 404,
+      "governorate_ar": "السويس",
+      "district_ar": "فيصل"
     },
     {
-      'district': 'Al Bleena',
-      'governorate_marker': '26',
-      'district_marker': 2605
+      "district": "Suez",
+      "governorate_marker": 4,
+      "district_marker": 401,
+      "governorate_ar": "السويس",
+      "district_ar": "السويس"
     },
     {
-      'district': 'Al Osirat',
-      'governorate_marker': '26',
-      'district_marker': 2617
-    },
-    {
-      'district': 'Al Mragha',
-      'governorate_marker': '26',
-      'district_marker': 2606
-    },
-    {
-      'district': "Al Monsha'ah",
-      'governorate_marker': '26',
-      'district_marker': 2607
-    },
-    {
-      'district': 'Gerga',
-      'governorate_marker': '26',
-      'district_marker': 2610
-    },
-    {
-      'district': 'Western Gohina',
-      'governorate_marker': '26',
-      'district_marker': 2611
-    },
-    {
-      'district': 'Dar Al Salam',
-      'governorate_marker': '26',
-      'district_marker': 2608
-    },
-    {
-      'district': 'Sakalta',
-      'governorate_marker': '26',
-      'district_marker': 2612
-    },
-    {
-      'district': 'Sohag',
-      'governorate_marker': '26',
-      'district_marker': 2603
-    },
-    {
-      'district': 'New Sohag City',
-      'governorate_marker': '26',
-      'district_marker': 2619
-    },
-    {
-      'district': 'Tama',
-      'governorate_marker': '26',
-      'district_marker': 2613
-    },
-    {
-      'district': 'Tahta',
-      'governorate_marker': '26',
-      'district_marker': 2614
-    },
-    {
-      'district': 'Alkawthr',
-      'governorate_marker': '26',
-      'district_marker': 2616
-    },
-    {
-      'district': 'Sohag',
-      'governorate_marker': '26',
-      'district_marker': 2601
-    },
-    {
-      'district': 'Sohag',
-      'governorate_marker': '26',
-      'district_marker': 2602
-    },
-    {
-      'district': 'Gerga',
-      'governorate_marker': '26',
-      'district_marker': 2609
-    },
-    {
-      'district': 'Tahta',
-      'governorate_marker': '26',
-      'district_marker': 2615
-    },
-    {
-      'district': 'New Akhmem City',
-      'governorate_marker': '26',
-      'district_marker': 2618
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
-    },
-    {
-      'district': 'Desert',
-      'governorate_marker': '26',
-      'district_marker': 2699
-    }
-  ],
-  'South Sinai': [
-    {
-      'district': 'Taba',
-      'governorate_marker': '35',
-      'district_marker': 3508
-    },
-    {
-      'district': 'Nuwayba',
-      'governorate_marker': '35',
-      'district_marker': 3507
-    },
-    {
-      'district': 'Abo Redis',
-      'governorate_marker': '35',
-      'district_marker': 3503
-    },
-    {
-      'district': 'Al Toor',
-      'governorate_marker': '35',
-      'district_marker': 3501
-    },
-    {
-      'district': 'Dahab',
-      'governorate_marker': '35',
-      'district_marker': 3506
-    },
-    {
-      'district': 'Ras Sedr',
-      'governorate_marker': '35',
-      'district_marker': 3502
-    },
-    {
-      'district': 'Saint Katrin',
-      'governorate_marker': '35',
-      'district_marker': 3504
-    },
-    {
-      'district': 'Sharm Al Shiekh',
-      'governorate_marker': '35',
-      'district_marker': 3505
-    },
-    {
-      'district': 'Abo Redis Desert',
-      'governorate_marker': '35',
-      'district_marker': 3599
-    },
-    {
-      'district': 'Abo Redis Desert',
-      'governorate_marker': '35',
-      'district_marker': 3599
-    },
-    {
-      'district': 'Abo Redis Desert',
-      'governorate_marker': '35',
-      'district_marker': 3599
-    },
-    {
-      'district': 'Abo Redis Desert',
-      'governorate_marker': '35',
-      'district_marker': 3599
-    },
-    {
-      'district': 'Abo Redis Desert',
-      'governorate_marker': '35',
-      'district_marker': 3599
+      "district": "Suez Harbour Department",
+      "governorate_marker": 4,
+      "district_marker": 406,
+      "governorate_ar": "السويس",
+      "district_ar": "مديرية ميناء السويس"
     }
   ]
 };
