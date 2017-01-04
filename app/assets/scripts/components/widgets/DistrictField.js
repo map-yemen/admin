@@ -1,5 +1,5 @@
 import React from 'react';
-import { governorateMap, reverseGovernorateMap } from '../../utils/locationNames';
+import { governorateMap, arabicGovernorateMap, reverseGovernorateMap } from '../../utils/locationNames';
 import districtNames from '../../utils/districtNames';
 
   /**
@@ -28,13 +28,13 @@ export default class DistrictField extends React.Component {
     const chosenGovernorate = reverseGovernorateMap[governorate] || '';
 
     let districts = (chosenGovernorate === '' ? [] : districtNames[chosenGovernorate].map((district) => {
-      return <option key={district['district_marker']} value={district['district_marker']}>{district['district']}</option>;
+      return <option key={district['district_marker']} value={district['district_marker']}>{district['district'] + ' - ' + district['district_ar']}</option>;
     }));
-    if (districts.length) districts.unshift(<option key={'-2'} value={'All'}>All Districts</option>);
+    if (districts.length) districts.unshift(<option key={'-2'} value={'All'}>All Districts - كل المراكز </option>);
     districts.unshift(<option key={'-1'} value={''}>District</option>);
 
     const governorates = Object.keys(governorateMap).map((governorate) => {
-      return <option key={governorateMap[governorate]} value={governorateMap[governorate]}>{governorate}</option>;
+      return <option key={governorateMap[governorate]} value={governorateMap[governorate]}>{governorate + ' - ' + arabicGovernorateMap[governorate]}</option>;
     });
 
     governorates.unshift(<option key={'-1'} value={''}>Governorate</option>);
