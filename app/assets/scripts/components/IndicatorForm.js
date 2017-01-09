@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
+import Dropdown from './widgets/Dropdown';
 
 import DataTypeWidget from './widgets/DataTypeWidget';
 import { csvToJSON } from '../utils/csv';
@@ -29,17 +30,7 @@ export const schema = {
     },
     theme: {
       title: 'Theme - موضوع',
-      type: 'string',
-      enum: [
-        'Select a Theme',
-        'Education & Training',
-        'Health',
-        'Economy',
-        'Agriculture',
-        'Domestic Policy',
-        'Energy',
-        'Environment'
-      ]
+      type: 'string'
     },
     indicator_type: {
       title: 'Type of Indicator - نوع المؤشر',
@@ -96,6 +87,9 @@ const uiSchema = {
     classNames: 'ar',
     'ui:widget': 'textarea'
   },
+  theme: {
+    'ui:field': 'select-theme'
+  },
   indicator_type: {
     classNames: 'indicator-checkbox'
   },
@@ -145,7 +139,16 @@ class IndicatorForm extends React.Component {
       liveValidate
       showErrorList={false}
       fields={{
-        'datatype': DataTypeWidget
+        'datatype': DataTypeWidget,
+        'select-theme': Dropdown('Theme - موضوع', 'Select a Theme', [
+          'Education & Training',
+          'Health',
+          'Economy',
+          'Agriculture',
+          'Domestic Policy',
+          'Energy',
+          'Environment'
+        ])
       }}
     >
       <button type='submit' className='btn button--primary'>Submit</button>

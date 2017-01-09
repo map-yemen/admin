@@ -4,6 +4,7 @@ import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
 import DistrictField from './widgets/DistrictField';
+import Dropdown from './widgets/Dropdown';
 
 export const schema = {
   type: 'object',
@@ -50,14 +51,14 @@ export const schema = {
       type: 'string',
       title: 'Corrective Action'
     },
-    status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع', enum: ['Select a status - يُرجى اختيار وضع محدد (حالة محددة)', 'Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']},
+    status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع'},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
     actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي', 'description': 'In case of project delays, extension, or cancellation.'},
     local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع', 'description': 'يرجى إضافة اسم المدير المسؤول في الوزارة أو الهيئة الوطنية'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة', enum: ['Select a Ministry', 'Ministry of Agriculture and Land Reclamation - وزارة الزراعة واستصلاح الأراضي', 'Ministry 2', 'Ministry 3']},
+    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة'},
     project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
@@ -73,22 +74,7 @@ export const schema = {
       type: 'array',
       items: {
         title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
-        type: 'string',
-        enum: [
-          'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
-          'Pillar 1: Economic Development - المحور الأول: التنمية الاقتصادية',
-          'Pillar 2: Energy - المحور الثاني: الطاقة',
-          'Pillar 3: Knowledge, Innovation and Scientific Research - المحور الثالث: المعرفة والابتكار والبحث العلمي',
-          'Pillar 4: Transparency and Efficiency of Government Institutions - المحور الرابع: شفافية وكفاءة المؤسسات الحكومية',
-          'Pillar 5: Social Justice - المحور الخامس: العدالة الاجتماعية',
-          'Pillar 6: Health - المحور السادس: الصحة',
-          'Pillar 7: Education & Training - المحور السابع: التعليم والتدريب',
-          'Pillar 8: Culture - المحور الثامن: الثقافة',
-          'Pillar 9: Environment - المحور التاسع: البيئة',
-          'Pillar 10: Urban Development - المحور العاشر: التنمية العمرانية',
-          'Pillar 11: National Security and Foreign Policy',
-          'Pillar 12: Domestic Policy - '
-        ]
+        type: 'string'
       }
     },
     sdg_indicator: {
@@ -96,27 +82,7 @@ export const schema = {
       type: 'array',
       items: {
         title: 'SDG Goal - هدف التنمية المستدامة',
-        type: 'string',
-        enum: [
-          'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
-          'Goal 1: End poverty in all its forms everywhere',
-          'Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
-          'Goal 3: Ensure healthy lies and promote well being for all at all ages',
-          'Goal 4: Ensure inclusive and equitable education and promote lifelong learning opportunities for all',
-          'Goal 5: Achieve gender equality and empower all women and girls',
-          'Goal 6: Ensure availability and sustainable management of water and sanitation for all',
-          'Goal 7: Ensure access to affordable, reliable, sustainable, and modern energy for all',
-          'Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
-          'Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
-          'Goal 10: Reduce inequality within and among countries',
-          'Goal 11: Make cities and human settlements inclusive, safe, resilient, and sustainable',
-          'Goal 12: Ensure sustainable consumption and production patterns',
-          'Goal 13: Take urgent action to combat climate change and its impacts',
-          'Goal 14: Conserve and sustainably use the oceans and marine resources for sustainable development',
-          'Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification and halt and reverse land degradation and halt biodiversity loss',
-          'Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels',
-          'Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development'
-        ]
+        type: 'string'
       }
     },
     category: {
@@ -124,16 +90,7 @@ export const schema = {
       title: 'Sub-sectors - القطاعات الفرعية',
       items: {
         title: 'Sub-sector - القطاع الفرعي',
-        type: 'string',
-        enum: [
-          'Select a sub-sector - يُرحى اختيار قطاع فرعي',
-          'Agriculture Extension & Research - الارشاد الزراعي والبحث',
-          'Agro-industry, Marketing & Trade - الصناعات الزراعية والتسويق والتجارة',
-          'Crops - المحاصيل',
-          'Fishing, Aquaculture & Forestry - صيد الأسماك و الزراعة المائية وعلم التحريج',
-          'Livestock - الثروة الحيوانية',
-          'Rural Infrastructure & Irrigation - البنية التحتية بالمناطق الريفية والري'
-        ]
+        type: 'string'
       }
     },
     location: {
@@ -166,7 +123,6 @@ export const schema = {
           }
         }
       }
-
     },
     budget: {
       title: 'Budget - الميزانية',
@@ -221,8 +177,7 @@ export const schema = {
           },
           type: {
             type: 'string',
-            title: 'Type of Fund',
-            enum: ['Select type of fund', 'Loan - قرض', 'Grant - منحة']
+            title: 'Type of Fund'
           },
           date: {
             type: 'string'
@@ -255,8 +210,7 @@ export const schema = {
           },
           status: {
             type: 'string',
-            title: 'Status',
-            enum: ['Select a status - يُرجى اختيار الوضع/ الحالة', 'Not Implemented - لم يتحقق', 'Partially Implemented - تحقق جزئياً', 'Implemented - تحقق بالكامل']
+            title: 'Status'
           },
           description: {
             type: 'string',
@@ -310,8 +264,12 @@ class ProjectForm extends React.Component {
       category: {
         classNames: 'multiform-group',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          'ui:field': 'select-category'
         }
+      },
+      status: {
+        'ui:field': 'select-status'
       },
       name: {
         classNames: 'section-half'
@@ -393,6 +351,9 @@ class ProjectForm extends React.Component {
         classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
       },
+      responsible_ministry: {
+        'ui:field': 'select-ministry'
+      },
       project_link: {
         'ui:placeholder': 'http://'
       },
@@ -406,13 +367,15 @@ class ProjectForm extends React.Component {
       sds_indicator: {
         classNames: 'multiform-group',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          'ui:field': 'select-sds_indicator'
         }
       },
       sdg_indicator: {
         classNames: 'multiform-group',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          'ui:field': 'select-sdg_indicator'
         }
       },
       budget: {
@@ -432,6 +395,7 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
+          type: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
@@ -451,6 +415,9 @@ class ProjectForm extends React.Component {
           },
           kpi_ar: {
             classNames: 'ar'
+          },
+          status: {
+            'ui:field': 'select-kmi_status'
           },
           description: {
             'ui:widget': 'textarea',
@@ -498,7 +465,62 @@ class ProjectForm extends React.Component {
         'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
         'district': DistrictField,
         'marker': LocationField,
-        'currency': CurrencyField
+        'currency': CurrencyField,
+        'select-status': Dropdown('Project Status - وضع/ حالة المشروع', 'Select a status - يُرجى اختيار وضع محدد (حالة محددة)', ['Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']),
+        'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry', ['Ministry of Agriculture and Land Reclamation - وزارة الزراعة واستصلاح الأراضي', 'Ministry 2', 'Ministry 3']),
+        'select-sds_indicator': Dropdown(
+          'SDS Goal - هدف استراتيجية التنمية المُستدامة',
+          'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
+          [
+            'Pillar 1: Economic Development - المحور الأول: التنمية الاقتصادية',
+            'Pillar 2: Energy - المحور الثاني: الطاقة',
+            'Pillar 3: Knowledge, Innovation and Scientific Research - المحور الثالث: المعرفة والابتكار والبحث العلمي',
+            'Pillar 4: Transparency and Efficiency of Government Institutions - المحور الرابع: شفافية وكفاءة المؤسسات الحكومية',
+            'Pillar 5: Social Justice - المحور الخامس: العدالة الاجتماعية',
+            'Pillar 6: Health - المحور السادس: الصحة',
+            'Pillar 7: Education & Training - المحور السابع: التعليم والتدريب',
+            'Pillar 8: Culture - المحور الثامن: الثقافة',
+            'Pillar 9: Environment - المحور التاسع: البيئة',
+            'Pillar 10: Urban Development - المحور العاشر: التنمية العمرانية',
+            'Pillar 11: National Security and Foreign Policy',
+            'Pillar 12: Domestic Policy - '
+          ]),
+        'select-sdg_indicator': Dropdown(
+          'SDG Goal - هدف التنمية المستدامة',
+          'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
+          [
+            'Goal 1: End poverty in all its forms everywhere',
+            'Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
+            'Goal 3: Ensure healthy lies and promote well being for all at all ages',
+            'Goal 4: Ensure inclusive and equitable education and promote lifelong learning opportunities for all',
+            'Goal 5: Achieve gender equality and empower all women and girls',
+            'Goal 6: Ensure availability and sustainable management of water and sanitation for all',
+            'Goal 7: Ensure access to affordable, reliable, sustainable, and modern energy for all',
+            'Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all',
+            'Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation',
+            'Goal 10: Reduce inequality within and among countries',
+            'Goal 11: Make cities and human settlements inclusive, safe, resilient, and sustainable',
+            'Goal 12: Ensure sustainable consumption and production patterns',
+            'Goal 13: Take urgent action to combat climate change and its impacts',
+            'Goal 14: Conserve and sustainably use the oceans and marine resources for sustainable development',
+            'Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification and halt and reverse land degradation and halt biodiversity loss',
+            'Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels',
+            'Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development'
+          ]),
+        'select-category': Dropdown(
+          'Sub-sector - القطاع الفرعي',
+          'Select a sub-sector - يُرحى اختيار قطاع فرعي',
+          [
+            'Agriculture Extension & Research - الارشاد الزراعي والبحث',
+            'Agro-industry, Marketing & Trade - الصناعات الزراعية والتسويق والتجارة',
+            'Crops - المحاصيل',
+            'Fishing, Aquaculture & Forestry - صيد الأسماك و الزراعة المائية وعلم التحريج',
+            'Livestock - الثروة الحيوانية',
+            'Rural Infrastructure & Irrigation - البنية التحتية بالمناطق الريفية والري'
+          ]
+        ),
+        'select-disbursed-type': Dropdown('Type of Fund', 'Select type of fund', ['Loan - قرض', 'Grant - منحة']),
+        'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة', ['Not Implemented - لم يتحقق', 'Partially Implemented - تحقق جزئياً', 'Implemented - تحقق بالكامل'])
       }}
       uiSchema = {this.state.uiSchema}
     >
