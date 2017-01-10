@@ -6,14 +6,17 @@ module.exports.csvToJSON = function csvToJSON (csv) {
   if (header.indexOf('data_value') === -1 || header.indexOf('sub_nat_id') === -1 || header.some(h => !h)) {
     throw new Error('Invalid csv');
   }
-  return body.map(b => {
-    return Object.assign(...b.split(', ').map((el, i) => ({ [header[i]]: el })));
-  });
+  return body
+    // don't use falsey/empty lines
+    .filter(b => b)
+    .map(b => {
+      return Object.assign(...b.split(', ').map((el, i) => ({ [header[i]]: el })));
+    });
 };
 
 module.exports.jsonToCSV = function jsonToCSV (json) {
   return [Object.keys(json[0]).join(', ')]
-    .concat(json.slice(1).map(row => {
+    .concat(json.map(row => {
       return Object.keys(row).map(d => row[d]).join(', ');
     }))
     .join('\n');
