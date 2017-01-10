@@ -10,8 +10,9 @@ export default class DataTypeWidget extends React.Component {
   }
 
   onChange (event) {
+    let nextValue = (event.target.value === '-1') ? undefined : event.target.value;
     return this.setState({
-      category: event.target.value
+      category: nextValue
     }, () => this.props.onChange(this.state.category));
   }
 
@@ -20,6 +21,7 @@ export default class DataTypeWidget extends React.Component {
       <div>
         <label className="control-label">{this.props.schema.title}</label>
         <select value={this.state.category} className="form-control" onChange={this.onChange.bind(this)}>
+          <option value="-1">Select the type of data</option>
           <option value="Sequential">Sequential</option>
           <option value="Diverging">Diverging</option>
           <option value="Categorical">Categorical</option>
