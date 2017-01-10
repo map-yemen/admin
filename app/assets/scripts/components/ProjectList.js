@@ -30,6 +30,10 @@ class ProjectList extends React.Component {
     list.sort((a, b) => moment(b.created_at) - moment(a.created_at));
     const listItems = list.map((item) => {
       let locations;
+      let categories;
+      if (item.categories) {
+        categories = item.categories.map((obj) => `${obj.en} - ${obj.ar}`);
+      }
       if (item.location) {
         locations = item.location.map(l => {
           let districtName = ''; let governorateName = '';
@@ -50,7 +54,7 @@ class ProjectList extends React.Component {
       return (
         <tr key={item.id}>
           <td><Link to={`/projects/${item.id}`} className="link--primary">{item.name}</Link></td>
-          <td>{item.categories && item.categories.join(', ')}</td>
+          <td>{categories && categories.join(', ')}</td>
           <td>{locations}</td>
           <td>{moment(item.updated_at).format('YYYY-MM-DD')}</td>
           <td>{moment(item.created_at).format('YYYY-MM-DD')}</td>

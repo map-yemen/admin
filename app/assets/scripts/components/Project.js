@@ -65,6 +65,9 @@ class Project extends React.Component {
         return key !== 'name';
       }).map(function (key) {
         if (!keys[key]) { return <div></div>; }
+        if (keys[key].type === 'object' && 'ar' in keys[key].properties) {
+          return <li key={key}><label>{keys[key].title}</label>{ String(project[key].en) + '-' + String(project[key].ar) }</li>;
+        }
         if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(project[key]) }</li>;
         } else if (key === 'published') {
@@ -89,16 +92,16 @@ class Project extends React.Component {
           });
           return <li key={key}><label>{keys[key].title}</label><ul>{locations}</ul></li>;
         } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'category') {
-          const indicators = project[key].map((item) => <li>{item}</li>);
+          const indicators = project[key].map((item) => <li>{item.en} - {item.ar}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{indicators}</ul></li>;
         } else if (key === 'budget' && project[key].length > 0) {
           const funds = project[key].map((fund) => <li>{fund.donor_name + ': ' + ' $' + fund.fund.amount}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{funds}</ul></li>;
         } else if (key === 'disbursed' && project[key].length > 0) {
-          const disbursed = project[key].map((fund) => <li>{fund.donor_name + ': ' + fund.type + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
+          const disbursed = project[key].map((fund) => <li>{fund.donor_name + ': ' + fund.type.en + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{disbursed}</ul></li>;
         } else if (key === 'kmi' && project[key].length > 0) {
-          const kmis = project[key].map((kmi) => <li>{kmi.activity}<p>{kmi.description}</p><p>{kmi.kpi}</p><p>{kmi.date}</p><p>{kmi.status}</p></li>);
+          const kmis = project[key].map((kmi) => <li>{kmi.activity}<p>{kmi.description}</p><p>{kmi.kpi}</p><p>{kmi.date}</p><p>{kmi.status.en}</p></li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{kmis}</ul></li>;
         }
       });

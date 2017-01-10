@@ -1,19 +1,28 @@
 import React from 'react';
 
-export default function (label, helpText, enumOptions) {
+export default function (label, helpText, enumOptions, arEnumOptions) {
   return class Dropdown extends React.Component {
     constructor (props) {
       super(props);
       this.state = {};
       if (props.formData) {
-        this.state.val = props.formData;
+        let enVal = props.formData.en;
+        enumOptions.forEach((val, i) => {
+          if (val === enVal) {
+            this.state.val = i;
+          }
+        });
       }
     }
 
     onChange (event) {
       let nextValue = (event.target.value === '-1') ? undefined : event.target.value;
       this.setState({val: nextValue}, () => {
-        this.props.onChange(this.state.val);
+        if (nextValue) {
+          this.props.onChange({en: enumOptions[nextValue], ar: arEnumOptions[nextValue]});
+        } else {
+          this.props.onChange(undefined);
+        }
       });
     }
 
@@ -26,7 +35,7 @@ export default function (label, helpText, enumOptions) {
               <option key='-1' value='-1'>{helpText}</option>
               {
                 enumOptions.map((option, i) => {
-                  return <option key={i} value={option}>{option}</option>;
+                  return <option key={i} value={i}>{option} - {arEnumOptions[i]}</option>;
                 })
               }
             </select>

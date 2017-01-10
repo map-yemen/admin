@@ -140,15 +140,26 @@ class IndicatorForm extends React.Component {
       showErrorList={false}
       fields={{
         'datatype': DataTypeWidget,
-        'select-theme': Dropdown('Theme - موضوع', 'Select a Theme', [
-          'Education & Training',
-          'Health',
-          'Economy',
-          'Agriculture',
-          'Domestic Policy',
-          'Energy',
-          'Environment'
-        ])
+        'select-theme': Dropdown('Theme - موضوع', 'Select a Theme',
+          [
+            'Education & Training',
+            'Health',
+            'Economy',
+            'Agriculture',
+            'Domestic Policy',
+            'Energy',
+            'Environment'
+          ],
+          [
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            ''
+          ],
+        )
       }}
     >
       <button type='submit' className='btn button--primary'>Submit</button>

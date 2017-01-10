@@ -51,14 +51,14 @@ export const schema = {
       type: 'string',
       title: 'Corrective Action'
     },
-    status: {type: 'string', title: 'Project Status - وضع/ حالة المشروع'},
+    status: {type: 'object', title: 'Project Status - وضع/ حالة المشروع', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
     actual_end_date: {type: 'string', title: 'Actual End Date - تاريخ الانتهاء الفعلي', 'description': 'In case of project delays, extension, or cancellation.'},
     local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع', 'description': 'يرجى إضافة اسم المدير المسؤول في الوزارة أو الهيئة الوطنية'},
-    responsible_ministry: {type: 'string', title: 'Responsible Ministry - الوزارة المسؤولة'},
+    responsible_ministry: {type: 'object', title: 'Responsible Ministry - الوزارة المسؤولة', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
     project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
@@ -74,7 +74,8 @@ export const schema = {
       type: 'array',
       items: {
         title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
-        type: 'string'
+        type: 'object',
+        properties: {en: {type: 'string'}, ar: {type: 'string'}}
       }
     },
     sdg_indicator: {
@@ -82,7 +83,8 @@ export const schema = {
       type: 'array',
       items: {
         title: 'SDG Goal - هدف التنمية المستدامة',
-        type: 'string'
+        type: 'object',
+        properties: {en: {type: 'string'}, ar: {type: 'string'}}
       }
     },
     category: {
@@ -90,7 +92,8 @@ export const schema = {
       title: 'Sub-sectors - القطاعات الفرعية',
       items: {
         title: 'Sub-sector - القطاع الفرعي',
-        type: 'string'
+        type: 'object',
+        properties: {en: {type: 'string'}, ar: {type: 'string'}}
       }
     },
     location: {
@@ -133,6 +136,7 @@ export const schema = {
         properties: {
           fund: {
             type: 'object',
+            required: ['currency', 'rate', 'amount', 'original'],
             properties: {
               currency: {type: 'string'},
               rate: {type: 'number'},
@@ -160,8 +164,9 @@ export const schema = {
         properties: {
           fund: {
             type: 'object',
+            required: ['currency', 'rate', 'amount', 'original'],
             properties: {
-              currenct: {type: 'string'},
+              currency: {type: 'string'},
               rate: {type: 'number'},
               amount: {type: 'number'},
               original: {type: 'number'}
@@ -176,8 +181,9 @@ export const schema = {
             title: 'المانح'
           },
           type: {
-            type: 'string',
-            title: 'Type of Fund'
+            title: 'Type of Fund',
+            type: 'object',
+            properties: {en: {type: 'string'}, ar: {type: 'string'}}
           },
           date: {
             type: 'string'
@@ -209,8 +215,9 @@ export const schema = {
             type: 'string'
           },
           status: {
-            type: 'string',
-            title: 'Status'
+            title: 'Status',
+            type: 'object',
+            properties: {en: {type: 'string'}, ar: {type: 'string'}}
           },
           description: {
             type: 'string',
@@ -466,25 +473,56 @@ class ProjectForm extends React.Component {
         'district': DistrictField,
         'marker': LocationField,
         'currency': CurrencyField,
-        'select-status': Dropdown('Project Status - وضع/ حالة المشروع', 'Select a status - يُرجى اختيار وضع محدد (حالة محددة)', ['Planned - مُخطط', 'Ongoing - جاري/ مستمر', 'Closed - مُغلق']),
-        'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry', ['Ministry of Agriculture and Land Reclamation - وزارة الزراعة واستصلاح الأراضي', 'Ministry 2', 'Ministry 3']),
+        'select-status': Dropdown(
+          'Project Status - وضع/ حالة المشروع',
+          'Select a status - يُرجى اختيار وضع محدد (حالة محددة)',
+          [
+            'Planned',
+            'Ongoing',
+            'Closed'
+          ],
+          [
+            ' مُخطط',
+            ' جاري/ مستمر',
+            ' مُغلق'
+          ]
+        ),
+        'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry',
+          ['Ministry of Agriculture and Land Reclamation', 'Ministry 2', 'Ministry 3'],
+          [' وزارة الزراعة واستصلاح الأراضي', '', '']
+        ),
         'select-sds_indicator': Dropdown(
           'SDS Goal - هدف استراتيجية التنمية المُستدامة',
           'Select an SDS goal - يُرجى اختيار أحد أهداف استراتيجية التنمية المستدامة التى يتناولها المشروع',
           [
-            'Pillar 1: Economic Development - المحور الأول: التنمية الاقتصادية',
-            'Pillar 2: Energy - المحور الثاني: الطاقة',
-            'Pillar 3: Knowledge, Innovation and Scientific Research - المحور الثالث: المعرفة والابتكار والبحث العلمي',
-            'Pillar 4: Transparency and Efficiency of Government Institutions - المحور الرابع: شفافية وكفاءة المؤسسات الحكومية',
-            'Pillar 5: Social Justice - المحور الخامس: العدالة الاجتماعية',
-            'Pillar 6: Health - المحور السادس: الصحة',
-            'Pillar 7: Education & Training - المحور السابع: التعليم والتدريب',
-            'Pillar 8: Culture - المحور الثامن: الثقافة',
-            'Pillar 9: Environment - المحور التاسع: البيئة',
-            'Pillar 10: Urban Development - المحور العاشر: التنمية العمرانية',
+            'Pillar 1: Economic Development',
+            'Pillar 2: Energy',
+            'Pillar 3: Knowledge, Innovation and Scientific Research',
+            'Pillar 4: Transparency and Efficiency of Government Institutions',
+            'Pillar 5: Social Justice',
+            'Pillar 6: Health',
+            'Pillar 7: Education & Training',
+            'Pillar 8: Culture',
+            'Pillar 9: Environment',
+            'Pillar 10: Urban Development',
             'Pillar 11: National Security and Foreign Policy',
-            'Pillar 12: Domestic Policy - '
-          ]),
+            'Pillar 12: Domestic Policy'
+          ],
+          [
+            ' المحور الأول: التنمية الاقتصادية',
+            ' المحور الثاني: الطاقة',
+            ' المحور الثالث: المعرفة والابتكار والبحث العلمي',
+            ' المحور الرابع: شفافية وكفاءة المؤسسات الحكومية',
+            ' المحور الخامس: العدالة الاجتماعية',
+            ' المحور السادس: الصحة',
+            ' المحور السابع: التعليم والتدريب',
+            ' المحور الثامن: الثقافة',
+            ' المحور التاسع: البيئة',
+            ' المحور العاشر: التنمية العمرانية',
+            '',
+            ''
+          ],
+        ),
         'select-sdg_indicator': Dropdown(
           'SDG Goal - هدف التنمية المستدامة',
           'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع',
@@ -506,21 +544,57 @@ class ProjectForm extends React.Component {
             'Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification and halt and reverse land degradation and halt biodiversity loss',
             'Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels',
             'Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development'
-          ]),
+          ],
+          [
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            ''
+          ],
+        ),
         'select-category': Dropdown(
           'Sub-sector - القطاع الفرعي',
           'Select a sub-sector - يُرحى اختيار قطاع فرعي',
           [
-            'Agriculture Extension & Research - الارشاد الزراعي والبحث',
-            'Agro-industry, Marketing & Trade - الصناعات الزراعية والتسويق والتجارة',
-            'Crops - المحاصيل',
-            'Fishing, Aquaculture & Forestry - صيد الأسماك و الزراعة المائية وعلم التحريج',
-            'Livestock - الثروة الحيوانية',
-            'Rural Infrastructure & Irrigation - البنية التحتية بالمناطق الريفية والري'
+            'Agriculture Extension & Research',
+            'Agro-industry, Marketing & Trade',
+            'Crops',
+            'Fishing, Aquaculture & Forestry',
+            'Livestock',
+            'Rural Infrastructure & Irrigation'
+          ],
+          [
+            ' الارشاد الزراعي والبحث',
+            ' الصناعات الزراعية والتسويق والتجارة',
+            ' المحاصيل',
+            ' صيد الأسماك و الزراعة المائية وعلم التحريج',
+            ' الثروة الحيوانية',
+            ' البنية التحتية بالمناطق الريفية والري'
           ]
         ),
-        'select-disbursed-type': Dropdown('Type of Fund', 'Select type of fund', ['Loan - قرض', 'Grant - منحة']),
-        'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة', ['Not Implemented - لم يتحقق', 'Partially Implemented - تحقق جزئياً', 'Implemented - تحقق بالكامل'])
+        'select-disbursed-type': Dropdown(
+          'Type of Fund',
+          'Select type of fund',
+          ['Loan', 'Grant'],
+          ['قرض', 'منحة']
+        ),
+        'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة',
+          ['Not Implemented', 'Partially Implemented', 'Implemented', 'N/A'],
+          [' لم يتحقق', ' تحقق جزئياً', ' تحقق بالكامل', 'N/A']
+        )
       }}
       uiSchema = {this.state.uiSchema}
     >
