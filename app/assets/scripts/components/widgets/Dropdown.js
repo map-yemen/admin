@@ -5,7 +5,7 @@ export default function (label, helpText, enumOptions, arEnumOptions) {
     constructor (props) {
       super(props);
       this.state = {};
-      if (props.formData) {
+      if (props.formData && props.formData.en) {
         let enVal = props.formData.en;
         enumOptions.forEach((val, i) => {
           if (val === enVal) {
@@ -16,10 +16,11 @@ export default function (label, helpText, enumOptions, arEnumOptions) {
     }
 
     onChange (event) {
-      let nextValue = (event.target.value === '-1') ? undefined : event.target.value;
+      let nextValue = (event.target.value === '-1') ? undefined : parseInt(event.target.value);
       this.setState({val: nextValue}, () => {
         if (nextValue) {
-          this.props.onChange({en: enumOptions[nextValue], ar: arEnumOptions[nextValue]});
+          let nextState = {en: enumOptions[nextValue], ar: arEnumOptions[nextValue]};
+          this.props.onChange(nextState);
         } else {
           this.props.onChange(undefined);
         }

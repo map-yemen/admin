@@ -30,7 +30,11 @@ export const schema = {
     },
     theme: {
       title: 'Theme - موضوع',
-      type: 'string'
+      type: 'object',
+      properties: {
+        ar: {type: 'string'},
+        en: {type: 'string'}
+      }
     },
     indicator_type: {
       title: 'Type of Indicator - نوع المؤشر',
