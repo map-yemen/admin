@@ -49,7 +49,7 @@ export const schema = {
     },
     corrective_action_ar: {
       type: 'string',
-      title: 'Corrective Action'
+      title: 'إجراءات تصحيحية'
     },
     status: {type: 'object', title: 'Project Status - وضع/ حالة المشروع', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
@@ -59,6 +59,8 @@ export const schema = {
     local_manager: {type: 'string', title: 'Local Project Manager', 'description': 'Please add the name of the responsible manager at the ministry or national entity'},
     local_manager_ar: {type: 'string', title: 'المدير المحلي للمشروع', 'description': 'يرجى إضافة اسم المدير المسؤول في الوزارة أو الهيئة الوطنية'},
     responsible_ministry: {type: 'object', title: 'Responsible Ministry - الوزارة المسؤولة', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
+    implementing_partners: {type: 'string', title: 'Implementing Partners'},
+    implementing_partners_ar: {type: 'string', title: 'الشركاء المنفذين'},
     project_link: {title: 'Project Link - الرابط الالكتروني للمشروع', type: 'string', format: 'uri'},
     number_served: {
       type: 'object',
@@ -283,6 +285,14 @@ class ProjectForm extends React.Component {
       },
       name_ar: {
         classNames: 'ar section-half section-half-left'
+      },
+      implementing_partners: {
+        classNames: 'with-ar',
+        'ui:widget': 'textarea'
+      },
+      implementing_partners_ar: {
+        classNames: 'ar',
+        'ui:widget': 'textarea'
       },
       description: {
         classNames: 'with-ar',
