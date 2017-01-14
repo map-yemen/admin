@@ -18,7 +18,7 @@ export default function (label, helpText, enumOptions, arEnumOptions) {
     onChange (event) {
       let nextValue = (event.target.value === '-1') ? undefined : parseInt(event.target.value);
       this.setState({val: nextValue}, () => {
-        if (nextValue) {
+        if (typeof nextValue !== 'undefined') {
           let nextState = {en: enumOptions[nextValue], ar: arEnumOptions[nextValue]};
           this.props.onChange(nextState);
         } else {

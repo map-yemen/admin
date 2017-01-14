@@ -91,6 +91,7 @@ export const schema = {
     number_served: {
       type: 'object',
       title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات ',
+      required: ['number_served', 'number_served_unit', 'number_served_unit_ar'],
       properties: {
         number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
@@ -289,7 +290,7 @@ class ProjectForm extends React.Component {
     this.state = {};
     this.state.schema = schema;
     this.state.formData = this.props.formData;
-    if ('published' in this.state.formData) {
+    if (this.state.formData && 'published' in this.state.formData) {
       this.state.isDraft = !this.state.formData.published;
     } else {
       this.state.isDraft = true;
