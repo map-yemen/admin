@@ -8,7 +8,33 @@ import Dropdown from './widgets/Dropdown';
 
 export const schema = {
   type: 'object',
-  required: ['name'],
+  required: [
+    'actual_end_date',
+    'actual_start_date',
+    'amendments',
+    'amendments_ar',
+    'budget',
+    'category',
+    'description',
+    'description_ar',
+    'disbursed',
+    'implementing_partners',
+    'implementing_partners_ar',
+    'kmi',
+    'location',
+    'name',
+    'name_ar',
+    'number_served',
+    'planned_end_date',
+    'planned_start_date',
+    'project_delays',
+    'project_delays_ar',
+    'published',
+    'responsible_ministry',
+    'sdg_indicator',
+    'sds_indicator',
+    'status'
+  ],
   properties: {
     name: {type: 'string', title: 'Project Name', 'description': 'Please make sure this is a unique name'},
     name_ar: {type: 'string', title: 'اسم المشروع', 'description': 'يُرجى التحقق من تخصيص اسم مُميز'},
@@ -65,6 +91,7 @@ export const schema = {
     number_served: {
       type: 'object',
       title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات ',
+      required: ['number_served', 'number_served_unit', 'number_served_unit_ar'],
       properties: {
         number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
@@ -263,6 +290,11 @@ class ProjectForm extends React.Component {
     this.state = {};
     this.state.schema = schema;
     this.state.formData = this.props.formData;
+    if (this.state.formData && 'published' in this.state.formData) {
+      this.state.isDraft = !this.state.formData.published;
+    } else {
+      this.state.isDraft = true;
+    }
     this.state.uiSchema = {
       components: {
         classNames: 'multiform-group form-block',
@@ -465,17 +497,25 @@ class ProjectForm extends React.Component {
     }
   }
 
-  render () {
-    let isDraft = true;
-    const {schema, formData} = this.state;
-    if (formData && formData.published) {
+  onChange ({formData}) {
+    let isDraft;
+    if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
+    this.setState({
+      isDraft,
+      formData
+    });
+  }
+
+  render () {
+    const {schema, formData, isDraft} = this.state;
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
       formData={formData}
+      onChange={this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
-      noValidate={isDraft}
+      noValidate={isDraft /* Only validate if this isn't a draft */ }
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),

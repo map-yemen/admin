@@ -62,6 +62,9 @@ class Indicator extends React.Component {
           return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Published' : 'Draft' }</li>;
         } else if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(indicator[key]) }</li>;
+        } else if (key === 'sources') {
+          const sources = indicator[key].map((item) => <li className="preview-item">{item}</li>);
+          return <li key={key}><label>{keys[key].title}</label><ul>{sources}</ul></li>;
         }
       });
 
