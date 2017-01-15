@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './react-jsonschema-form/dist/react-jsonschema-form';
+import Form from './react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
