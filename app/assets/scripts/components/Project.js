@@ -103,7 +103,7 @@ class Project extends React.Component {
           const funds = project[key].map((fund) => <li className="preview-item">{fund.donor_name + ': ' + ' $' + fund.fund.amount}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{funds}</ul></li>;
         } else if (key === 'disbursed' && project[key].length > 0) {
-          const disbursed = project[key].map((fund) => <li className="preview-item">{fund.donor_name + ': ' + fund.type.en + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
+          const disbursed = project[key].map((fund) => <li className="preview-item">{fund.donor_name + ': ' + fund.type_of_fund.en + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{disbursed}</ul></li>;
         } else if (key === 'kmi' && project[key].length > 0) {
           const kmis = project[key].map((kmi) => <li className='preview-item'>{kmi.activity}<p>{kmi.description}</p><p>{kmi.kpi}</p><p>{kmi.date}</p><p>{kmi.status.en}</p></li>);

@@ -1,10 +1,25 @@
 import React from 'react';
-import Form from 'react-jsonschema-form/dist/react-jsonschema-form';
+import Form from './react-jsonschema-form/dist/react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
 import DistrictField from './widgets/DistrictField';
 import Dropdown from './widgets/Dropdown';
+
+Object.byString = function (o, s) {
+  s = s.replace(/\[(\w+)\]/g, '.items.properties'); // convert indexes to properties
+  s = s.replace(/^\./, '');           // strip a leading dot
+  var a = s.split('.');
+  for (var i = 0, n = a.length; i < n; ++i) {
+    var k = a[i];
+    if (k in o) {
+      o = o[k];
+    } else {
+      return;
+    }
+  }
+  return o;
+};
 
 export const schema = {
   type: 'object',
@@ -167,10 +182,10 @@ export const schema = {
             type: 'object',
             required: ['currency', 'rate', 'amount', 'original'],
             properties: {
-              currency: {type: 'string'},
-              rate: {type: 'number'},
-              amount: {type: 'number'},
-              original: {type: 'number'}
+              currency: {type: 'string', title: 'Currency'},
+              rate: {type: 'number', title: 'Exchange Rate'},
+              amount: {type: 'number', title: 'Amount'},
+              original: {type: 'number', title: 'Original Amount'}
             }
           },
           donor_name: {
@@ -189,16 +204,16 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['fund', 'donor_name', 'type', 'date'],
+        required: ['fund', 'donor_name', 'type_of_fund', 'date'],
         properties: {
           fund: {
             type: 'object',
             required: ['currency', 'rate', 'amount', 'original'],
             properties: {
-              currency: {type: 'string'},
-              rate: {type: 'number'},
-              amount: {type: 'number'},
-              original: {type: 'number'}
+              currency: {type: 'string', title: 'Currency'},
+              rate: {type: 'number', title: 'Exchange Rate'},
+              amount: {type: 'number', title: 'Amount'},
+              original: {type: 'number', title: 'Original Amount'}
             }
           },
           donor_name: {
@@ -209,13 +224,15 @@ export const schema = {
             type: 'string',
             title: 'المانح'
           },
-          type: {
+          type_of_fund: {
             title: 'Type of Fund',
             type: 'object',
-            properties: {en: {type: 'string'}, ar: {type: 'string'}}
+            required: ['en'],
+            properties: {en: {type: 'string', title: 'Type of Fund'}, ar: {type: 'string'}}
           },
           date: {
-            type: 'string'
+            type: 'string',
+            title: 'Date'
           }
         }
       }
@@ -444,7 +461,7 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
-          type: {'ui:field': 'select-disbursed-type'},
+          type_of_fund: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
@@ -493,14 +510,40 @@ class ProjectForm extends React.Component {
 
   onError (errors) {
     if (errors.length) {
-      window.scroll(0, 0);
+      // window.scroll(0, 0);
     }
+  }
+
+  transformErrors (errors) {
+    return errors.map((error) => {
+      if (error.name === 'required') {
+        if (error.property === 'instance') {
+          let title = error.schema.properties[error.argument].title;
+          return Object.assign({}, error, {
+            message: `${title} is required`
+          });
+        } else {
+          error.argument.replace('instance.', '');
+          let title = Object.byString(error.schema.properties, error.argument).title;
+          return Object.assign({}, error, {
+            message: `${title} is required`
+          });
+        }
+      }
+    });
   }
 
   onChange ({formData}) {
     let isDraft;
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
+    }
+    for (let key in formData) {
+      if (schema.properties[key].type === 'array' && formData[key].length === 0) {
+        formData[key] = undefined;
+      } else if (schema.properties[key].type === 'object' && Object.keys(formData[key]).length === 0) {
+        formData[key] = undefined;
+      }
     }
     this.setState({
       isDraft,
@@ -647,6 +690,8 @@ class ProjectForm extends React.Component {
         )
       }}
       uiSchema = {this.state.uiSchema}
+      transformErrors={this.transformErrors.bind(this)}
+      showErrorList={false}
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
