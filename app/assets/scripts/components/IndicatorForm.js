@@ -67,6 +67,11 @@ export const schema = {
       type: 'string',
       title: 'Unit - وحدة القياس'
     },
+    data_geography: {
+      title: 'Data Geography',
+      type: 'boolean',
+      enumNames: ['Governorate - ', 'District - ']
+    },
     data: {
       type: 'string',
       title: 'Data - البيانات'
@@ -123,6 +128,10 @@ const uiSchema = {
   private: {
     classNames: 'section-half section-half-left',
     'ui:widget': 'radio'
+  },
+  data_geography: {
+    'ui:widget': 'radio',
+    classNames: 'section-half'
   },
   data: {
     'ui:widget': 'textarea',
