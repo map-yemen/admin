@@ -48,9 +48,9 @@ export const schema = {
     },
     themer: {
       type: 'array',
-      title: 'Theme - موضوع',
+      title: 'Other Development Indicator',
       items: {
-        title: 'Theme - موضوع',
+        title: 'Other Development Indicator',
         type: 'object',
         properties: {en: {type: 'string'}, ar: {type: 'string'}}
       }
@@ -234,7 +234,9 @@ class IndicatorForm extends React.Component {
             ''
           ],
         ),
-        'select-themer': Dropdown('Theme - موضوع', 'Select a Theme',
+        'select-themer': Dropdown(
+          'Other Development Indicators',
+          'Select Other Development Indicator',
           [
             'Education & Training',
             'Health',
