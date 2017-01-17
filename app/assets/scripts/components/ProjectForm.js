@@ -27,10 +27,9 @@ Object.byString = function (o, s) {
 export const schema = {
   type: 'object',
   required: [
-    'actual_start_date',
     'budget',
-    'category',
     'description',
+    'category',
     'kmi',
     'location',
     'name',
@@ -38,7 +37,6 @@ export const schema = {
     'planned_end_date',
     'planned_start_date',
     'published',
-    'responsible_ministry',
     'sdg_indicator',
     'sds_indicator',
     'status'
@@ -235,7 +233,7 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['status', 'target', 'kpi', 'date'],
+        required: ['status', 'target', 'kpi', 'component'],
         properties: {
           kpi: {
             type: 'string',
