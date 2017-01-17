@@ -4,6 +4,9 @@ import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
 import DistrictField from './widgets/DistrictField';
+import CustomTextAreaWidget from './widgets/CustomTextAreaWidget';
+import CustomTextWidget from './widgets/CustomTextWidget';
+import CustomNumberWidget from './widgets/CustomNumberWidget';
 import Dropdown from './widgets/Dropdown';
 
 Object.byString = function (o, s) {
@@ -337,19 +340,19 @@ class ProjectForm extends React.Component {
       },
       implementing_partners: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       implementing_partners_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       description: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       description_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       corrective_action: {
         classNames: 'with-ar'
@@ -367,19 +370,19 @@ class ProjectForm extends React.Component {
       },
       amendments: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       amendments_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       project_delays: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       project_delays_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       local_manager: {
         classNames: 'section-half'
@@ -390,12 +393,15 @@ class ProjectForm extends React.Component {
       number_served: {
         classNames: 'field-half form-less-spacing',
         number_served: {
+          'ui:field': 'customnumber'
         },
         number_served_unit: {
-          classNames: 'padding-right'
+          classNames: 'padding-right',
+          'ui:field': 'customtext'
         },
         number_served_unit_ar: {
-          classNames: 'ar form-float-right'
+          classNames: 'ar form-float-right',
+          'ui:field': 'customtext'
         }
       },
       percent_complete: {
@@ -486,7 +492,7 @@ class ProjectForm extends React.Component {
             'ui:field': 'select-kmi_status'
           },
           description: {
-            'ui:widget': 'textarea',
+            'ui:field': 'textarea',
             classNames: 'with-ar'
           },
           component: {
@@ -496,7 +502,7 @@ class ProjectForm extends React.Component {
             classNames: 'ar'
           },
           description_ar: {
-            'ui:widget': 'textarea',
+            'ui:field': 'textarea',
             classNames: 'ar'
           }
         }
@@ -515,7 +521,7 @@ class ProjectForm extends React.Component {
   }
 
   transformErrors (errors) {
-    return errors.map((error) => {
+    let ret = errors.map((error) => {
       if (error.name === 'required') {
         if (error.property === 'instance') {
           let title = error.schema.properties[error.argument].title;
@@ -529,8 +535,11 @@ class ProjectForm extends React.Component {
             message: `${title} is required`
           });
         }
+      } else {
+        return error;
       }
     });
+    return ret;
   }
 
   onChange ({formData}) {
@@ -539,10 +548,15 @@ class ProjectForm extends React.Component {
       isDraft = !formData.published;
     }
     for (let key in formData) {
-      if (schema.properties[key].type === 'array' && formData[key].length === 0) {
-        formData[key] = undefined;
-      } else if (schema.properties[key].type === 'object' && Object.keys(formData[key]).length === 0) {
-        formData[key] = undefined;
+      let data = formData[key];
+      if (typeof data !== 'undefined') {
+        if (schema.properties[key].type === 'array' && data.length === 0) {
+          formData[key] = undefined;
+        } else if (schema.properties[key].type === 'object') {
+          if (Object.keys(data).length === 0 || Object.values(data).every((el) => typeof el === 'undefined')) {
+            formData[key] = undefined;
+          }
+        }
       }
     }
     this.setState({
@@ -564,6 +578,9 @@ class ProjectForm extends React.Component {
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
         'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
         'district': DistrictField,
+        'textarea': CustomTextAreaWidget,
+        'customtext': CustomTextWidget,
+        'customnumber': CustomNumberWidget,
         'marker': LocationField,
         'currency': CurrencyField,
         'select-status': Dropdown(
