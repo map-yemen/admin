@@ -7,7 +7,9 @@ const config = require('../config');
 const apiRoot = config.api_root;
 const ordering = [
   'name',
+  'name_ar',
   'description',
+  'description_ar',
   'published',
   'project_delays',
   'status',
@@ -15,9 +17,14 @@ const ordering = [
   'actual_start_date',
   'planned_end_date',
   'actual_end_date',
+  'amendments',
+  'amendments_ar',
   'number_served',
   'responsible_party',
   'responsible_ministry',
+  'implementing_partners',
+  'implementing_partners_ar',
+  'local_manager',
   'project_link',
   'percent_complete',
   'sds_indicator',
@@ -26,8 +33,6 @@ const ordering = [
   'location',
   'budget',
   'disbursed',
-  'local_manager',
-  'amendments',
   'kmi'
 ];
 
@@ -82,9 +87,9 @@ class Project extends React.Component {
               governorateName = reverseGovernorateMap[districtObj.governorate];
               if (districtObj.district) {
                 let districtName = districtLookup(districtObj.governorate, districtObj.district);
-                return <li>{districtName + ', ' + governorateName}</li>;
+                return <li className="preview-item">{districtName + ', ' + governorateName}</li>;
               } else {
-                return <li>{governorateName}</li>;
+                return <li className="preview-item">{governorateName}</li>;
               }
             }
 
@@ -92,16 +97,16 @@ class Project extends React.Component {
           });
           return <li key={key}><label>{keys[key].title}</label><ul>{locations}</ul></li>;
         } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'category') {
-          const indicators = project[key].map((item) => <li>{item.en} - {item.ar}</li>);
+          const indicators = project[key].map((item) => <li className="preview-item">{item.en} - {item.ar}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{indicators}</ul></li>;
         } else if (key === 'budget' && project[key].length > 0) {
-          const funds = project[key].map((fund) => <li>{fund.donor_name + ': ' + ' $' + fund.fund.amount}</li>);
+          const funds = project[key].map((fund) => <li className="preview-item">{fund.donor_name + ': ' + ' $' + fund.fund.amount}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{funds}</ul></li>;
         } else if (key === 'disbursed' && project[key].length > 0) {
-          const disbursed = project[key].map((fund) => <li>{fund.donor_name + ': ' + fund.type.en + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
+          const disbursed = project[key].map((fund) => <li className="preview-item">{fund.donor_name + ': ' + fund.type.en + ' $' + fund.fund.amount + ' ' + fund.date}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{disbursed}</ul></li>;
         } else if (key === 'kmi' && project[key].length > 0) {
-          const kmis = project[key].map((kmi) => <li>{kmi.activity}<p>{kmi.description}</p><p>{kmi.kpi}</p><p>{kmi.date}</p><p>{kmi.status.en}</p></li>);
+          const kmis = project[key].map((kmi) => <li className='preview-item'>{kmi.activity}<p>{kmi.description}</p><p>{kmi.kpi}</p><p>{kmi.date}</p><p>{kmi.status.en}</p></li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{kmis}</ul></li>;
         }
       });

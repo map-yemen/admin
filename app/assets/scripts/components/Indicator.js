@@ -67,6 +67,9 @@ class Indicator extends React.Component {
         } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'themer') {
           const indicators = indicator[key].map((item) => <li>{item.en} - {item.ar}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{indicators}</ul></li>;
+        } else if (key === 'sources') {
+          const sources = indicator[key].map((item) => <li className="preview-item">{item}</li>);
+          return <li key={key}><label>{keys[key].title}</label><ul>{sources}</ul></li>;
         }
       });
 
