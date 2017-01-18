@@ -392,5 +392,35 @@ label {
 
 .preview-item {
   margin-left: 10px;
+}
 
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: #333;
+}
+.has-error .form-control {
+  border-color: rgb(204, 204, 204);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.has-error .form-control:focus {
+  border-color: rgb(204, 204, 204);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.has-error .input-group-addon {
+  color: #333;
+  background-color: #333;
+  border-color: rgb(204, 204, 204);
+}
+.has-error .form-control-feedback {
+  color: #333;
 }
