@@ -17,7 +17,7 @@ export default function (yearLabel, monthLabel) {
     }
 
     readyForChange () {
-      return this.state.year && this.state.year !== -1;
+      return this.state.year && this.state.year !== '-1';
     }
 
     onChange (name) {
@@ -25,6 +25,8 @@ export default function (yearLabel, monthLabel) {
         this.setState({[name]: event.target.value}, () => {
           if (this.readyForChange()) {
             this.props.onChange(this.state.year + '/' + this.state.month);
+          } else {
+            this.props.onChange(undefined);
           }
         });
       };
@@ -33,7 +35,10 @@ export default function (yearLabel, monthLabel) {
     render () {
       const {month, year} = this.state;
       let months = range(1, 13).map((month) => {
-        return <option key={month} value={month}>{month}</option>;
+        let monthMap = ['January - يناير', 'February - فبراير', 'March - مارس', 'April - أبريل', 'May - مايو', 'June - يونيو',
+          'July - يوليو', 'August - أغسطس', 'September - سبتمبر', 'October - أكتوبر',
+          'November - نوفمبر', 'December - ديسمبر'];
+        return <option key={month} value={month}>{monthMap[month]}</option>;
       });
       months.unshift(<option key={-1} value={-1}>Select a Month</option>);
 
@@ -43,11 +48,13 @@ export default function (yearLabel, monthLabel) {
 
       years.unshift(<option key={-1} value={-1}>Select a Year</option>);
 
+      let requiredLabel = (this.props.required) ? '*' : '';
+
       return <div className="form-date">
         <legend>{this.props.schema.title}</legend>
         <div className="row">
           <div className="col-sm-6">
-            <label>{yearLabel}</label>
+            <label>{`${yearLabel} ${requiredLabel}`}</label>
             <select className="form-control" value={Number(year)} onChange={this.onChange('year')}>
             {years}
             </select>

@@ -1,36 +1,64 @@
 import React from 'react';
-import Form from 'react-jsonschema-form/dist/react-jsonschema-form';
+import Form from './react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
 import DistrictField from './widgets/DistrictField';
+import CustomTextAreaWidget from './widgets/CustomTextAreaWidget';
+import CustomTextWidget from './widgets/CustomTextWidget';
+import CustomNumberWidget from './widgets/CustomNumberWidget';
 import Dropdown from './widgets/Dropdown';
+
+Object.byString = function (o, s) {
+  s = s.replace(/\[(\w+)\]/g, '.items.properties'); // convert indexes to properties
+  s = s.replace(/^\./, '');           // strip a leading dot
+  var a = s.split('.');
+  for (var i = 0, n = a.length; i < n; ++i) {
+    var k = a[i];
+    if (k in o) {
+      o = o[k];
+    } else {
+      return;
+    }
+  }
+  return o;
+};
+
+function isEmptyObj (data) {
+  return Object.keys(data).length === 0 || Object.values(data).every((el) => typeof el === 'undefined');
+}
+
+function setMaybe (formData) {
+  for (let key in formData) {
+    let data = formData[key];
+    if (typeof data !== 'undefined') {
+      if (schema.properties[key].type === 'array') {
+        if (data.length === 0) {
+          formData[key] = undefined;
+        }
+      } else if (schema.properties[key].type === 'object') {
+        if (isEmptyObj(data)) {
+          formData[key] = undefined;
+        }
+      }
+    }
+  }
+  return formData;
+}
 
 export const schema = {
   type: 'object',
   required: [
-    'actual_end_date',
-    'actual_start_date',
-    'amendments',
-    'amendments_ar',
     'budget',
-    'category',
     'description',
-    'description_ar',
-    'disbursed',
-    'implementing_partners',
-    'implementing_partners_ar',
+    'category',
     'kmi',
     'location',
     'name',
-    'name_ar',
     'number_served',
     'planned_end_date',
     'planned_start_date',
-    'project_delays',
-    'project_delays_ar',
     'published',
-    'responsible_ministry',
     'sdg_indicator',
     'sds_indicator',
     'status'
@@ -91,7 +119,7 @@ export const schema = {
     number_served: {
       type: 'object',
       title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات ',
-      required: ['number_served', 'number_served_unit', 'number_served_unit_ar'],
+      required: ['number_served', 'number_served_unit'],
       properties: {
         number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
@@ -104,7 +132,8 @@ export const schema = {
       items: {
         title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDS Indicator'}, ar: {type: 'string'}}
       }
     },
     sdg_indicator: {
@@ -113,7 +142,8 @@ export const schema = {
       items: {
         title: 'SDG Goal - هدف التنمية المستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDG Indicator'}, ar: {type: 'string'}}
       }
     },
     category: {
@@ -122,7 +152,8 @@ export const schema = {
       items: {
         title: 'Sub-sector - القطاع الفرعي',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'Sub-sector'}, ar: {type: 'string'}}
       }
     },
     location: {
@@ -167,10 +198,10 @@ export const schema = {
             type: 'object',
             required: ['currency', 'rate', 'amount', 'original'],
             properties: {
-              currency: {type: 'string'},
-              rate: {type: 'number'},
-              amount: {type: 'number'},
-              original: {type: 'number'}
+              currency: {type: 'string', title: 'Currency'},
+              rate: {type: 'number', title: 'Exchange Rate'},
+              amount: {type: 'number', title: 'Amount'},
+              original: {type: 'number', title: 'Original Amount'}
             }
           },
           donor_name: {
@@ -189,16 +220,16 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['fund', 'donor_name', 'type', 'date'],
+        required: ['fund', 'donor_name', 'type_of_fund', 'date'],
         properties: {
           fund: {
             type: 'object',
             required: ['currency', 'rate', 'amount', 'original'],
             properties: {
-              currency: {type: 'string'},
-              rate: {type: 'number'},
-              amount: {type: 'number'},
-              original: {type: 'number'}
+              currency: {type: 'string', title: 'Currency'},
+              rate: {type: 'number', title: 'Exchange Rate'},
+              amount: {type: 'number', title: 'Amount'},
+              original: {type: 'number', title: 'Original Amount'}
             }
           },
           donor_name: {
@@ -209,13 +240,15 @@ export const schema = {
             type: 'string',
             title: 'المانح'
           },
-          type: {
+          type_of_fund: {
             title: 'Type of Fund',
             type: 'object',
-            properties: {en: {type: 'string'}, ar: {type: 'string'}}
+            required: ['en'],
+            properties: {en: {type: 'string', title: 'Type of Fund'}, ar: {type: 'string'}}
           },
           date: {
-            type: 'string'
+            type: 'string',
+            title: 'Date'
           }
         }
       }
@@ -225,7 +258,7 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['status', 'target', 'kpi', 'date'],
+        required: ['status', 'target', 'kpi', 'component'],
         properties: {
           kpi: {
             type: 'string',
@@ -320,19 +353,19 @@ class ProjectForm extends React.Component {
       },
       implementing_partners: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       implementing_partners_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       description: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       description_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       corrective_action: {
         classNames: 'with-ar'
@@ -350,19 +383,19 @@ class ProjectForm extends React.Component {
       },
       amendments: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       amendments_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       project_delays: {
         classNames: 'with-ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       project_delays_ar: {
         classNames: 'ar',
-        'ui:widget': 'textarea'
+        'ui:field': 'textarea'
       },
       local_manager: {
         classNames: 'section-half'
@@ -373,12 +406,15 @@ class ProjectForm extends React.Component {
       number_served: {
         classNames: 'field-half form-less-spacing',
         number_served: {
+          'ui:field': 'customnumber'
         },
         number_served_unit: {
-          classNames: 'padding-right'
+          classNames: 'padding-right',
+          'ui:field': 'customtext'
         },
         number_served_unit_ar: {
-          classNames: 'ar form-float-right'
+          classNames: 'ar form-float-right',
+          'ui:field': 'customtext'
         }
       },
       percent_complete: {
@@ -444,7 +480,7 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
-          type: {'ui:field': 'select-disbursed-type'},
+          type_of_fund: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
@@ -469,7 +505,7 @@ class ProjectForm extends React.Component {
             'ui:field': 'select-kmi_status'
           },
           description: {
-            'ui:widget': 'textarea',
+            'ui:field': 'textarea',
             classNames: 'with-ar'
           },
           component: {
@@ -479,7 +515,7 @@ class ProjectForm extends React.Component {
             classNames: 'ar'
           },
           description_ar: {
-            'ui:widget': 'textarea',
+            'ui:field': 'textarea',
             classNames: 'ar'
           }
         }
@@ -493,8 +529,30 @@ class ProjectForm extends React.Component {
 
   onError (errors) {
     if (errors.length) {
-      window.scroll(0, 0);
+      // window.scroll(0, 0);
     }
+  }
+
+  transformErrors (errors) {
+    let ret = errors.map((error) => {
+      if (error.name === 'required') {
+        if (error.property === 'instance') {
+          let title = error.schema.properties[error.argument].title;
+          return Object.assign({}, error, {
+            message: `${title} is required`
+          });
+        } else {
+          error.argument.replace('instance.', '');
+          let title = Object.byString(error.schema.properties, error.argument).title;
+          return Object.assign({}, error, {
+            message: `${title} is required`
+          });
+        }
+      } else {
+        return error;
+      }
+    });
+    return ret;
   }
 
   onChange ({formData}) {
@@ -502,16 +560,23 @@ class ProjectForm extends React.Component {
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
+    formData = setMaybe(formData);
     this.setState({
       isDraft,
       formData
     });
   }
 
+  onSubmit (formObject) {
+    let {formData} = formObject;
+    formData = setMaybe(formData);
+    this.props.onSubmit(Object.assign({}, formObject, {formData}));
+  }
+
   render () {
     const {schema, formData, isDraft} = this.state;
     return <Form schema={schema}
-      onSubmit={this.props.onSubmit}
+      onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
@@ -521,6 +586,9 @@ class ProjectForm extends React.Component {
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
         'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
         'district': DistrictField,
+        'textarea': CustomTextAreaWidget,
+        'customtext': CustomTextWidget,
+        'customnumber': CustomNumberWidget,
         'marker': LocationField,
         'currency': CurrencyField,
         'select-status': Dropdown(
@@ -572,6 +640,7 @@ class ProjectForm extends React.Component {
             '',
             ''
           ],
+          true
         ),
         'select-sdg_indicator': Dropdown(
           'SDG Goal - هدف التنمية المستدامة',
@@ -614,6 +683,7 @@ class ProjectForm extends React.Component {
             '',
             ''
           ],
+          true
         ),
         'select-category': Dropdown(
           'Sub-sector - القطاع الفرعي',
@@ -633,7 +703,8 @@ class ProjectForm extends React.Component {
             'صيد الأسماك و الزراعة المائية وعلم التحريج',
             'الثروة الحيوانية',
             'البنية التحتية بالمناطق الريفية والري'
-          ]
+          ],
+          true
         ),
         'select-disbursed-type': Dropdown(
           'Type of Fund',
@@ -647,6 +718,8 @@ class ProjectForm extends React.Component {
         )
       }}
       uiSchema = {this.state.uiSchema}
+      transformErrors={this.transformErrors.bind(this)}
+      showErrorList={false}
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
