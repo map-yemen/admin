@@ -8,43 +8,7 @@ import CustomTextAreaWidget from './widgets/CustomTextAreaWidget';
 import CustomTextWidget from './widgets/CustomTextWidget';
 import CustomNumberWidget from './widgets/CustomNumberWidget';
 import Dropdown from './widgets/Dropdown';
-
-Object.byString = function (o, s) {
-  s = s.replace(/\[(\w+)\]/g, '.items.properties'); // convert indexes to properties
-  s = s.replace(/^\./, '');           // strip a leading dot
-  var a = s.split('.');
-  for (var i = 0, n = a.length; i < n; ++i) {
-    var k = a[i];
-    if (k in o) {
-      o = o[k];
-    } else {
-      return;
-    }
-  }
-  return o;
-};
-
-function isEmptyObj (data) {
-  return Object.keys(data).length === 0 || Object.values(data).every((el) => typeof el === 'undefined');
-}
-
-function setMaybe (formData) {
-  for (let key in formData) {
-    let data = formData[key];
-    if (typeof data !== 'undefined') {
-      if (schema.properties[key].type === 'array') {
-        if (data.length === 0) {
-          formData[key] = undefined;
-        }
-      } else if (schema.properties[key].type === 'object') {
-        if (isEmptyObj(data)) {
-          formData[key] = undefined;
-        }
-      }
-    }
-  }
-  return formData;
-}
+import {setMaybe, transformErrors} from '../utils/nullUtils';
 
 export const schema = {
   type: 'object',
@@ -527,40 +491,12 @@ class ProjectForm extends React.Component {
     };
   }
 
-  onError (errors) {
-    if (errors.length) {
-      // window.scroll(0, 0);
-    }
-  }
-
-  transformErrors (errors) {
-    let ret = errors.map((error) => {
-      if (error.name === 'required') {
-        if (error.property === 'instance') {
-          let title = error.schema.properties[error.argument].title;
-          return Object.assign({}, error, {
-            message: `${title} is required`
-          });
-        } else {
-          error.argument.replace('instance.', '');
-          let title = Object.byString(error.schema.properties, error.argument).title;
-          return Object.assign({}, error, {
-            message: `${title} is required`
-          });
-        }
-      } else {
-        return error;
-      }
-    });
-    return ret;
-  }
-
   onChange ({formData}) {
     let isDraft;
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
-    formData = setMaybe(formData);
+    formData = setMaybe(this.schema, formData);
     this.setState({
       isDraft,
       formData
@@ -569,7 +505,7 @@ class ProjectForm extends React.Component {
 
   onSubmit (formObject) {
     let {formData} = formObject;
-    formData = setMaybe(formData);
+    formData = setMaybe(this.schema, formData);
     this.props.onSubmit(Object.assign({}, formObject, {formData}));
   }
 
@@ -718,7 +654,7 @@ class ProjectForm extends React.Component {
         )
       }}
       uiSchema = {this.state.uiSchema}
-      transformErrors={this.transformErrors.bind(this)}
+      transformErrors={transformErrors}
       showErrorList={false}
     >
       <button type='submit' className='btn button--primary'>Submit</button>

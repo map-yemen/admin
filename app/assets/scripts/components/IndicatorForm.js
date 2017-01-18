@@ -4,10 +4,11 @@ import Dropdown from './widgets/Dropdown';
 
 import DataTypeWidget from './widgets/DataTypeWidget';
 import { csvToJSON } from '../utils/csv';
+import {setMaybe, transformErrors} from '../utils/nullUtils';
 
 export const schema = {
   type: 'object',
-  required: ['name'],
+  required: ['name', 'category', 'data', 'unit'],
   properties: {
     name: {type: 'string', title: 'Indicator Name'},
     name_ar: {type: 'string', title: 'اسم المؤشر'},
@@ -34,7 +35,8 @@ export const schema = {
       items: {
         title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDS Indicator'}, ar: {type: 'string'}}
       }
     },
     sdg_indicator: {
@@ -43,7 +45,8 @@ export const schema = {
       items: {
         title: 'SDG Goal - هدف التنمية المستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDG Indicator'}, ar: {type: 'string'}}
       }
     },
     themer: {
@@ -52,7 +55,8 @@ export const schema = {
       items: {
         title: 'Other Development Indicator',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'Other Development Indicator'}, ar: {type: 'string'}}
       }
     },
     sources: {
@@ -151,21 +155,20 @@ const validate = function validate (formData, errors) {
 };
 
 class IndicatorForm extends React.Component {
-  onError (errors) {
-    if (errors.length) {
-      window.scroll(0, 0);
-    }
+  onChange ({formData}) {
+    formData = setMaybe(schema, formData);
+    this.setState({
+      formData
+    }, () => this.props.onChange(this.state));
   }
 
   render () {
     return <Form schema={schema}
       onSubmit={this.props.onSubmit}
-      onChange={this.props.onChange}
-      onError={this.onError.bind(this)}
+      onChange={this.onChange}
       formData={this.props.formData}
       uiSchema={uiSchema}
       validate={validate}
-      liveValidate
       showErrorList={false}
       fields={{
         'datatype': DataTypeWidget,
@@ -266,6 +269,8 @@ class IndicatorForm extends React.Component {
           ],
         )
       }}
+      transformErrors={transformErrors}
+      showErrorList={false}
     >
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
