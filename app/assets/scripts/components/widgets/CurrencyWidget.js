@@ -10,20 +10,43 @@ export default class CurrencyField extends React.Component {
     }
   }
 
+  setMaybe (nextState) {
+    let maybeState = {};
+    console.log(nextState);
+    for (let key in nextState) {
+      let val = nextState[key];
+      if (
+        (typeof val === 'number' && isNaN(val)) ||
+        (typeof val === 'string' && val.length === 0) ||
+        val === null ||
+        typeof val === undefined
+      ) {
+        maybeState[key] = undefined;
+      } else {
+        maybeState[key] = val;
+      }
+    }
+
+    this.setState(maybeState, () => this.props.onChange(this.state));
+  }
+
   onChange (name) {
-    const component = this;
     return (event) => {
       let scratch = Object.assign({}, this.state);
       scratch[name] = parseFloat(event.target.value);
       scratch['amount'] = scratch['rate'] * scratch['original'];
-      component.setState(scratch, () => component.props.onChange(component.state));
+
+      this.setMaybe(Object.assign({}, this.state, {
+        amount: scratch['amount'],
+        rate: scratch['rate'],
+        original: scratch['original']
+      }));
     };
   }
 
   onChangeCurrency (event) {
-    this.setState({
-      currency: event.target.value
-    }, () => this.props.onChange(this.state));
+    let nextValue = (event.target.value === '-1') ? undefined : event.target.value;
+    this.setMaybe(Object.assign({}, this.state, {currency: nextValue}));
   }
 
   render () {
@@ -32,9 +55,9 @@ export default class CurrencyField extends React.Component {
       <legend>{this.props.schema.title}</legend>
       <div className="row">
         <div className="col-sm-4">
-          <label>Currency - العملة</label>
+          <label>Currency - العملة * </label>
           <select className="select-sm" name="currency_code" value={currency} onChange={this.onChangeCurrency.bind(this)}>
-            <option value="">Select a currency - يُرجى اختيار عملة التداول</option>
+            <option value='-1'>Select a currency - يُرجى اختيار عملة التداول</option>
             <option value="AUD">Australian Dollar</option>
             <option value="BRL">Brazilian Real</option>
             <option value="CAD">Canadian Dollar</option>
@@ -62,12 +85,12 @@ export default class CurrencyField extends React.Component {
           </select>
         </div>
         <div className="col-sm-4">
-          <label>Original Amount - المبلغ الأصلي</label>
+          <label>Original Amount - المبلغ الأصلي * </label>
           <input className="form-control" type="number" value={original} step="1"
             onChange={this.onChange('original')} />
         </div>
         <div className="col-sm-4">
-          <label>Exchange Rate - سعر الصرف</label>
+          <label>Exchange Rate - سعر الصرف * </label>
           <input className="form-control" type="number" value={rate} step="0.01"
             onChange={this.onChange('rate')} />
         </div>

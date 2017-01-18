@@ -24,8 +24,10 @@ class CustomTextAreaWidget extends React.Component {
       readonly,
       autofocus
     } = this.props;
+
+    let requiredLabel = (this.props.required) ? '*' : '';
     return (<div>
-      <label className="control-label">{schema.title}</label>
+      <label className="control-label">{`${schema.title} ${requiredLabel}`} </label>
       <p className="field-description">{schema.description}</p>
       <textarea
       id={id}

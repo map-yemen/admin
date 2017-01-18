@@ -97,7 +97,7 @@ export const schema = {
     number_served: {
       type: 'object',
       title: 'Number of Beneficiaries - عدد المستفيدين/ المستفيدات ',
-      required: ['number_served', 'number_served_unit', 'number_served_unit_ar'],
+      required: ['number_served', 'number_served_unit'],
       properties: {
         number_served: {type: 'number', title: 'Number - العدد', 'description': 'e.g. 2000'},
         number_served_unit: {type: 'string', title: 'Unit', 'description': 'e.g. Households Served'},
@@ -620,6 +620,7 @@ class ProjectForm extends React.Component {
             '',
             ''
           ],
+          true
         ),
         'select-sdg_indicator': Dropdown(
           'SDG Goal - هدف التنمية المستدامة',
@@ -662,6 +663,7 @@ class ProjectForm extends React.Component {
             '',
             ''
           ],
+          true
         ),
         'select-category': Dropdown(
           'Sub-sector - القطاع الفرعي',
@@ -681,7 +683,8 @@ class ProjectForm extends React.Component {
             'صيد الأسماك و الزراعة المائية وعلم التحريج',
             'الثروة الحيوانية',
             'البنية التحتية بالمناطق الريفية والري'
-          ]
+          ],
+          true
         ),
         'select-disbursed-type': Dropdown(
           'Type of Fund',

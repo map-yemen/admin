@@ -48,11 +48,13 @@ export default function (yearLabel, monthLabel) {
 
       years.unshift(<option key={-1} value={-1}>Select a Year</option>);
 
+      let requiredLabel = (this.props.required) ? '*' : '';
+
       return <div className="form-date">
         <legend>{this.props.schema.title}</legend>
         <div className="row">
           <div className="col-sm-6">
-            <label>{yearLabel}</label>
+            <label>{`${yearLabel} ${requiredLabel}`}</label>
             <select className="form-control" value={Number(year)} onChange={this.onChange('year')}>
             {years}
             </select>

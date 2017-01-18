@@ -43,7 +43,7 @@ export default class DistrictField extends React.Component {
       <legend>{this.props.schema.title}</legend>
       <div className="row">
         <div className="col-sm-6">
-          <label>Governorate - المحافظة</label>
+          <label>Governorate - المحافظة *</label>
           <select className="form-control" value={governorate} onChange={this.onChange('governorate')}>
             {governorates}
           </select>
