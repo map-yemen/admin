@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default function (label, helpText, enumOptions, arEnumOptions) {
+export default function (label, helpText, enumOptions, arEnumOptions, required) {
   return class Dropdown extends React.Component {
     constructor (props) {
       super(props);
       this.state = {};
+      this.state.required = this.props.required || required;
       if (props.formData && props.formData.en) {
         let enVal = props.formData.en;
         enumOptions.forEach((val, i) => {
@@ -28,10 +29,11 @@ export default function (label, helpText, enumOptions, arEnumOptions) {
     }
 
     render () {
+      let requiredLabel = (this.state.required) ? '*' : '';
       return (
         <div className="row">
           <div className="col-sm-6">
-            <label>{label}</label>
+            <label>{`${label} ${requiredLabel}`} </label>
             <select className="form-control" onChange={this.onChange.bind(this)} value={this.state.val}>
               <option key='-1' value='-1'>{helpText}</option>
               {
