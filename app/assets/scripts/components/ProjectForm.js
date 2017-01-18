@@ -24,6 +24,28 @@ Object.byString = function (o, s) {
   return o;
 };
 
+function isEmptyObj (data) {
+  return Object.keys(data).length === 0 || Object.values(data).every((el) => typeof el === 'undefined');
+}
+
+function setMaybe (formData) {
+  for (let key in formData) {
+    let data = formData[key];
+    if (typeof data !== 'undefined') {
+      if (schema.properties[key].type === 'array') {
+        if (data.length === 0) {
+          formData[key] = undefined;
+        }
+      } else if (schema.properties[key].type === 'object') {
+        if (isEmptyObj(data)) {
+          formData[key] = undefined;
+        }
+      }
+    }
+  }
+  return formData;
+}
+
 export const schema = {
   type: 'object',
   required: [
@@ -110,7 +132,8 @@ export const schema = {
       items: {
         title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDS Indicator'}, ar: {type: 'string'}}
       }
     },
     sdg_indicator: {
@@ -119,7 +142,8 @@ export const schema = {
       items: {
         title: 'SDG Goal - هدف التنمية المستدامة',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'SDG Indicator'}, ar: {type: 'string'}}
       }
     },
     category: {
@@ -128,7 +152,8 @@ export const schema = {
       items: {
         title: 'Sub-sector - القطاع الفرعي',
         type: 'object',
-        properties: {en: {type: 'string'}, ar: {type: 'string'}}
+        required: ['en'],
+        properties: {en: {type: 'string', title: 'Sub-sector'}, ar: {type: 'string'}}
       }
     },
     location: {
@@ -535,28 +560,23 @@ class ProjectForm extends React.Component {
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
-    for (let key in formData) {
-      let data = formData[key];
-      if (typeof data !== 'undefined') {
-        if (schema.properties[key].type === 'array' && data.length === 0) {
-          formData[key] = undefined;
-        } else if (schema.properties[key].type === 'object') {
-          if (Object.keys(data).length === 0 || Object.values(data).every((el) => typeof el === 'undefined')) {
-            formData[key] = undefined;
-          }
-        }
-      }
-    }
+    formData = setMaybe(formData);
     this.setState({
       isDraft,
       formData
     });
   }
 
+  onSubmit (formObject) {
+    let {formData} = formObject;
+    formData = setMaybe(formData);
+    this.props.onSubmit(Object.assign({}, formObject, {formData}));
+  }
+
   render () {
     const {schema, formData, isDraft} = this.state;
     return <Form schema={schema}
-      onSubmit={this.props.onSubmit}
+      onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
       onError= {this.onError.bind(this)}
