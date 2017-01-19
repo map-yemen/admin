@@ -515,7 +515,6 @@ class ProjectForm extends React.Component {
       onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
-      onError= {this.onError.bind(this)}
       noValidate={isDraft /* Only validate if this isn't a draft */ }
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
