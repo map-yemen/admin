@@ -496,7 +496,7 @@ class ProjectForm extends React.Component {
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
-    formData = setMaybe(this.schema, formData);
+    formData = setMaybe(schema, formData);
     this.setState({
       isDraft,
       formData
@@ -505,7 +505,7 @@ class ProjectForm extends React.Component {
 
   onSubmit (formObject) {
     let {formData} = formObject;
-    formData = setMaybe(this.schema, formData);
+    formData = setMaybe(schema, formData);
     this.props.onSubmit(Object.assign({}, formObject, {formData}));
   }
 
