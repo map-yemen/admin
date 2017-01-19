@@ -16,7 +16,6 @@ export const schema = {
     'budget',
     'description',
     'category',
-    'kmi',
     'location',
     'name',
     'number_served',
@@ -496,7 +495,7 @@ class ProjectForm extends React.Component {
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
-    formData = setMaybe(schema, formData);
+    formData = setMaybe(this.state.schema, formData);
     this.setState({
       isDraft,
       formData
@@ -505,7 +504,7 @@ class ProjectForm extends React.Component {
 
   onSubmit (formObject) {
     let {formData} = formObject;
-    formData = setMaybe(schema, formData);
+    formData = setMaybe(this.state.schema, formData);
     this.props.onSubmit(Object.assign({}, formObject, {formData}));
   }
 

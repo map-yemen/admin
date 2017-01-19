@@ -12,7 +12,6 @@ export default class CurrencyField extends React.Component {
 
   setMaybe (nextState) {
     let maybeState = {};
-    console.log(nextState);
     for (let key in nextState) {
       let val = nextState[key];
       if (
