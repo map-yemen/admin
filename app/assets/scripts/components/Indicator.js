@@ -64,8 +64,13 @@ class Indicator extends React.Component {
           return <li key={key}><label>{keys[key].title}</label>{ indicator[key] ? 'Governorate' : 'District' }</li>;
         } else if (keys[key].type === 'string') {
           return <li key={key}><label>{keys[key].title}</label>{ String(indicator[key]) }</li>;
-        } else if (key === 'sds_indicator' || key === 'sdg_indicator' || key === 'themer') {
-          const indicators = indicator[key].map((item) => <li>{item.en} - {item.ar}</li>);
+        } else if (key === 'themes') {
+          const typeDisplayMap = {
+            'sds': 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
+            'sdg': 'SDG Goal - هدف التنمية المستدامة',
+            'other': 'Other Development Indicator'
+          };
+          const indicators = indicator[key].map((item) => <li>{typeDisplayMap[item.type]} - {item.en} - {item.ar}</li>);
           return <li key={key}><label>{keys[key].title}</label><ul>{indicators}</ul></li>;
         } else if (key === 'sources') {
           const sources = indicator[key].map((item) => <li className="preview-item">{item}</li>);

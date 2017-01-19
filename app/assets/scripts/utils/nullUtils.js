@@ -20,7 +20,6 @@ function isEmptyObj (data) {
 function setMaybe (schema, formData) {
   for (let key in formData) {
     let data = formData[key];
-    console.log(key, data, schema.properties[key]);
     if (typeof data !== 'undefined' &&
       typeof schema.properties[key] !== 'undefined') {
       if (schema.properties[key].type === 'array') {
