@@ -183,7 +183,7 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['fund', 'donor_name', 'type_of_fund', 'date'],
+        required: ['fund', 'donor_name', 'type', 'date'],
         properties: {
           fund: {
             type: 'object',
@@ -203,7 +203,7 @@ export const schema = {
             type: 'string',
             title: 'المانح'
           },
-          type_of_fund: {
+          type: {
             title: 'Type of Fund',
             type: 'object',
             required: ['en'],
@@ -443,7 +443,7 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
-          type_of_fund: {'ui:field': 'select-disbursed-type'},
+          type: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
