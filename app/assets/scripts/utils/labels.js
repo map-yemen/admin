@@ -73,7 +73,7 @@ module.exports = {
     'select': 'Select an SDG goal - يُرجى اختيار أحد أهداف التنمية المُستدامة التى يتناولها المشروع'
   },
   otherDevLabels: {
-    'ar': [
+    'en': [
       'Education & Training',
       'Health',
       'Economy',
@@ -82,7 +82,7 @@ module.exports = {
       'Energy',
       'Environment'
     ],
-    'en': [
+    'ar': [
       '',
       '',
       '',
