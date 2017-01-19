@@ -37,7 +37,6 @@ function setMaybe (schema, formData) {
 }
 
 function transformErrors (errors) {
-  console.log(errors)
   let ret = errors.map((error) => {
     if (error.name === 'required') {
       if (error.property === 'instance') {
