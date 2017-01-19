@@ -8,7 +8,7 @@ import {transformErrors} from '../utils/nullUtils';
 
 export const schema = {
   type: 'object',
-  required: ['name', 'category', 'data', 'units'],
+  required: ['name', 'category', 'data', 'units', 'themes'],
   properties: {
     name: {type: 'string', title: 'Indicator Name'},
     name_ar: {type: 'string', title: 'اسم المؤشر'},
