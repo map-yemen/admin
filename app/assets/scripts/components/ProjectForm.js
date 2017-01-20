@@ -16,7 +16,6 @@ export const schema = {
     'budget',
     'description',
     'category',
-    'kmi',
     'location',
     'name',
     'number_served',
@@ -184,7 +183,7 @@ export const schema = {
       type: 'array',
       items: {
         type: 'object',
-        required: ['fund', 'donor_name', 'type_of_fund', 'date'],
+        required: ['fund', 'donor_name', 'type', 'date'],
         properties: {
           fund: {
             type: 'object',
@@ -204,7 +203,7 @@ export const schema = {
             type: 'string',
             title: 'المانح'
           },
-          type_of_fund: {
+          type: {
             title: 'Type of Fund',
             type: 'object',
             required: ['en'],
@@ -444,7 +443,7 @@ class ProjectForm extends React.Component {
         items: {
           fund: {'ui:field': 'currency'},
           date: {'ui:field': 'fund-date'},
-          type_of_fund: {'ui:field': 'select-disbursed-type'},
+          type: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
@@ -496,7 +495,7 @@ class ProjectForm extends React.Component {
     if (formData && 'published' in formData) {
       isDraft = !formData.published;
     }
-    formData = setMaybe(this.schema, formData);
+    formData = setMaybe(this.state.schema, formData);
     this.setState({
       isDraft,
       formData
@@ -505,7 +504,7 @@ class ProjectForm extends React.Component {
 
   onSubmit (formObject) {
     let {formData} = formObject;
-    formData = setMaybe(this.schema, formData);
+    formData = setMaybe(this.state.schema, formData);
     this.props.onSubmit(Object.assign({}, formObject, {formData}));
   }
 
@@ -515,7 +514,6 @@ class ProjectForm extends React.Component {
       onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
-      onError= {this.onError.bind(this)}
       noValidate={isDraft /* Only validate if this isn't a draft */ }
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
