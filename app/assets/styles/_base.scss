@@ -369,14 +369,6 @@ label {
 .field-example-item {
   width: 33%;
   float: left;
-  &:before {
-    content: "";
-    width: 15em;
-    height: 10em;
-    display: block;
-    background-color: darken($background-color, 10%);
-    margin-bottom: .5em;
-  }
 }
 
 .indicator-checkbox {
