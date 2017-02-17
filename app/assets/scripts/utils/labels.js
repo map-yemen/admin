@@ -35,7 +35,7 @@ module.exports = {
     'en': [
       'Goal 1: End poverty in all its forms everywhere',
       'Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture',
-      'Goal 3: Ensure healthy lies and promote well being for all at all ages',
+      'Goal 3: Ensure healthy lives and promote well being for all at all ages',
       'Goal 4: Ensure inclusive and equitable education and promote lifelong learning opportunities for all',
       'Goal 5: Achieve gender equality and empower all women and girls',
       'Goal 6: Ensure availability and sustainable management of water and sanitation for all',
