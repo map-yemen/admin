@@ -112,10 +112,13 @@ const uiSchema = {
 
 const validate = function validate (formData, errors) {
   if (formData.data) {
-    try {
-      csvToJSON(formData.data);
-    } catch (e) {
-      errors.data.addError('Is this a tab separated csv file? Contact an administrator if you\'re having problems adding data');
+    // accept mapbox ids or csv
+    if (!formData.data.match(/^\w+\.\w+$/)) {
+      try {
+        csvToJSON(formData.data);
+      } catch (e) {
+        errors.data.addError('Is this a tab separated csv file? Contact an administrator if you\'re having problems adding data');
+      }
     }
   }
   return errors;

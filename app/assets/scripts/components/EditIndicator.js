@@ -29,7 +29,7 @@ class EditIndicator extends React.Component {
     component.props.auth.request(`${apiRoot}/indicators/${id}`, 'get')
       .then(function (resp) {
         const indicator = resp;
-        if (indicator.data && indicator.data.data) {
+        if (indicator.data && indicator.data.data && !indicator.data.data.match(/^\w+\.\w+$/)) {
           indicator.data.data = jsonToCSV(indicator.data.data);
         }
         component.setState({ indicator, id });
