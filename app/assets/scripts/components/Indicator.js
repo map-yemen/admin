@@ -53,7 +53,13 @@ class Indicator extends React.Component {
           return <li key={key}><label>{keys[key].title}</label>{indicator[key].en} - {indicator[key].ar}</li>;
         }
         if (key === 'data' && indicator[key]) {
-          const displayData = jsonToCSV(indicator[key]);
+          // accept mapbox ids or csv
+          let displayData;
+          if (typeof indicator[key] === 'string') {
+            displayData = indicator[key];
+          } else {
+            displayData = jsonToCSV(indicator[key]);
+          }
           return (<li key={key} className='large'>
             <label>{keys[key].title}</label>
             <textarea className='form-control' readOnly value={displayData}></textarea>
