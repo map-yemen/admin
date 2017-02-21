@@ -55,7 +55,7 @@ class Indicator extends React.Component {
         if (key === 'data' && indicator[key]) {
           // accept mapbox ids or csv
           let displayData;
-          if (indicator[key].match(/^\w+\.\w+$/)) {
+          if (typeof indicator[key] === 'string') {
             displayData = indicator[key];
           } else {
             displayData = jsonToCSV(indicator[key]);
