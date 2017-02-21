@@ -26,10 +26,7 @@ class NewIndicator extends React.Component {
     const component = this;
 
     if (formData.data) {
-      // accept mapbox ids or csv
-      if (!formData.data.match(/^\w+\.\w+$/)) {
-        formData.data = csvToJSON(formData.data);
-      }
+      formData.data = csvToJSON(formData.data);
     }
 
     return this.props.auth.request(`${apiRoot}/indicators`, 'post', {
