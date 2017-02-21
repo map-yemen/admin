@@ -11,6 +11,7 @@ const ordering = [
   'description',
   'description_ar',
   'published',
+  'components',
   'project_delays',
   'status',
   'planned_start_date',
@@ -79,6 +80,9 @@ class Project extends React.Component {
           return <li key={key}><label>{keys[key].title}</label>{ project[key] ? 'Published' : 'Draft' }</li>;
         } else if (key === 'number_served') {
           return <li key={key}><label>{keys[key].title}</label>{ project[key].number_served + ' ' + project[key].number_served_unit}</li>;
+        } else if (key === 'components') {
+          const items = project[key].map((item) => <li className="preview-item">{item.component + ' - ' + item.component_ar}</li>);
+          return <li key={key}><label>{keys[key].title}</label>{ items}</li>;
         } else if (key === 'location') {
           const locations = project[key].map((location) => {
             let districtObj = location.district;
