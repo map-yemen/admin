@@ -312,7 +312,13 @@ class ProjectForm extends React.Component {
       components: {
         classNames: 'multiform-group form-block',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          component: {
+            classNames: 'with-ar'
+          },
+          component_ar: {
+            classNames: 'ar'
+          }
         }
       },
       category: {
