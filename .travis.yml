@@ -28,6 +28,7 @@ before_script:
 - npm test
 
 script:
+- npm rebuild node-sass
 - npm run build
 
 deploy:
