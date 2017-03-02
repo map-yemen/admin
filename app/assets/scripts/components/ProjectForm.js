@@ -43,6 +43,23 @@ export const schema = {
       default: false,
       enumNames: ['Ready for publishing - جاهز للنشر', 'Draft - مسودة']
     },
+    components: {
+      title: 'Project Components - (مكونات المشروع (الأهداف المحددة وأنشطة المشروع',
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          component: {
+            title: 'Component',
+            type: 'string'
+          },
+          component_ar: {
+            title: 'المكون',
+            type: 'string'
+          }
+        }
+      }
+    },
     amendments: {
       title: 'Project Amendments', 'description': 'Please indicate if there have been any major amendments to the project (for example a change in project objective, location, etc.)',
       type: 'string'
@@ -295,7 +312,13 @@ class ProjectForm extends React.Component {
       components: {
         classNames: 'multiform-group form-block',
         items: {
-          classNames: 'multiform-group_item'
+          classNames: 'multiform-group_item',
+          component: {
+            classNames: 'with-ar'
+          },
+          component_ar: {
+            classNames: 'ar'
+          }
         }
       },
       category: {
