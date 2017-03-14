@@ -646,20 +646,20 @@ class ProjectForm extends React.Component {
           'Sub-sector - القطاع الفرعي',
           'Select a sub-sector - يُرحى اختيار قطاع فرعي',
           [
-            'Agriculture Extension & Research',
-            'Agro-industry, Marketing & Trade',
-            'Crops',
-            'Fishing, Aquaculture & Forestry',
-            'Livestock',
-            'Rural Infrastructure & Irrigation'
+            'Agriculture',
+            'Water',
+            'Trade & Employment',
+            'Health',
+            'Nutrition',
+            'Education'
           ],
           [
-            'الارشاد الزراعي والبحث',
-            'الصناعات الزراعية والتسويق والتجارة',
-            'المحاصيل',
-            'صيد الأسماك و الزراعة المائية وعلم التحريج',
-            'الثروة الحيوانية',
-            'البنية التحتية بالمناطق الريفية والري'
+            'الزراعة',
+            'المياه',
+            'التجارة و التوظيف',
+            'الصحة',
+            'التغذية',
+            'التعليم'
           ],
           true
         ),
