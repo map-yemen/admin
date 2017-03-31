@@ -27,3 +27,14 @@ export function isEditor (token) {
   const decoded = decode(token);
   return decoded.roles && decoded.roles.indexOf('edit') > -1;
 }
+
+export function isAdmin (token) {
+  const decoded = decode(token);
+  return decoded.roles && decoded.roles.indexOf('admin') > -1;
+}
+
+export function sub (token) {
+  const decoded = decode(token);
+  return decoded.sub;
+}
+

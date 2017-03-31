@@ -1,4 +1,4 @@
-import { isTokenExpired, isEditor } from './jwtHelper';
+import { isTokenExpired, isEditor, isAdmin, sub } from './jwtHelper';
 
 import reqwest from 'reqwest';
 import Auth0 from 'auth0-js';
@@ -50,7 +50,17 @@ export default class AuthService {
 
   loggedInNotEditor () {
     const token = this.getToken();
-    return !!token && !isTokenExpired(token) && !isEditor(token);
+    return !!token && !isTokenExpired(token) && !(isEditor(token) || isAdmin(token));
+  }
+
+  isAdmin () {
+    const token = this.getToken();
+    return isAdmin(token);
+  }
+
+  getSub () {
+    const token = this.getToken();
+    return sub(token);
   }
 
   setToken (idToken) {
