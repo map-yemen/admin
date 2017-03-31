@@ -3,7 +3,6 @@ import Form from './react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
-import DistrictField from './widgets/DistrictField';
 import CustomTextAreaWidget from './widgets/CustomTextAreaWidget';
 import CustomTextWidget from './widgets/CustomTextWidget';
 import CustomNumberWidget from './widgets/CustomNumberWidget';
@@ -431,8 +430,7 @@ class ProjectForm extends React.Component {
       location: {
         classNames: 'form-block multiform-group',
         items: {
-          district: {'ui:field': 'district'},
-          marker: {'ui:field': 'marker'}
+          'ui:field': 'location'
         }
       },
       sds_indicator: {
@@ -542,11 +540,10 @@ class ProjectForm extends React.Component {
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
         'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
-        'district': DistrictField,
+        'location': LocationField,
         'textarea': CustomTextAreaWidget,
         'customtext': CustomTextWidget,
         'customnumber': CustomNumberWidget,
-        'marker': LocationField,
         'currency': CurrencyField,
         'select-status': Dropdown(
           'Project Status - وضع/ حالة المشروع',
