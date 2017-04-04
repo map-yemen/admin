@@ -20,7 +20,7 @@ class LocationFieldItem extends React.Component {
     return (event) => {
       let newState = _.cloneDeep(this.state);
       if (name === 'governorate' || name === 'district') {
-        newState['district'][name] = parseInt(event.target.value);
+        newState['district'][name] = event.target.value;
       } else if (name === 'lat' || name === 'lon') {
         newState['marker'][name] = parseFloat(event.target.value);
       }
@@ -170,7 +170,7 @@ export default class LocationFieldArray extends React.Component {
     let itemSchema = schema.items;
     const formData = this.state.formData;
     this.onChange(
-      [...formData, getDefaultFormState(itemSchema, undefined, definitions)],
+      [...formData, Object.assign({}, getDefaultFormState(itemSchema, undefined, definitions), {key: `key-${Math.random()}`})],
       { validate: false }
     );
   }
@@ -193,6 +193,7 @@ export default class LocationFieldArray extends React.Component {
       }
       const formData = this.state.formData;
       let newItem = _.cloneDeep(formData[index]);
+      newItem.key = `key-${Math.random()}`;
       let newFormData = [...formData.slice(0, index + 1), newItem, ...formData.slice(index + 1)];
       this.onChange(newFormData, { validate: false });
     };
@@ -243,7 +244,7 @@ export default class LocationFieldArray extends React.Component {
       const itemErrorSchema = errorSchema ? errorSchema[index] : undefined;
       const itemIdPrefix = idSchema.$id + '_' + index;
       const itemIdSchema = toIdSchema(itemSchema, itemIdPrefix, definitions);
-      return (<div key={index} className={'array-item'}>
+      return (<div key={item.key} className={'array-item'}>
 
         <div className={'col-xs-9'}>
           <LocationFieldItem
