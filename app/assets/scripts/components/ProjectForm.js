@@ -429,9 +429,7 @@ class ProjectForm extends React.Component {
       },
       location: {
         classNames: 'form-block multiform-group',
-        items: {
-          'ui:field': 'location'
-        }
+        'ui:field': 'location'
       },
       sds_indicator: {
         classNames: 'multiform-group',
