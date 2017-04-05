@@ -45,7 +45,7 @@ class LocationFieldItem extends React.Component {
 
     governorates.unshift(<option key={'-1'} value={''}>Governorate</option>);
     return (
-      <div>
+      <div className='form-group'>
         <div className="form-location">
           <legend>{this.props.schema.title}</legend>
           <div className="row">
@@ -263,8 +263,8 @@ export default class LocationFieldArray extends React.Component {
 
         <div className='col-xs-3 array-item-toolbox'>
           <div
-            className='btn-group'
-            style={{ display: 'flex', justifyContent: 'space-around' }}>
+            className='btn-group--separate'
+            style={{ display: 'flex', justifyContent: 'flex-start' }}>
 
             <IconBtn
               icon='duplicate'
