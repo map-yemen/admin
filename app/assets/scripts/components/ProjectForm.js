@@ -185,7 +185,7 @@ export const schema = {
           },
           donor_name: {
             type: 'string',
-            title: 'Donor Name'
+            title: 'Donor or Contributor Name'
           },
           donor_name_ar: {
             type: 'string',
@@ -661,8 +661,8 @@ class ProjectForm extends React.Component {
         'select-disbursed-type': Dropdown(
           'Type of Fund',
           'Select type of fund',
-          ['Loan', 'Grant'],
-          ['قرض', 'منحة']
+          ['Loan', 'Grant', 'Local Contribution'],
+          ['قرض', 'منحة', 'المساهمة المحلية']
         ),
         'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة',
           ['Not Implemented', 'Partially Implemented', 'Implemented', 'N/A'],
