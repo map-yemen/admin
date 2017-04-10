@@ -85,6 +85,7 @@ export const schema = {
       title: 'إجراءات تصحيحية'
     },
     status: {type: 'object', title: 'Project Status - وضع/ حالة المشروع', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
+    contract_date: {type: 'string', title: 'Contract Signed - تم توقيع العقد'},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
@@ -406,6 +407,10 @@ class ProjectForm extends React.Component {
       },
       percent_complete: {
         'ui:widget': 'range'
+      },
+      contract_date: {
+        classNames: 'form-extra-spacing',
+        'ui:field': 'short-date'
       },
       planned_start_date: {
         classNames: 'form-extra-spacing',
