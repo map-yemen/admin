@@ -291,7 +291,9 @@ export const schema = {
       type: 'string',
       title: 'Report Link - الرابط الالكتروني لتقرير الرصد',
       format: 'uri'
-    }
+    },
+    recommendations: {type: 'string', title: 'Recommendations based on project experience'},
+    recommendations_ar: {type: 'string', title: 'توصيات بناء على خبرة المشروع'}
   }
 };
 
@@ -505,6 +507,14 @@ class ProjectForm extends React.Component {
       reportLink: {
         title: 'Report link',
         'ui:placeholder': 'http://'
+      },
+      recommendations: {
+        classNames: 'with-ar',
+        'ui:field': 'textarea'
+      },
+      recommendations_ar: {
+        classNames: 'ar',
+        'ui:field': 'textarea'
       }
     };
   }
