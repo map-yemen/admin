@@ -14,6 +14,7 @@ const ordering = [
   'components',
   'project_delays',
   'status',
+  'contract_date',
   'planned_start_date',
   'actual_start_date',
   'planned_end_date',
@@ -34,7 +35,8 @@ const ordering = [
   'location',
   'budget',
   'disbursed',
-  'kmi'
+  'kmi',
+  'recommendations'
 ];
 
 const sortOrder = {};

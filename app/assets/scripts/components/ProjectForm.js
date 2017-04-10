@@ -85,6 +85,7 @@ export const schema = {
       title: 'إجراءات تصحيحية'
     },
     status: {type: 'object', title: 'Project Status - وضع/ حالة المشروع', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
+    contract_date: {type: 'string', title: 'Contract Signed - تم توقيع العقد'},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
@@ -291,7 +292,9 @@ export const schema = {
       type: 'string',
       title: 'Report Link - الرابط الالكتروني لتقرير الرصد',
       format: 'uri'
-    }
+    },
+    recommendations: {type: 'string', title: 'Recommendations based on project experience'},
+    recommendations_ar: {type: 'string', title: 'توصيات بناء على خبرة المشروع'}
   }
 };
 
@@ -405,6 +408,10 @@ class ProjectForm extends React.Component {
       percent_complete: {
         'ui:widget': 'range'
       },
+      contract_date: {
+        classNames: 'form-extra-spacing',
+        'ui:field': 'short-date'
+      },
       planned_start_date: {
         classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
@@ -505,6 +512,14 @@ class ProjectForm extends React.Component {
       reportLink: {
         title: 'Report link',
         'ui:placeholder': 'http://'
+      },
+      recommendations: {
+        classNames: 'with-ar',
+        'ui:field': 'textarea'
+      },
+      recommendations_ar: {
+        classNames: 'ar',
+        'ui:field': 'textarea'
       }
     };
   }
