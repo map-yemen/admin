@@ -3,7 +3,6 @@ import Form from './react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
-import DistrictField from './widgets/DistrictField';
 import CustomTextAreaWidget from './widgets/CustomTextAreaWidget';
 import CustomTextWidget from './widgets/CustomTextWidget';
 import CustomNumberWidget from './widgets/CustomNumberWidget';
@@ -86,6 +85,7 @@ export const schema = {
       title: 'إجراءات تصحيحية'
     },
     status: {type: 'object', title: 'Project Status - وضع/ حالة المشروع', properties: {en: {type: 'string'}, ar: {type: 'string'}}},
+    contract_date: {type: 'string', title: 'Contract Signed - تم توقيع العقد'},
     planned_start_date: {type: 'string', title: 'Planned Start Date - تاريخ البدء (الانطلاق) المُخطط'},
     actual_start_date: {type: 'string', title: 'Actual Start Date - تاريخ البدء (الانطلاق) الفعلي'},
     planned_end_date: {type: 'string', title: 'Planned End Date - تاريخ الانتهاء المُخطط', 'description': 'In case of project delays, extension, or cancellation.'},
@@ -186,7 +186,7 @@ export const schema = {
           },
           donor_name: {
             type: 'string',
-            title: 'Donor Name'
+            title: 'Donor or Contributor Name'
           },
           donor_name_ar: {
             type: 'string',
@@ -292,7 +292,9 @@ export const schema = {
       type: 'string',
       title: 'Report Link - الرابط الالكتروني لتقرير الرصد',
       format: 'uri'
-    }
+    },
+    recommendations: {type: 'string', title: 'Recommendations based on project experience'},
+    recommendations_ar: {type: 'string', title: 'توصيات بناء على خبرة المشروع'}
   }
 };
 
@@ -406,6 +408,10 @@ class ProjectForm extends React.Component {
       percent_complete: {
         'ui:widget': 'range'
       },
+      contract_date: {
+        classNames: 'form-extra-spacing',
+        'ui:field': 'short-date'
+      },
       planned_start_date: {
         classNames: 'form-extra-spacing',
         'ui:field': 'short-date'
@@ -430,10 +436,7 @@ class ProjectForm extends React.Component {
       },
       location: {
         classNames: 'form-block multiform-group',
-        items: {
-          district: {'ui:field': 'district'},
-          marker: {'ui:field': 'marker'}
-        }
+        'ui:field': 'location'
       },
       sds_indicator: {
         classNames: 'multiform-group',
@@ -509,6 +512,14 @@ class ProjectForm extends React.Component {
       reportLink: {
         title: 'Report link',
         'ui:placeholder': 'http://'
+      },
+      recommendations: {
+        classNames: 'with-ar',
+        'ui:field': 'textarea'
+      },
+      recommendations_ar: {
+        classNames: 'ar',
+        'ui:field': 'textarea'
       }
     };
   }
@@ -542,11 +553,10 @@ class ProjectForm extends React.Component {
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
         'monitoring-date': DateFieldFactory('Monitoring Date (Year) - تاريخ الرصد (عام)؛', 'Monitoring Date (Month) - تاريخ الرصد (شهر)؛'),
-        'district': DistrictField,
+        'location': LocationField,
         'textarea': CustomTextAreaWidget,
         'customtext': CustomTextWidget,
         'customnumber': CustomNumberWidget,
-        'marker': LocationField,
         'currency': CurrencyField,
         'select-status': Dropdown(
           'Project Status - وضع/ حالة المشروع',
@@ -666,8 +676,8 @@ class ProjectForm extends React.Component {
         'select-disbursed-type': Dropdown(
           'Type of Fund',
           'Select type of fund',
-          ['Loan', 'Grant'],
-          ['قرض', 'منحة']
+          ['Loan', 'Grant', 'Local Contribution'],
+          ['قرض', 'منحة', 'المساهمة المحلية']
         ),
         'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة',
           ['Not Implemented', 'Partially Implemented', 'Implemented', 'N/A'],

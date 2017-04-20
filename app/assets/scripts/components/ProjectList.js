@@ -15,8 +15,17 @@ class ProjectList extends React.Component {
     const component = this;
     component.props.auth.request(`${apiRoot}/projects`, 'get')
       .then(function (resp) {
+        let list = resp;
+        let sub = component.props.auth.getSub();
+        // If we're not the admin filter the list
+        if (!component.props.auth.isAdmin()) {
+          list = list.filter((project) => {
+            return project.owner === sub;
+          });
+        }
+
         component.setState({
-          list: resp
+          list: list
         });
       });
   }
