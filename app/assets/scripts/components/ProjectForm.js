@@ -290,7 +290,7 @@ export const schema = {
     },
     reportLink: {
       type: 'string',
-      title: 'Report Link - الرابط الالكتروني لتقرير الرصد',
+      title: 'Monitoring report link - الرابط الالكتروني لتقرير الرصد',
       format: 'uri'
     },
     recommendations: {type: 'string', title: 'Recommendations based on project experience'},
