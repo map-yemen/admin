@@ -9,6 +9,7 @@ class CustomTextAreaWidget extends React.Component {
 
   onChange (e) {
     if (e.target.value.length > 0) {
+      this.setState({ value: e.target.value });
       this.props.onChange(e.target.value);
     } else {
       this.props.onChange(undefined);
