@@ -544,11 +544,7 @@ class ProjectForm extends React.Component {
     const errors = transformErrors(props.errors);
 
     return (
-      <ul className="error-detail bs-callout bs-callout-info" style={{
-        padding: '10px',
-        marginBottom:'25px',
-        backgroundColor: 'rgba(169, 68, 66, 0.1)'
-      }}>
+      <ul className="error-list bs-callout bs-callout-info">
         <p className="text-danger control-label"><b>There are errors in the form:</b></p>
         {errors.map((error, i) => {
           return (
