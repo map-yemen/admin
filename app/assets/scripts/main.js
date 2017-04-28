@@ -1,7 +1,8 @@
 'use strict';
 var config = require('./config');
 
-import React, { PropTypes as T } from 'react';
+import React from 'react';
+import { PropTypes as T } from 'prop-types';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
