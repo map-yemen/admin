@@ -88,7 +88,7 @@
     "lodash.defaultsdeep": "^4.3.5",
     "moment": "^2.16.0",
     "prop-types": "^15.5.8",
-    "react": "^15.5.5",
+    "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-jsonschema-form": "^0.47.0",
     "react-router": "^2.8.1",
