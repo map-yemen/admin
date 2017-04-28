@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './react-jsonschema-form';
+import Form from 'react-jsonschema-form';
 import DateFieldFactory from './widgets/DateWidget';
 import LocationField from './widgets/LocationWidget';
 import CurrencyField from './widgets/CurrencyWidget';
@@ -536,6 +536,31 @@ class ProjectForm extends React.Component {
     });
   }
 
+  onError () {
+    window.scrollTo(0, 0);
+  }
+
+  ErrorList (props) {
+    const errors = transformErrors(props.errors);
+
+    return (
+      <ul className="error-detail bs-callout bs-callout-info" style={{
+        padding: '10px',
+        marginBottom:'25px',
+        backgroundColor: 'rgba(169, 68, 66, 0.1)'
+      }}>
+        <p className="text-danger control-label"><b>There are errors in the form:</b></p>
+        {errors.map((error, i) => {
+          return (
+            <li key={i} className="text-danger">
+              {error.message}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
   onSubmit (formObject) {
     let {formData} = formObject;
     formData = setMaybe(this.state.schema, formData);
@@ -544,10 +569,13 @@ class ProjectForm extends React.Component {
 
   render () {
     const {schema, formData, isDraft} = this.state;
+
     return <Form schema={schema}
       onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
+      onError={this.onError.bind(this)}
+      ErrorList={this.ErrorList.bind(this)}
       noValidate={isDraft /* Only validate if this isn't a draft */ }
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
@@ -686,8 +714,9 @@ class ProjectForm extends React.Component {
       }}
       uiSchema = {this.state.uiSchema}
       transformErrors={transformErrors}
-      showErrorList={false}
+      showErrorList={true}
     >
+
       <button type='submit' className='btn button--primary'>Submit</button>
       {this.props.children}
     </Form>;

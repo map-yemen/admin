@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './react-jsonschema-form';
+import Form from 'react-jsonschema-form';
 
 import DataTypeWidget from './widgets/DataTypeWidget';
 import ThemeField from './widgets/ThemeField';
