@@ -51,6 +51,13 @@ function transformErrors (errors) {
           message: `${title} is required`
         });
       }
+    } else if (error.name === 'type') {
+      const title = error.schema.title;
+      const type = error.schema.type;
+
+      return Object.assign({}, error, {
+        message: `${title} must be a ${type}`
+      });
     } else {
       return error;
     }

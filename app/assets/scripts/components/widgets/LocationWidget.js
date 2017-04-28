@@ -18,12 +18,21 @@ class LocationFieldItem extends React.Component {
 
   onChange (name) {
     return (event) => {
+      let value = event.target.value;
       let newState = _.cloneDeep(this.state);
+
       if (name === 'governorate' || name === 'district') {
-        newState['district'][name] = event.target.value;
+        newState['district'][name] = value;
       } else if (name === 'lat' || name === 'lon') {
-        newState['marker'][name] = parseFloat(event.target.value);
+        value = parseFloat(value);
+
+        if (isNaN(value)) {
+          value = undefined;
+        }
+
+        newState['marker'][name] = value;
       }
+
       this.setState(newState, () => this.props.onChange(this.state));
     };
   }
