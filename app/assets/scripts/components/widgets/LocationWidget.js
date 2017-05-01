@@ -38,7 +38,7 @@ class LocationFieldItem extends React.Component {
   }
 
   render () {
-    const {lat, lon} = this.state.marker;
+    const {lat, lon, village} = this.state.marker;
     const {district, governorate} = this.state.district;
     const chosenGovernorate = reverseGovernorateMap[governorate] || '';
 
