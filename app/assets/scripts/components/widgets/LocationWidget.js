@@ -83,6 +83,11 @@ class LocationFieldItem extends React.Component {
             <input className="form-control" type="number" value={lon} step="0.00001"
               onChange={this.onChange('lon')} />
           </div>
+          <div className="col-sm-6">
+            <label>Village</label>
+            <input className="form-control" type="text" value={village_name}
+              onChange={this.onChange('village_name')} />
+          </div>
         </div>
       </div>
     );
