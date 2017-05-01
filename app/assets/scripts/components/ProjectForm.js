@@ -167,6 +167,10 @@ export const schema = {
               lat: {
                 title: 'Latitude',
                 type: 'number'
+              },
+              village: {
+                title: 'Village',
+                type: 'string'
               }
             }
           }
