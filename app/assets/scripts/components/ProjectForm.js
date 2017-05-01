@@ -570,7 +570,7 @@ class ProjectForm extends React.Component {
   }
 
   render () {
-    const {schema, formData, isDraft} = this.state;
+    const {schema, formData} = this.state;
 
     return <Form schema={schema}
       onSubmit={this.onSubmit.bind(this)}
@@ -578,7 +578,6 @@ class ProjectForm extends React.Component {
       onChange={this.onChange.bind(this)}
       onError={this.onError.bind(this)}
       ErrorList={this.ErrorList.bind(this)}
-      noValidate={isDraft /* Only validate if this isn't a draft */ }
       fields={{
         'short-date': DateFieldFactory('Year - عام', 'Month - شهر'),
         'fund-date': DateFieldFactory('Year Disbursed - تاريخ الصرف (عام)؛', 'Month Disbursed - تاريخ الصرف (شهر)؛'),
