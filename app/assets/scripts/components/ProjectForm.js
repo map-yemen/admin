@@ -191,6 +191,12 @@ export const schema = {
           donor_name_ar: {
             type: 'string',
             title: 'الجهة المانحة'
+          },
+          type: {
+            title: 'Type of Fund',
+            type: 'object',
+            required: ['en'],
+            properties: {en: {type: 'string', title: 'Type of Fund'}, ar: {type: 'string'}}
           }
         }
       }
@@ -456,6 +462,7 @@ class ProjectForm extends React.Component {
         classNames: 'form-block columns-small multiform-group',
         items: {
           fund: {'ui:field': 'currency'},
+          type: {'ui:field': 'select-disbursed-type'},
           donor_name: {
             classNames: 'with-ar'
           },
