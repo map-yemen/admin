@@ -31,6 +31,8 @@ class LocationFieldItem extends React.Component {
         }
 
         newState['marker'][name] = value;
+      } else if (name === 'village') {
+        newState['marker'][name] = value;
       }
 
       this.setState(newState, () => this.props.onChange(this.state));
