@@ -1,5 +1,6 @@
 /* Add a new Dataset */
-import React, {PropTypes as T} from 'react';
+import React from 'react';
+import { PropTypes as T } from 'prop-types';
 import IndicatorForm from './IndicatorForm';
 import {Link} from 'react-router';
 
