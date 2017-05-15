@@ -717,7 +717,7 @@ class ProjectForm extends React.Component {
           'Type of Fund',
           'Select type of fund',
           ['Loan', 'Grant', 'Local Contribution'],
-          ['قرض', 'منحة', 'المساهمة المحلية']
+          ['قرض', 'منحة', 'مساهمة محلية']
         ),
         'select-kmi_status': Dropdown('Status', 'Select a status - يُرجى اختيار الوضع/ الحالة',
           ['Not Implemented', 'Partially Implemented', 'Implemented', 'N/A'],
