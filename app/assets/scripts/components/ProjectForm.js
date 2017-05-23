@@ -613,8 +613,8 @@ class ProjectForm extends React.Component {
           ]
         ),
         'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry',
-          ['Ministry of Agriculture and Land Reclamation', 'Ministry 2', 'Ministry 3'],
-          [' وزارة الزراعة واستصلاح الأراضي', '', '']
+          ['Ministry of Agriculture and Land Reclamation', 'Ministry of International Cooperation and Investment', 'Ministry of Environment – Egyptian Environment Affairs Agency', 'Ministry of Water Resources and Irrigation', 'Ministry of Trade and Industry'],
+          ['وزارة الزراعة واستصلاح الأراضي', 'وزارة الاستثمار و التعاون الدولى', 'وزارة البيئة - جهاز شئون البيئة', 'الموارد المائية والري وزارة', 'التجارة والصناعة وزارة']
         ),
         'select-sds_indicator': Dropdown(
           'SDS Goal - هدف استراتيجية التنمية المُستدامة',
