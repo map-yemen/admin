@@ -8,7 +8,8 @@ class CustomNumberWidget extends React.Component {
   }
 
   onChange (e) {
-    const value = e.target.value || undefined;
+    let value = e.target.value || undefined;
+    if (value) value = Number(value);
     this.setState({ value: value }, () => {
       this.props.onChange(value);
     });
