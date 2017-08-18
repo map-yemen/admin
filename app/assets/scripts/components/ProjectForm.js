@@ -581,12 +581,13 @@ class ProjectForm extends React.Component {
   }
 
   render () {
-    const {schema, formData} = this.state;
+    const {schema, formData, isDraft} = this.state;
 
     return <Form schema={schema}
       onSubmit={this.onSubmit.bind(this)}
       formData={formData}
       onChange={this.onChange.bind(this)}
+      noValidate={isDraft}
       onError={this.onError.bind(this)}
       ErrorList={this.ErrorList.bind(this)}
       fields={{
