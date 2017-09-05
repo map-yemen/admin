@@ -4,7 +4,7 @@ import Form from 'react-jsonschema-form';
 import DataTypeWidget from './widgets/DataTypeWidget';
 import ThemeField from './widgets/ThemeField';
 import { csvToJSON } from '../utils/csv';
-import {transformErrors} from '../utils/nullUtils';
+import { transformErrors } from '../utils/nullUtils';
 
 export const schema = {
   type: 'object',
