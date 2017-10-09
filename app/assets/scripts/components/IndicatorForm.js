@@ -111,7 +111,8 @@ const uiSchema = {
 };
 
 const validate = function validate (formData, errors) {
-  if (formData.data) {
+  // If there is form data and it doesn't look like a mapbox id
+  if (formData.data && !formData.data.match(/^\w+\.\w+$/)) {
     try {
       csvToJSON(formData.data);
     } catch (e) {
