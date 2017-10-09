@@ -111,7 +111,7 @@ const uiSchema = {
 };
 
 const validate = function validate (formData, errors) {
-  if (formData.data) {
+  if (formData.data && !formData.data.match(/^\w+\.\w+$/)) {
     try {
       csvToJSON(formData.data);
     } catch (e) {
