@@ -416,3 +416,13 @@ label {
 .has-error .form-control-feedback {
   color: #333;
 }
+
+.error-list {
+  padding: 10px;
+  margin-bottom: 25px;
+  background-color: rgba(169, 68, 66, 0.1);
+}
+
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"] {
+  min-width: 10px;
+}

@@ -1,4 +1,5 @@
-import React, {PropTypes as T} from 'react';
+import React from 'react';
+import { PropTypes as T } from 'prop-types';
 import IndicatorForm from './IndicatorForm';
 import { Link } from 'react-router';
 
@@ -41,7 +42,8 @@ class EditIndicator extends React.Component {
   handleSubmit ({formData}) {
     const component = this;
 
-    if (formData.data) {
+    // If there is form data and it doesn't look like a mapbox id
+    if (formData.data && !formData.data.match(/^\w+\.\w+$/)) {
       formData.data = csvToJSON(formData.data);
     }
 

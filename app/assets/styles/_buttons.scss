@@ -275,10 +275,27 @@
   padding: .5em .5em .6em;
   border: none;
   transition: opacity 0.24s ease 0s;
+  margin-left: 2em;
   &:hover {
     opacity: 0.8;
     background-color: $danger-color;
   }
+}
+
+.btn-group--separate {
+  margin-top: 1.7em;
+}
+
+.array-item-list {
+  .array-item {
+    .btn-group {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.array-item-toolbox {
+  float: right;
 }
 
 .button-group { 

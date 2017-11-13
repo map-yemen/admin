@@ -1,10 +1,10 @@
 import React from 'react';
-import Form from './react-jsonschema-form';
+import Form from 'react-jsonschema-form';
 
 import DataTypeWidget from './widgets/DataTypeWidget';
 import ThemeField from './widgets/ThemeField';
 import { csvToJSON } from '../utils/csv';
-import {transformErrors} from '../utils/nullUtils';
+import { transformErrors } from '../utils/nullUtils';
 
 export const schema = {
   type: 'object',
@@ -111,7 +111,8 @@ const uiSchema = {
 };
 
 const validate = function validate (formData, errors) {
-  if (formData.data) {
+  // If there is form data and it doesn't look like a mapbox id
+  if (formData.data && !formData.data.match(/^\w+\.\w+$/)) {
     try {
       csvToJSON(formData.data);
     } catch (e) {

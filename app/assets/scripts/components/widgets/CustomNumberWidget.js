@@ -8,11 +8,11 @@ class CustomNumberWidget extends React.Component {
   }
 
   onChange (e) {
-    if (e.target.value.length > 0) {
-      this.props.onChange(Number(e.target.value));
-    } else {
-      this.props.onChange(undefined);
-    }
+    let value = e.target.value || undefined;
+    if (value) value = Number(value);
+    this.setState({ value: value }, () => {
+      this.props.onChange(value);
+    });
   }
 
   render () {
@@ -45,4 +45,3 @@ class CustomNumberWidget extends React.Component {
 }
 
 export default CustomNumberWidget;
-

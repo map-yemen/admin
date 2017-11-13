@@ -1,6 +1,21 @@
 import React from 'react';
 import {range} from 'lodash';
 
+const MONTHS = [
+  'January - يناير',
+  'February - فبراير',
+  'March - مارس',
+  'April - أبريل',
+  'May - مايو',
+  'June - يونيو',
+  'July - يوليو',
+  'August - أغسطس',
+  'September - سبتمبر',
+  'October - أكتوبر',
+  'November - نوفمبر',
+  'December - ديسمبر'
+];
+
   /**
    * Date widget with month & year dropdowns
    */
@@ -34,11 +49,8 @@ export default function (yearLabel, monthLabel) {
 
     render () {
       const {month, year} = this.state;
-      let months = range(1, 13).map((month) => {
-        let monthMap = ['January - يناير', 'February - فبراير', 'March - مارس', 'April - أبريل', 'May - مايو', 'June - يونيو',
-          'July - يوليو', 'August - أغسطس', 'September - سبتمبر', 'October - أكتوبر',
-          'November - نوفمبر', 'December - ديسمبر'];
-        return <option key={month} value={month}>{monthMap[month]}</option>;
+      let months = MONTHS.map((month, index) => {
+        return <option key={index + 1} value={index + 1}>{month}</option>;
       });
       months.unshift(<option key={-1} value={-1}>Select a Month</option>);
 
