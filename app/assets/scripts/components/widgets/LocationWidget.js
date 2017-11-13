@@ -1,40 +1,46 @@
 import React from 'react';
-
+import LocationField from './LocationField';
   /**
-   * Location field implementing latitude / longitude
+   * District widget with Governorate & district dropdowns
    */
-export default class LocationField extends React.Component {
+
+export default class DistrictField extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {};
-    for (let key in props.formData) {
-      this.state[key] = props.formData[key];
+    if (props.formData && props.formData.governorate && props.formData.district) {
+      const {governorate, district} = props.formData;
+      this.state = {governorate, district, lat: '', lon: ''};
+    } else {
+      this.state = {governorate: '', district: '', lat: '', lon: ''};
     }
   }
 
-  onChange (name) {
-    return (event) => {
-      this.setState({
-        [name]: parseFloat(event.target.value)
-      }, () => this.props.onChange(this.state));
-    };
+  onChange (e) {
+    console.log(this.props.formData);
+
+    if (e.target) {
+      let name = e.target.id;
+      let thing = (name === 'lat' || name === 'lon' ? parseFloat(e.target.value) : e.target.value);
+
+      if (name === 'lat' || name === 'lon') {
+        thing = parseFloat(e.target.value);
+      } else {
+        thing = e.target.value;
+      }
+
+      this.setState({[name]: thing});
+    }
+  }
+
+  newLine () {
+    console.log('woof');
   }
 
   render () {
-    const {lat, lon} = this.state;
-    return (
-      <div className="row">
-        <div className="col-sm-6">
-          <label>Latitude - خط العرض</label>
-          <input className="form-control" type="number" value={lat} step="0.00001"
-            onChange={this.onChange('lat')} />
-        </div>
-        <div className="col-sm-6">
-          <label>Longitude - خط الطول</label>
-          <input className="form-control" type="number" value={lon} step="0.00001"
-            onChange={this.onChange('lon')} />
-        </div>
-      </div>
-    );
+    const {formData, onChange} = this.props;
+
+    return <div className="form-group field field-array  multiform-group">
+      <LocationField />
+    </div>;
   }
 }
