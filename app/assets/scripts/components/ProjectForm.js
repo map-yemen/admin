@@ -23,7 +23,6 @@ export const schema = {
     'planned_start_date',
     'published',
     'sdg_indicator',
-    'sds_indicator',
     'status'
   ],
   properties: {
