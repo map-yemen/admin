@@ -106,16 +106,16 @@ export const schema = {
         number_served_unit_ar: {type: 'string', title: 'الفئة', 'description': 'مثال: الاسر المستفيدة'}
       }
     },
-    sds_indicator: {
-      title: 'SDS Goals - أهداف استراتيجية التنمية المُستدامة',
-      type: 'array',
-      items: {
-        title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
-        type: 'object',
-        required: ['en'],
-        properties: {en: {type: 'string', title: 'SDS Indicator'}, ar: {type: 'string'}}
-      }
-    },
+    // sds_indicator: {
+    //   title: 'SDS Goals - أهداف استراتيجية التنمية المُستدامة',
+    //   type: 'array',
+    //   items: {
+    //     title: 'SDS Goal - هدف استراتيجية التنمية المُستدامة',
+    //     type: 'object',
+    //     required: ['en'],
+    //     properties: {en: {type: 'string', title: 'SDS Indicator'}, ar: {type: 'string'}}
+    //   }
+    // },
     sdg_indicator: {
       title: 'SDG Goals - أهداف التنمية المستدامة',
       type: 'array',
@@ -631,13 +631,13 @@ class ProjectForm extends React.Component {
             'الهيئة العامة لتنمية الثروة السمكية'
           ]
         ),
-        'select-sds_indicator': Dropdown(
-          'SDS Goal - هدف استراتيجية التنمية المُستدامة',
-          sdsLabels.select,
-          sdsLabels.en,
-          sdsLabels.ar,
-          true
-        ),
+        // 'select-sds_indicator': Dropdown(
+        //   'SDS Goal - هدف استراتيجية التنمية المُستدامة',
+        //   sdsLabels.select,
+        //   sdsLabels.en,
+        //   sdsLabels.ar,
+        //   true
+        // ),
         'select-sdg_indicator': Dropdown(
           'SDG Goal - هدف التنمية المستدامة',
           sdgLabels.select,
