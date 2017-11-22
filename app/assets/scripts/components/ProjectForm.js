@@ -8,7 +8,7 @@ import CustomTextWidget from './widgets/CustomTextWidget';
 import CustomNumberWidget from './widgets/CustomNumberWidget';
 import Dropdown from './widgets/Dropdown';
 import {setMaybe, transformErrors} from '../utils/nullUtils';
-import {sdsLabels, sdgLabels} from '../utils/labels';
+import {sdgLabels} from '../utils/labels';
 
 export const schema = {
   type: 'object',
@@ -605,12 +605,14 @@ class ProjectForm extends React.Component {
           [
             'Planned',
             'Ongoing',
-            'Closed'
+            'Closed',
+            'Suspended/Halted'
           ],
           [
             'مُخطط',
             'جاري/ مستمر',
-            'مُغلق'
+            'مُغلق',
+            'معلق'
           ]
         ),
         'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry',
