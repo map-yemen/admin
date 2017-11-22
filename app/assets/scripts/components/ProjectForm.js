@@ -605,12 +605,14 @@ class ProjectForm extends React.Component {
           [
             'Planned',
             'Ongoing',
-            'Closed'
+            'Closed',
+            'Suspended/Halted'
           ],
           [
             'مُخطط',
             'جاري/ مستمر',
-            'مُغلق'
+            'مُغلق',
+            'معلق'
           ]
         ),
         'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry',
