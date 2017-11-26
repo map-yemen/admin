@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes as T } from 'prop-types';
 import { Link } from 'react-router';
 import moment from 'moment';
+import { sortBy } from 'lodash';
 
 const config = require('../config');
 const apiRoot = config.api_root;
@@ -26,8 +27,8 @@ class IndicatorList extends React.Component {
     if (!component.state) {
       return (<div></div>);
     }
-    const {list} = component.state;
-    list.sort((a, b) => moment(b.created_at) - moment(a.created_at));
+    let { list } = component.state;
+    list = sortBy(list, [o => o.name.toLowerCase(), o => moment(o.created_at)]); // Sort by na,e, then created_at
     const listItems = list.map((item) => {
       return (
         <tr key={item.id}>
