@@ -617,20 +617,36 @@ class ProjectForm extends React.Component {
         ),
         'select-ministry': Dropdown('Responsible Ministry - الوزارة المسؤولة', 'Select a Ministry',
           [
-            'Ministry of Agriculture and Land Reclamation',
-            'Ministry of International Cooperation and Investment',
-            'Ministry of Environment – Egyptian Environment Affairs Agency',
-            'Ministry of Water Resources and Irrigation',
-            'Ministry of Trade and Industry',
-            'General Authority For Fish Resources Development'
+            'Ministry of Planning and International Cooperation',
+            'Ministry of Agriculture and Irrigation',
+            'Ministry of Water and Environment',
+            'Ministry of Local Administration',
+            'Ministry of Social Affairs and Labor',
+            'Ministry of Oil and Minerals',
+            'Ministry of Education',
+            'Ministry of Technical Education and Vocational Training',
+            'Ministry of Finance',
+            'Ministry of Electricity and Energy',
+            'Ministry of Public Health and Population',
+            'Ministry of Higher Education and Scientific Research',
+            'Ministry of Fish Wealth',
+            'Ministry of Industry and Trade'
           ],
           [
-            'وزارة الزراعة واستصلاح الأراضي',
-            'وزارة الاستثمار و التعاون الدولى',
-            'وزارة البيئة - جهاز شئون البيئة',
-            'وزارة الموارد المائية والراي',
-            'وزارة التجارة والصناعة',
-            'الهيئة العامة لتنمية الثروة السمكية'
+            'وزارة التخطيط والتعاون الدولي',
+            'وزارة الزراعة والري',
+            'وزارة المياه والبيئة',
+            'وزارة الإدارة المحلية',
+            'وزارة الشؤون الإجتماعية والعمل',
+            'وزارة النفط والمعادن',
+            'وزارة التربية والتعليم',
+            'وزارة التعليم الفني والتدريب المهني',
+            'وزارة المالية',
+            'وزارة الكهرباء والطاقة',
+            'وزارة الصحة العامة والسكان',
+            'وزارة التعليم العالي والبحث العلمي',
+            'وزارة الثروة السمكية',
+            'وزارة الصناعة والتجارة'
           ]
         ),
         // 'select-sds_indicator': Dropdown(
@@ -651,20 +667,28 @@ class ProjectForm extends React.Component {
           'Sub-sector - القطاع الفرعي',
           'Select a sub-sector - يُرحى اختيار قطاع فرعي',
           [
-            'Agriculture',
-            'Water',
-            'Trade & Employment',
+            'Agriculture and food security',
             'Health',
             'Nutrition',
-            'Education'
+            'Education',
+            'Rural Infrastructure and Irrigation',
+            'Crops',
+            'Livestock',
+            'Agroindustry Marketing and Trade',
+            'Fisheries',
+            'Environment'
           ],
           [
-            'الزراعة',
-            'المياه',
-            'التجارة و التوظيف',
+            'الزراعة والأمن الغذائي',
             'الصحة',
             'التغذية',
-            'التعليم'
+            'التعليم',
+            'لبنية التحتية الريفية والري',
+            'المحاصيل',
+            'تربية الماشية',
+            'تسويق الصناعات الزراعية والتجارة',
+            'مصايد الأسماك',
+            'البيئة'
           ],
           true
         ),
