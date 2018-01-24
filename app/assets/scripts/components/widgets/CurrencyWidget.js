@@ -74,6 +74,7 @@ export default class CurrencyField extends React.Component {
             <option value="PHP">Philippine Peso</option>
             <option value="PLN">Polish Zloty</option>
             <option value="GBP">Pound Sterling</option>
+            <option value="SR">Saudi Rials</option>
             <option value="SGD">Singapore Dollar</option>
             <option value="SEK">Swedish Krona</option>
             <option value="CHF">Swiss Franc</option>
