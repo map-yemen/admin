@@ -674,7 +674,7 @@ class ProjectForm extends React.Component {
             'Rural Infrastructure and Irrigation',
             'Crops',
             'Livestock',
-            'Agroindustry Marketing and Trade',
+            'Agroindustry, Marketing, and Trade',
             'Fisheries',
             'Environment'
           ],
