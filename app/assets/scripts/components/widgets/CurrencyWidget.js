@@ -32,8 +32,8 @@ export default class CurrencyField extends React.Component {
   onChange (name) {
     return (event) => {
       let scratch = Object.assign({}, this.state);
-      scratch[name] = parseFloat(event.target.value);
-      scratch['amount'] = scratch['rate'] * scratch['original'];
+      scratch[name] = event.target.value;
+      scratch['amount'] = +scratch['rate'] * +scratch['original'];
 
       this.setMaybe(Object.assign({}, this.state, {
         amount: scratch['amount'],
@@ -92,7 +92,7 @@ export default class CurrencyField extends React.Component {
         </div>
         <div className="col-sm-4">
           <label>Exchange Rate - سعر الصرف * </label>
-          <input className="form-control" type="number" value={rate} step="0.01"
+          <input className="form-control" type="string" value={rate}
             onChange={this.onChange('rate')} />
         </div>
       </div>
