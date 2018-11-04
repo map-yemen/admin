@@ -32,13 +32,17 @@ export default class CurrencyField extends React.Component {
   onChange (name) {
     return (event) => {
       let scratch = Object.assign({}, this.state);
+      // don't parse the original value as a float because we want to preserve
+      // things as a string when adding multiple decimal places, e.g 0.0004
       scratch[name] = event.target.value;
       scratch['amount'] = +scratch['rate'] * +scratch['original'];
 
       this.setMaybe(Object.assign({}, this.state, {
         amount: scratch['amount'],
-        rate: scratch['rate'],
-        original: scratch['original']
+        // when storing rate, it needs to be a number except when it is a variant
+        // of zero, e.g 0.000
+        rate: (+scratch['rate'] === 0) ? scratch['rate'] : +scratch['rate'],
+        original: +scratch['original']
       }));
     };
   }
